@@ -1,0 +1,41 @@
+/* Google Font Import - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* Import Theme Colour */
+@import "light.css";
+@import "dark.css";
+
+/* Import SVG */
+@import "svg.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+    color: var(--font);
+}
+
+.fal {
+    font-size: 24px;
+    display: inline-flex !important;
+    align-items: center;
+}
+
+.svg {
+    width: 30px;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times.svg) no-repeat 50% 50%;
+    background-size: contain;
+    opacity: 0;
+    pointer-events: none;
+}
+
+input[type="search"]:focus::-webkit-search-cancel-button {
+    opacity: var(--searchbar-cancel-opacity);
+    pointer-events: all;
+}
