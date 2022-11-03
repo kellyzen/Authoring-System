@@ -12,7 +12,7 @@
     </ul>
 
     <ul class="course-add list-unstyled">
-      <li class=""><a href="#" class="text-decoration-none d-flex justify-content-between">Add course(s)<i class="fal fa-solid fa-plus"></i></a></li>
+      <li class=""><a href="#" class="text-decoration-none d-flex justify-content-between">Add course<i class="fal fa-solid fa-plus"></i></a></li>
 
     </ul>
 
