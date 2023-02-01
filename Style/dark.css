@@ -5,9 +5,12 @@
     --icon: #ccc;
     --icon-hover: #ff3838;
     --icon-disabled: #666;
+    --box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
     /*Header*/
     --header-bg: #464646;
+    --header-dropdown-bg: #666;
+    --header-dropdown-bg-hover: rgba(0, 0, 0, 0.3);
 
     /*Sidebar*/
     --sidebar-bg: #666;

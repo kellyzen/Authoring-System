@@ -1,0 +1,177 @@
+/*Header*/
+.navbar {
+    width: 100%;
+    background: var(--header-bg);
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25);
+}
+
+.nav-item {
+    padding: 0 15px;
+    align-self: center;
+
+}
+
+.navbar-nav {
+    flex-direction: row !important;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar-logo {
+    font-weight: 600;
+    font-size: 26px;
+    color: var(--font);
+    padding-left: 30px;
+}
+
+.navbar-logo:hover,
+.navbar i:hover {
+    color: var(--font);
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.nav-item.search-container {
+    flex: 0.8;
+}
+
+.search-bar {
+    height: 40px;
+    display: flex;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--searchbar-border);
+    background-color: var(--searchbar-bg);
+}
+
+.search-bar input {
+    width: 100%;
+    outline: none;
+    padding-left: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background: none;
+    border: none;
+}
+
+.search-bar input::placeholder {
+    color: var(--searchbar-placeholder);
+    font-size: 18px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.search-bar_icons {
+    display: inherit;
+    position: relative;
+    padding-right: 20px;
+}
+
+.search-bar_icons .fal {
+    padding: 5px;
+    color: var(--searchbar-icon);
+}
+
+.search-bar_icons .fal:hover, .search-bar_icons .fal.active {
+    color: var(--icon);
+}
+
+.setting-dropdown-content, .filter-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--header-dropdown-bg);
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: var(--box-shadow);
+    z-index: 1;
+    border-radius: 8px;
+    padding: 10px 0 10px 0;
+}
+
+.setting-dropdown-content {
+    top: 65px;
+    right: 10px;
+}
+
+.filter-dropdown-content {
+    top: 57px;
+    right: 0px;
+}
+
+.setting-dropdown-content span, .filter-dropdown-content span {
+    color: var(--font);
+    padding: 10px 15px;
+    display: block;
+}
+
+.setting-dropdown-content .fal {
+    padding: 0 15px;
+}
+
+.setting-dropdown-content .fal:hover {
+    opacity: 1;
+}
+
+.setting-container span:hover {
+    color: var(--font);
+}
+
+.setting-dropdown-box, .filter-dropdown-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.setting-dropdown-box:hover, .filter-dropdown-box:hover {
+    background-color: var(--header-dropdown-bg-hover);
+}
+
+.show {
+    display: block;
+}
+
+/*Toggle Switch*/
+.toggle {
+    --width: 40px;
+    --height: calc(var(--width) / 2);
+    --border-radius: calc(var(--height) / 2);
+  
+    display: inline-block;
+    cursor: pointer;
+    align-self: center;
+    padding: 0 10px;
+  }
+  
+  .toggle__input {
+    display: none;
+  }
+  
+  .toggle__fill {
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+    border-radius: var(--border-radius);
+    background: #dddddd;
+    transition: background 0.2s;
+  }
+  
+  .toggle__input:checked ~ .toggle__fill {
+    background: #33B67F;
+  }
+  
+  .toggle__fill::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: var(--height);
+    width: var(--height);
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: var(--border-radius);
+    transition: transform 0.2s;
+  }
+  
+  .toggle__input:checked ~ .toggle__fill::after {
+    transform: translateX(var(--height));
+  }

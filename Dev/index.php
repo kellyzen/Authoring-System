@@ -5,16 +5,30 @@
 <body class="dark">
     <div class="main-container">
         <?php include 'navbar.php'; ?>
-        <?php include 'Dashboard/dashboard.php'; ?>
+
+        <div id="main-dashboard" class="main-dashboard">
+            <?php include 'Dashboard/dashboard.php'; ?>
+        </div>
+        <div id="main-profile" class="main-profile" style="display: none;">
+            <?php include 'Profile/profile.php'; ?>
+        </div>
     </div>
 </body>
 
-<!--Toggle sidebar-->
 <script>
+    //Toggle sidebar
     let sidebar = document.querySelector(".sidebar");
     let closeBtn = document.querySelector("#btn");
 
     closeBtn.addEventListener("click", () => {
         sidebar.classList.toggle("close");
+    });
+
+    //Change main content
+    let profile = document.querySelector("#profile");
+    
+    profile.addEventListener("click", () => {
+        document.getElementById("main-profile").style.display = "block";
+        document.getElementById("main-dashboard").style.display = "none";
     });
 </script>
