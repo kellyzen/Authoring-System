@@ -47,7 +47,7 @@
                     <div class="setting-dropdown-box">
                         <span>Dark theme</span>
                         <label class="toggle" for="themeToggle">
-                            <input class="toggle__input" name="" type="checkbox" id="themeToggle" onclick="toggleTheme()" checked>
+                            <input class="toggle__input" name="" type="checkbox" id="themeToggle" onclick="toggleTheme()">
                             <div class="toggle__fill"></div>
                         </label>
                     </div>

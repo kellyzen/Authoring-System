@@ -2,7 +2,7 @@
 
 <!--remove class after implementing toggle dark/light mode-->
 
-<body class="dark">
+<body class="light">
     <div class="main-container">
         <?php include 'navbar.php'; ?>
 
