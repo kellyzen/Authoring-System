@@ -24,7 +24,7 @@
         sidebar.classList.toggle("close");
     });
 
-    //Change main content
+    //Switch to profile page
     let profile = document.querySelector("#profile");
     
     profile.addEventListener("click", () => {
