@@ -1,0 +1,58 @@
+.light{
+    --bg: #fff;
+    --font: #000;
+    --font-hover: #bf1818;
+    --icon: #000;
+    --icon-hover: #bf1818;
+    --icon-disabled: #aaa;
+    --box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    /*Header*/
+    --header-bg: #fff;
+    --header-dropdown-bg: #f4f4f4;
+    --header-dropdown-bg-hover: #fff;
+
+    /*Sidebar*/
+    --sidebar-bg: #f4f4f4;
+    --sidebar-item-bg-selected: rgba(0, 0, 0, 0.1);
+    --sidebar-item-bg-hover: rgba(0, 0, 0, 0.3);
+    --sidebar-button-bg: rgba(0, 0, 0, 0.1);
+    --sidebar-button-bg-hover: rgba(0, 0, 0, 0.3);
+
+    /*Search bar*/
+    --searchbar-bg: #f4f4f4;
+    --searchbar-border: #aaa;
+    --searchbar-icon: #aaa;
+    --searchbar-placeholder: #aaa;
+    --searchbar-cancel-opacity: 0.3;
+
+    /*Textbox*/
+    --textbox-bg: #f4f4f4;
+    --textbox-border: #aaa;
+    --textbox-icon: var(--icon);
+    --textbox-placeholder: #aaa;
+
+    /*Primary button*/
+    --primary-btn-bg: #bf1818;
+    --primary-btn-bg-hover: #000;
+    --primary-btn-bg-disabled: #404040;
+    --primary-btn-border: #bf1818;
+    --primary-btn-border-hover: #000;
+    --primary-btn-border-disabled: #404040;
+    --primary-btn-font: #fff;
+    --primary-btn-font-hover: #fff;
+    --primary-btn-font-disabled: #eee;
+
+    /*Secondary button*/
+    --secondary-btn-bg: transparent;
+    --secondary-btn-border: #bf1818;
+    --secondary-btn-border-hover: #000;
+    --secondary-btn-border-disabled: #404040;
+    --secondary-btn-font: #bf1818;
+    --secondary-btn-font-hover: #000;
+    --secondary-btn-font-disabled: #404040;
+
+
+    /*Pop Up*/
+    --popup-bg: rgba(0, 0, 0, 0.6);
+}
