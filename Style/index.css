@@ -31,10 +31,11 @@ body {
     color: var(--primary-btn-font-hover);
 }
 
-.primary-btn:disabled, .primary-btn[disabled] {
+.primary-btn:disabled,
+.primary-btn[disabled] {
     border: 1px solid var(--primary-btn-border-disabled);
     background-color: var(--primary-btn-bg-disabled);
-    font: var(--primary-btn-font-disabled);
+    color: var(--primary-btn-font-disabled);
 }
 
 .secondary-btn {
@@ -54,10 +55,11 @@ body {
     color: var(--secondary-btn-font-hover);
 }
 
-.secondary-btn:disabled, .secondary-btn[disabled] {
+.secondary-btn:disabled,
+.secondary-btn[disabled] {
     border: 1px solid var(--secondary-btn-border-disabled);
     background-color: var(--secondary-btn-bg);
-    font: var(--secondary-btn-font-disabled);
+    color: var(--secondary-btn-font-disabled);
 }
 
 .dropdown {
@@ -69,6 +71,47 @@ body {
     font-weight: 600;
     padding: 10px 15px;
     outline: none;
+}
+
+.action-btn {
+    border-radius: 0px;
+    border: none;
+    background-color: var(--action-btn-bg);
+    color: var(--action-btn-font);
+    font-size: 16px;
+    padding: 10px;
+    outline: none;
+}
+
+.action-btn:hover {
+    border: none;
+    background-color: var(--action-btn-bg-hover);
+    color: var(--action-btn-font-hover);
+}
+
+.action-btn:disabled,
+.action-btn[disabled] {
+    border: none;
+    background-color: var(--action-btn-bg-disabled);
+    color: var(--action-btn-font-disabled);
+}
+
+.action-btn:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.action-btn:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+.action-btn .fal {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.action-btn:disabled .fal,
+.action-btn[disabled] .fal {
+    color: var(--action-btn-font-disabled);
 }
 
 input[type="search"]::-webkit-search-cancel-button {
@@ -86,7 +129,7 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     pointer-events: all;
 }
 
-input[type=text] {
+input[type=text], input[type=password] {
     border-radius: 8px;
     border: 1px solid var(--textbox-border);
     outline: none;
@@ -102,10 +145,11 @@ textarea {
     background: var(--textbox-bg);
     padding: 10px 15px;
     height: 130px;
-    vertical-align:text-top;
+    vertical-align: text-top;
 }
 
-input::placeholder, ::placeholder {
+input::placeholder,
+::placeholder {
     color: var(--textbox-placeholder);
     font-size: 16px;
     font-weight: 500;
