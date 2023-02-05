@@ -54,6 +54,18 @@
     --secondary-btn-font-hover: #fff;
     --secondary-btn-font-disabled: #eee;
 
+    /*Action button*/
+    --action-btn-bg: #363636;
+    --action-btn-bg-hover: #666;
+    --action-btn-bg-disabled: #363636;
+    --action-btn-font: #ccc;
+    --action-btn-font-hover: #ccc;
+    --action-btn-font-disabled: #666;
+
     /*Pop Up*/
     --popup-bg: rgba(0, 0, 0, 0.6);
+
+    /*Container Background*/
+    --container-bg-1: #363636;
+    --container-bg-2: #666;
 }

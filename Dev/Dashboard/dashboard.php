@@ -1,6 +1,6 @@
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard | stud.io</title>
+  <title>stud.io</title>
 </head>
 
 <div class="content d-flex">

@@ -31,4 +31,12 @@
         document.getElementById("main-profile").style.display = "block";
         document.getElementById("main-dashboard").style.display = "none";
     });
+
+    //Switch to dashboard page
+    let dashboard = document.querySelector("#dashboard");
+    
+    dashboard.addEventListener("click", () => {
+        document.getElementById("main-dashboard").style.display = "block";
+        document.getElementById("main-profile").style.display = "none";
+    });
 </script>
