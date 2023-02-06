@@ -21,7 +21,7 @@
     let closeBtn = document.querySelector("#btn");
 
     closeBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("close");
+        sidebar.classList.toggle("close");        
     });
 
     //Switch to profile page
