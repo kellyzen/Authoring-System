@@ -7,7 +7,7 @@
             <button id="dashboard" class="profile-action-button action-btn" type="button">
                 Back <i class="fal fa-solid fa-arrow-left"></i>
             </button>
-            <button id="EditButton" class="profile-action-button action-btn" type="button" onclick="editProfile()">
+            <button id="editButton" class="profile-action-button action-btn" type="button" onclick="editProfile()">
                 Edit <i class="fal fa-regular fa-edit"></i>
             </button>
         </div>
@@ -68,7 +68,7 @@
     function editProfile() {
         if (document.getElementById("profile-content").classList.contains("profile-edit")) {
             //change action button's content
-            document.getElementById('EditButton').innerHTML = 'Edit <i class="fal fa-regular fa-edit"></i>';
+            document.getElementById('editButton').innerHTML = 'Edit <i class="fal fa-regular fa-edit"></i>';
             document.getElementById("profile-content").classList.remove("profile-edit")
             //disable all inputs
             $("#profile-edit :input").prop("disabled", true);
@@ -77,7 +77,7 @@
             document.getElementById("password").type = "password";
         } else {
             document.getElementById("profile-content").classList.toggle("profile-edit")
-            document.getElementById('EditButton').innerHTML = 'Save <i class="fal fa-regular fa-save"></i>';
+            document.getElementById('editButton').innerHTML = 'Save <i class="fal fa-regular fa-save"></i>';
             //enable all inputs
             $("#profile-edit :input").prop("disabled", false);
         }
