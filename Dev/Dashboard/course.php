@@ -18,7 +18,7 @@
                     </button>
                 </div>
                 <div class="dashboard-action-buttons">
-                    <button class="dashboard-action-button action-btn" type="button">
+                    <button id="viewButton" class="dashboard-action-button action-btn" type="button" onclick="changeView()">
                         <i class="fal fa-regular fa-list"></i>
                     </button>
                 </div>
@@ -26,9 +26,10 @@
 
         </div>
     </div>
+    <!--List of Topics-->
     <div id="dashboard-content" class="dashboard-content">
         <div class="dashboard-topic">
-            <span class="svg-folder"></span>
+            <span class="svg svg-folder"></span>
             <span class="dashboard-topic-group">
                 <span class="dashboard-topic-title">Topic 1</span>
                 <span class="dashboard-topic-difficulty difficulty-advanced"></span>
@@ -36,7 +37,7 @@
             <i class="fal fa-solid fa-ellipsis-h"></i>
         </div>
         <div class="dashboard-topic">
-            <span class="svg-folder"></span>
+            <span class="svg svg-folder"></span>
             <span class="dashboard-topic-group">
                 <span class="dashboard-topic-title">Topic 2</span>
                 <span class="dashboard-topic-difficulty difficulty-intermediate"></span>
@@ -44,7 +45,7 @@
             <i class="fal fa-solid fa-ellipsis-h"></i>
         </div>
         <div class="dashboard-topic">
-            <span class="svg-folder"></span>
+            <span class="svg svg-folder"></span>
             <span class="dashboard-topic-group">
                 <span class="dashboard-topic-title">Topic 3</span>
                 <span class="dashboard-topic-difficulty difficulty-beginner"></span>
@@ -52,7 +53,7 @@
             <i class="fal fa-solid fa-ellipsis-h"></i>
         </div>
         <div class="dashboard-topic">
-            <span class="svg-folder"></span>
+            <span class="svg svg-folder"></span>
             <span class="dashboard-topic-group">
                 <span class="dashboard-topic-title">Topic 4</span>
                 <span class="dashboard-topic-difficulty difficulty-beginner"></span>
@@ -60,7 +61,7 @@
             <i class="fal fa-solid fa-ellipsis-h"></i>
         </div>
         <div class="dashboard-topic">
-            <span class="svg-folder"></span>
+            <span class="svg svg-folder"></span>
             <span class="dashboard-topic-group">
                 <span class="dashboard-topic-title">Topic 5</span>
                 <span class="dashboard-topic-difficulty difficulty-advanced"></span>
@@ -68,7 +69,7 @@
             <i class="fal fa-solid fa-ellipsis-h"></i>
         </div>
         <div class="dashboard-topic">
-            <span class="svg-folder"></span>
+            <span class="svg svg-folder"></span>
             <span class="dashboard-topic-group">
                 <span class="dashboard-topic-title">Topic 6</span>
                 <span class="dashboard-topic-difficulty difficulty-intermediate"></span>
@@ -76,7 +77,7 @@
             <i class="fal fa-solid fa-ellipsis-h"></i>
         </div>
         <div class="dashboard-topic">
-            <span class="svg-folder"></span>
+            <span class="svg svg-folder"></span>
             <span class="dashboard-topic-group">
                 <span class="dashboard-topic-title">Topic 7</span>
                 <span class="dashboard-topic-difficulty difficulty-beginner"></span>
@@ -84,7 +85,7 @@
             <i class="fal fa-solid fa-ellipsis-h"></i>
         </div>
         <div class="dashboard-topic">
-            <span class="svg-folder"></span>
+            <span class="svg svg-folder"></span>
             <span class="dashboard-topic-group">
                 <span class="dashboard-topic-title">Topic 8</span>
                 <span class="dashboard-topic-difficulty difficulty-intermediate"></span>
@@ -94,12 +95,25 @@
     </div>
 </div>
 <script>
+    //Toggle between edit and save function
+    function changeView() {
+        if (document.getElementById("dashboard-content").classList.contains("dashboard-list")) {
+            //change dashboard to grid view
+            document.getElementById('viewButton').innerHTML = '<i class="fal fa-regular fa-list"></i>';
+            document.getElementById("dashboard-content").classList.remove("dashboard-list");
+        } else {
+            //change dashboard to list view
+            document.getElementById('viewButton').innerHTML = '<i class="fal fa-solid fa-grip-vertical"></i>';
+            document.getElementById("dashboard-content").classList.toggle("dashboard-list");
+        }
+    }
+
+    //Ignore enter key while editing course title and course description
     document.querySelector('#course-header-title').addEventListener('keydown', function(e) {
         if (e.key === 'Enter') {
             e.preventDefault();
         }
     });
-
     document.querySelector('#course-description').addEventListener('keydown', function(e) {
         if (e.key === 'Enter') {
             e.preventDefault();

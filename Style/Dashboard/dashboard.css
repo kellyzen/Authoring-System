@@ -77,6 +77,8 @@
 
 .dashboard-action-button .fal{
     margin: 0;
+    width: 24px;
+    justify-content: center;
 }
 
 .dashboard-content {
@@ -89,6 +91,12 @@
     text-align: center;
     align-content: flex-start;
     flex-wrap: wrap;
+}
+
+.dashboard-content.dashboard-list {
+    display: block;
+    text-align: left;
+    padding: 0;
 }
 
 .dashboard-topic {
@@ -113,6 +121,10 @@
     text-decoration: none;
 }
 
+.dashboard-topic .svg{
+    width: 180px;
+}
+
 .dashboard-topic-group {
     top: -25px;
     position: relative;
@@ -134,6 +146,40 @@
     width: 10px;
     height: 10px;
     display: inline-block;
+}
+
+.dashboard-list .dashboard-topic{
+    width: 100%;
+    max-width: 100%;
+    max-height: 50px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--table-border-bottom);
+}
+
+.dashboard-list .dashboard-topic:hover{
+    background: var(--table-bg-hover);
+    opacity: 1;
+}
+
+.dashboard-list .dashboard-topic-group{
+    display: inline;
+    padding: 0 30px;
+    top: 0;
+}
+
+.dashboard-list .dashboard-topic-difficulty{
+    margin-left: 10px;
+}
+
+.dashboard-list .dashboard-topic .svg{
+    width: 40px;
+}
+
+.dashboard-list .dashboard-topic .fal{
+    width: 40px;
+    position: static;
 }
 
 /*Add Course*/
