@@ -32,6 +32,10 @@
     --textbox-icon: var(--icon);
     --textbox-placeholder: #666;
 
+    /*Table*/
+    --table-border-bottom: #222;
+    --table-bg-hover: #FFFFFF1A;
+
 
     /*Primary button*/
     --primary-btn-bg: #ff3838;

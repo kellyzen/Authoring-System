@@ -106,12 +106,24 @@ body {
 
 .action-btn .fal {
     vertical-align: middle;
-    margin-left: 10px;
+    margin-left: 8px;
 }
 
 .action-btn:disabled .fal,
 .action-btn[disabled] .fal {
     color: var(--action-btn-font-disabled);
+}
+
+.difficulty-beginner {
+    background: #008000;
+}
+
+.difficulty-intermediate {
+    background: #FFA500;
+}
+
+.difficulty-advanced {
+    background: #FF0000;
 }
 
 input[type="search"]::-webkit-search-cancel-button {

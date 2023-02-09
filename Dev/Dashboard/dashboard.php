@@ -5,7 +5,7 @@
 
 <div class="content d-flex">
   <?php include 'sidebar.php'; ?>
-  <?php include 'content.php'; ?>
+  <?php include 'course.php'; ?>
   <div id="content-course-add" class="content-course-add" style="display: none;">
     <?php include 'add_course.php'; ?>
   </div>
