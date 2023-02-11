@@ -1,7 +1,5 @@
 <?php include 'head.php'; ?>
 
-<!--remove class after implementing toggle dark/light mode-->
-
 <body class="light">
     <div class="main-container">
         <?php include 'navbar.php'; ?>
