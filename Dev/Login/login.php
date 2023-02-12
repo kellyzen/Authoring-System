@@ -2,8 +2,7 @@
 session_start();
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-  header('Location: ../index.php', true, 301);
-  exit;
+  header('Location: ../index.php');
 }
 
 $servername = "localhost";
@@ -47,14 +46,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
           if ($stmt->fetch()) {
             if ($password == $hashed_password) {
-              session_start();
               $_SESSION['loggedin'] = true;
               $_SESSION['id'] = $id;
               $_SESSION['username'] = $username;
-              header('Location: ../index.php', true, 301);
+              header('Location: ../index.php');
             } else {
               $password_err = 'Incorrect password.';
-              echo 'Incorrect';
             }
           }
         } else {
@@ -67,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $stmt->close();
     }
 
-    $conn->close();
+    //$conn->close();
   }
 }
 ?>
