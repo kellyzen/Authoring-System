@@ -16,7 +16,7 @@ if ($count != '0') {
         <ul class="navbar-nav">
             <li class="nav-item">
                 <i class="fal fa-solid fa-bars" id="btn"></i>
-                <a class="navbar-logo text-decoration-none" href="index.php<?php echo '?id='.$id; ?>">stud.io</a>
+                <a class="navbar-logo text-decoration-none" href="<?php echo '?id='.$id; ?>">stud.io</a>
             </li>
             <li class="nav-item search-container">
                 <div class="search-bar">

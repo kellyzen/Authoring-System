@@ -1,8 +1,15 @@
 <?php
 session_start();
-
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-  header('Location: ../index.php');
+  include '../config.php';
+  $query = mysqli_query($conn, "SELECT * FROM course where user_ID='$_SESSION[id]';");
+  $count = mysqli_num_rows($query);
+
+  if ($count != '0') {
+    $row = mysqli_fetch_array($query);
+    $id = $row['course_ID'];
+  }
+  header('Location: ../?id=' . $id);
 }
 
 $servername = "localhost";
@@ -49,7 +56,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               $_SESSION['loggedin'] = true;
               $_SESSION['id'] = $id;
               $_SESSION['username'] = $username;
-              header('Location: ../index.php');
+
+              $query = mysqli_query($conn, "SELECT * FROM course where user_ID='$_SESSION[id]';");
+              $count = mysqli_num_rows($query);
+
+              if ($count != '0') {
+                $row = mysqli_fetch_array($query);
+                $id = $row['course_ID'];
+              }
+              header('Location: ../?id=' . $id);
             } else {
               $password_err = 'Incorrect password.';
             }
@@ -63,8 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       $stmt->close();
     }
-
-    //$conn->close();
   }
 }
 ?>

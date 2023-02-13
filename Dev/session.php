@@ -1,5 +1,5 @@
 <?php
 if (empty($_SESSION['loggedin'])) :
-    header('Location: ../Login/login.php');
+    header('Location: ../Dev/Login/login.php');
 endif;
 ?>
