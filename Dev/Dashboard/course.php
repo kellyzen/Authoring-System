@@ -1,3 +1,10 @@
+<?php
+include 'session.php';
+include 'config.php';
+
+$get_id = $_GET['id'];
+?>
+
 <div class="dashboard-container">
     <div class="dashboard-header">
         <div class="dashboard-title-box">

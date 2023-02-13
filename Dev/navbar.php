@@ -1,9 +1,22 @@
+<?php
+include 'session.php';
+include 'config.php';
+
+$query = mysqli_query($conn, "SELECT * FROM course where user_ID='$_SESSION[id]';");
+$count = mysqli_num_rows($query);
+
+if ($count != '0') {
+    $row = mysqli_fetch_array($query);
+    $id = $row['course_ID'];
+}
+?>
+
 <nav class="navbar navbar-expand-md">
     <div class="container-fluid">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <i class="fal fa-solid fa-bars" id="btn"></i>
-                <a class="navbar-logo text-decoration-none" href="#">stud.io</a>
+                <a class="navbar-logo text-decoration-none" href="index.php<?php echo '?id='.$id; ?>">stud.io</a>
             </li>
             <li class="nav-item search-container">
                 <div class="search-bar">

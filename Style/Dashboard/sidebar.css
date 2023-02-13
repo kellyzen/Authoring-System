@@ -30,6 +30,17 @@
     margin: 0;
 }
 
+.course-badge {
+    background: var(--sidebar-item-bg-selected);;
+    border: 1px solid var(--sidebar-item-bg-selected);;
+    border-radius: 18px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--font);
+    padding: 3px 8px;
+    margin-left: 10px;
+}
+
 .sidebar .course {
     border-radius: 8px;
     margin: 5px 0;
