@@ -3,17 +3,42 @@ include 'session.php';
 include 'config.php';
 
 $get_id = $_GET['id'];
+$user_ID = "$_SESSION[id]";
+
+$sql = "SELECT * FROM course where user_ID='$user_ID' AND course_ID='$get_id';";
+$result = $conn->query($sql);
+
+$c_name = $c_description = $c_type_ID = "";
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $c_name = $row["c_name"];
+        $c_description = $row["c_description"];
+        $c_type_ID = $row["c_type_ID"];
+    }
+}
+
+$query = "SELECT * FROM course_type where c_type_ID='$c_type_ID';";
+$result = $conn->query($query);
+
+$c_type = "";
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $c_type = $row["c_type"];
+    }
+}
 ?>
 
 <div class="dashboard-container">
     <div class="dashboard-header">
         <div class="dashboard-title-box">
-            <span id="course-header-title" class="course-header-title" contenteditable="true">Course title</span>
-            <span class="course-type">Computer Science</span>
+            <span id="course-header-title" class="course-header-title" contenteditable="true"><?php echo $c_name; ?></span>
+            <span class="course-type"><?php echo $c_type; ?></span>
         </div>
         <div class="dashboard-description-box">
             <span id="course-description" class="course-description" contenteditable="true">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, totam? Sequi alias eveniet ut quas ullam delectus et quasi incidunt rem deserunt asperiores reiciendis assumenda doloremque provident, dolores aspernatur neque.
+            <?php echo $c_description; ?>
             </span>
             <div class="dashboard-action-buttons-box">
                 <div class="dashboard-action-buttons">

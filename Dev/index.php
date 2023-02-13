@@ -1,8 +1,10 @@
 <?php
 session_start();
-if(empty($_SESSION['loggedin'])):
+if (empty($_SESSION['loggedin'])) {
     header('Location:Login/login.php');
-endif;
+} else {
+    //new course
+}
 include 'head.php';
 ?>
 
