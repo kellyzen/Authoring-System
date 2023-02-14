@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
         </div>
         <div class="dashboard-description-box">
             <span id="course-description" class="course-description" contenteditable="true">
-            <?php echo $c_description; ?>
+                <?php echo $c_description; ?>
             </span>
             <div class="dashboard-action-buttons-box">
                 <div class="dashboard-action-buttons">
@@ -60,6 +60,8 @@ if ($result->num_rows > 0) {
     </div>
     <!--List of Topics-->
     <div id="dashboard-content" class="dashboard-content">
+        <?php include 'topics.php'; ?>
+        <!--
         <div class="dashboard-topic">
             <span class="svg svg-folder"></span>
             <span class="dashboard-topic-group">
@@ -123,7 +125,7 @@ if ($result->num_rows > 0) {
                 <span class="dashboard-topic-difficulty difficulty-intermediate"></span>
             </span>
             <i class="fal fa-solid fa-ellipsis-h"></i>
-        </div>
+        </div>-->
     </div>
 </div>
 <script>
