@@ -67,6 +67,16 @@ if ($result->num_rows > 0) {
                 <span class="dashboard-topic-difficulty difficulty-advanced"></span>
             </span>
             <i class="fal fa-solid fa-ellipsis-h"></i>
+            <div id="folder-dropdown" class="folder-dropdown-content">
+                <div id="delete" class="folder-dropdown-box">
+                    <span>Delete</span>
+                    <i class="fal fa-regular fa-user"></i>
+                </div>
+                <div id="clone" class="folder-dropdown-box">
+                    <span>Clone</span>
+                    <i class="fal fa-regular fa-user"></i>
+                </div>
+            </div>
         </div>
         <div class="dashboard-topic">
             <span class="svg svg-folder"></span>
