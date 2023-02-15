@@ -111,6 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <h2 class="display-4 pt-3">Login</h2>
       <p class="text-center">Please fill this form to create an account.</p>
       <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+
         <div class="form-group <?php (!empty($username_err)) ? 'has_error' : ''; ?>">
           <label for="username">Username</label>
           <input type="text" name="username" id="username" class="form-control" value="<?php echo $username ?>">
@@ -126,6 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="form-group">
           <input type="submit" class="btn btn-block btn-outline-primary" value="login">
         </div>
+        
         <p>Don't have an account? <a href="register.php">Sign in</a>.</p>
       </form>
     </section>
