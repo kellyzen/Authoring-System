@@ -18,18 +18,17 @@ if ($count != '0') {
             $difficulty = "difficulty-intermediate";
         } else {
             $difficulty = "difficulty-advanced";
-        } 
+        }
 ?>
 
-        <a href="<?php echo '../Topic?id='.$topic_ID; ?>" class="dashboard-topic">
-            <span class="svg svg-folder"></span>
+        <div class="dashboard-topic">
+            <a href="<?php echo '../Topic?id=' . $topic_ID; ?>"><span class="svg svg-folder"></span></a>
             <span class="dashboard-topic-group">
                 <span class="dashboard-topic-title"><?php echo $row['topic_name']; ?></span>
                 <span class="dashboard-topic-difficulty <?php echo $difficulty; ?>"></span>
             </span>
             <i class="fal fa-solid fa-ellipsis-h"></i>
-        </a>
-
+        </div>
 <?php
     }
 }
