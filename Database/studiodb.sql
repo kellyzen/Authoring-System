@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2023 at 05:10 AM
+-- Generation Time: Feb 14, 2023 at 04:17 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -197,7 +197,19 @@ CREATE TABLE `topic` (
 INSERT INTO `topic` (`topic_ID`, `topic_name`, `topic_description`, `difficulty_ID`, `course_ID`) VALUES
 (1, 'Memory Management', 'To learn the different algorithms for storing/ retrieving memory.', 2, 1),
 (2, 'Differentiation', 'dy/dx', 1, 2),
-(3, 'Icing ingredients', 'How to mix icing?', 1, 3);
+(3, 'Icing ingredients', 'How to mix icing?', 1, 3),
+(4, 'Vanilla Buttercream', 'This vanilla buttercream frosting will be ready to turn any cake, cookie or cupcake into a special-occasion dessert', 3, 3),
+(5, 'Linked List', 'Malloc(), Calloc(), Realloc()', 2, 6),
+(6, 'Pointer', 'Ways to pass a pointer to a function.', 2, 6),
+(7, 'File Processing', 'File processing consists of creating, storing, and/or retrieving the contents of a file from a recognizable medium. For example, it is used to save wo', 1, 6),
+(8, 'Introduction', 'In physics, a force is an influence that can change the motion of an object. A force can cause an object with mass to change its velocity, i.e., to ac', 1, 7),
+(9, 'Types of Force', 'Newton\'s Laws - Lesson 2 - Force and Its Representation', 1, 7),
+(10, 'Powdered sugar icing', 'This easy, 3-ingredient Powdered Sugar Icing is perfect for bundt cakes, pound cakes, angel food cakes, cookies, and quick breads.', 1, 3),
+(11, 'Structure, Union, Enumeration', 'struc and union cannot compare because there might be bytes of undefined data, only can compare one by one (for struc)', 2, 6),
+(12, 'Array', 'Array is a group of contiguous memory locations with same type.', 1, 6),
+(13, 'Past Year Papers', '- Past Year Paper 2020/2021\r\n- Past Year Paper 2019/2020\r\n- Past Year Paper 2019/2019', 3, 6),
+(14, 'Newton’s first principle', ' a body that is at rest or moving at a uniform rate in a straight line will remain in that state until some force is applied to it', 2, 7),
+(15, 'Newton’s second law', 'when an external force acts on a body, it produces an acceleration (change in velocity) of the body in the direction of the force', 2, 7);
 
 -- --------------------------------------------------------
 
@@ -211,16 +223,17 @@ CREATE TABLE `user` (
   `firstname` varchar(20) NOT NULL,
   `lastname` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `theme` varchar(10) NOT NULL DEFAULT 'light'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_ID`, `username`, `firstname`, `lastname`, `email`, `password`) VALUES
-(1, 'John_Doe', 'John', 'Doe', 'JohnDoe@domain.com', 'johndoe'),
-(2, 'GRPC', 'Group', 'C', 'GrpC@gmail.com', '000');
+INSERT INTO `user` (`user_ID`, `username`, `firstname`, `lastname`, `email`, `password`, `theme`) VALUES
+(1, 'John_Doe', 'John', 'Doe', 'JohnDoe@domain.com', 'Johndoe000&', 'light'),
+(2, 'groupc', 'Grp', 'C', 'grpc@gmail.com', 'GroupC000!', 'light');
 
 --
 -- Indexes for dumped tables
@@ -314,7 +327,7 @@ ALTER TABLE `file_type`
 -- AUTO_INCREMENT for table `topic`
 --
 ALTER TABLE `topic`
-  MODIFY `topic_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `topic_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `user`

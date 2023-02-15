@@ -101,9 +101,9 @@
 
 .dashboard-topic {
     max-width: 180px;
-    height: 200px;
-    overflow: hidden;
+    max-height: 210px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .dashboard-topic:hover {
@@ -112,7 +112,7 @@
 
 .dashboard-topic .fal{
     position: relative;
-    top: -180px;
+    top: -200px;
     right: -50px;
     border-radius: 20px;
     text-align: center;
@@ -137,6 +137,7 @@
 
 .dashboard-topic-title {
     max-width: 110px;
+    height: 50px;
     overflow: hidden;
     text-align: start;
     text-overflow: ellipsis;
