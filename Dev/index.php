@@ -6,9 +6,19 @@ if (empty($_SESSION['loggedin'])) {
     //new course
 }
 include 'head.php';
+include 'config.php';
+
+$sql = "SELECT theme FROM user where username='$_SESSION[username]';";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $theme = $row["theme"];
+    }
+}
 ?>
 
-<body class="light">
+<body class="<?php echo $theme; ?>">
     <div class="main-container">
         <?php include 'navbar.php'; ?>
 

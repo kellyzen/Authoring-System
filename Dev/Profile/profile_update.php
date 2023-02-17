@@ -1,5 +1,4 @@
 <?php
-echo "profile_update";
 include "../config.php";
 if (isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["password"])) {
     $profile_id = mysqli_real_escape_string($conn, $_POST["profileid"]);
