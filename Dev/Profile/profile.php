@@ -17,6 +17,12 @@ if ($result->num_rows > 0) {
         $password = $row["password"];
     }
 }
+
+$cquery = mysqli_query($conn, "SELECT * FROM course where user_ID='$_SESSION[id]';");
+$course_count = mysqli_num_rows($cquery);
+
+$tquery = mysqli_query($conn, "SELECT * FROM topic INNER JOIN course ON course.course_ID = topic.course_ID where user_ID='$_SESSION[id]';");
+$topic_count = mysqli_num_rows($tquery);
 ?>
 
 <div class="profile-container">
@@ -77,12 +83,12 @@ if ($result->num_rows > 0) {
             <hr>
             <div class="profile-display-box">
                 <span>No. Course(s)</span>
-                <span>8</span>
+                <span><?php echo $course_count; ?></span>
             </div>
             <hr>
             <div class="profile-display-box">
                 <span>No. Topic(s)</span>
-                <span>18</span>
+                <span><?php echo $topic_count; ?></span>
             </div>
         </div>
     </div>
