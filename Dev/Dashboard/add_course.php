@@ -1,3 +1,11 @@
+<?php
+include 'session.php';
+include 'config.php';
+
+$query = mysqli_query($conn, "SELECT * FROM course_type ORDER BY c_type ASC;");
+$count = mysqli_num_rows($query);
+?>
+
 <div class="course-add-popup">
     <div class="popup-content">
         <div class="popup-header-box">
@@ -11,16 +19,13 @@
             <div class="popup-content-small-box">
                 <span class="popup-content-title">Course Type</span>
                 <select class="dropdown">
-                    <option>Course Type 1</option>
-                    <option>Course Type 2</option>
-                    <option>Course Type 3</option>
-                    <option>Course Type 4</option>
-                    <option>Course Type 5</option>
-                    <option>Course Type 6</option>
-                    <option>Course Type 7</option>
-                    <option>Course Type 8</option>
-                    <option>Course Type 9</option>
-                    <option>Course Type 10</option>
+                    <?php
+                    if ($count != '0') {
+                        while ($row = mysqli_fetch_array($query)) {?>
+                            <option><?php echo $row['c_type']; ?></option><?php
+                        }
+                    }
+                    ?>
                 </select>
             </div>
             <div class="popup-content-small-box">
