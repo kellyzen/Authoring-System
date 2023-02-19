@@ -39,7 +39,7 @@ $topic_count = mysqli_num_rows($tquery);
             <span class="profile-title">Profile</span>
         </div>
         <div class="profile-action-buttons">
-            <button id="dashboardButton" class="profile-action-button action-btn" type="button" onclick="location.href='<?php echo '?id='.$id; ?>'">
+            <button id="dashboardButton" class="profile-action-button action-btn" type="button" onclick="location.href='<?php echo '?id=' . $id; ?>'">
                 Back <i class="fal fa-solid fa-arrow-left"></i>
             </button>
             <button id="editButton" class="profile-action-button action-btn" type="button" onclick="editProfile()">
@@ -78,7 +78,6 @@ $topic_count = mysqli_num_rows($tquery);
                     <span>Password</span>
                     <input type="password" id="password" name="password" value="<?php echo $password; ?>" disabled required>
                     <input type="checkbox" id="pwVisibility" onclick="showPassword()" disabled><span style="font-size: 14px;">Show Password</span>
-                    <input type='hidden' id='profileid' value=''>
                     <div id="password_err" class="error_text"></div>
                 </div>
             </div>
@@ -209,7 +208,6 @@ $topic_count = mysqli_num_rows($tquery);
 
     //Update profile to database
     function saveProfile() {
-        var profileid = $('#profileid').val().trim();
         var userid = <?php echo $user_ID ?>;
         var email = $('#email').val().trim();
         var username = $('#username').val().trim();
@@ -248,7 +246,6 @@ $topic_count = mysqli_num_rows($tquery);
                     url: 'Profile/profile_update.php',
                     type: 'post',
                     data: {
-                        profileid: profileid,
                         userid: userid,
                         email: email,
                         username: username,
@@ -256,8 +253,20 @@ $topic_count = mysqli_num_rows($tquery);
                         lastname: lastname,
                         password: password,
                     },
-                    success: function(response) {
-                        $('#profileid').val(response);
+                    success: function(html) {
+                        if (html == "true") {
+                            $.jGrowl("Profile Invalid", {
+                                header: 'Update Profile Failed'
+                            });
+                        } else {
+                            $.jGrowl("Profile Successfully  Updated", {
+                                header: 'Profile Updated'
+                            });
+                            var delay = 1000;
+                            setTimeout(function() {
+                                window.location = ''
+                            }, delay);
+                        }
                     }
                 });
                 return true;
