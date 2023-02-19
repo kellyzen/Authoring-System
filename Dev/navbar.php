@@ -47,10 +47,10 @@ if ($count != '0') {
             <li class="nav-item setting-container" onclick="toggleSettingFunction()">
                 <i class="fal fa-solid fa-gear float-end"></i>
                 <div id="setting-dropdown" class="setting-dropdown-content">
-                    <div id="profile" class="setting-dropdown-box">
+                    <a href="<?php echo '?id='; ?>" id="profile" class="setting-dropdown-box">
                         <span>Profile</span>
                         <i class="fal fa-regular fa-user"></i>
-                    </div>
+                    </a>
                     <div class="setting-dropdown-box">
                         <span>User view</span>
                         <label class="toggle" for="viewToggle">
