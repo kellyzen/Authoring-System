@@ -41,20 +41,4 @@ if ($result->num_rows > 0) {
     closeBtn.addEventListener("click", () => {
         sidebar.classList.toggle("close");
     });
-
-    //Switch to profile page
-    let profile = document.querySelector("#profile");
-
-    profile.addEventListener("click", () => {
-        //document.getElementById("main-profile").style.display = "block";
-        //document.getElementById("main-dashboard").style.display = "none";
-    });
-
-    //Switch to dashboard page
-    let dashboardButton = document.querySelector("#dashboardButton");
-
-    dashboardButton.addEventListener("click", () => {
-        //document.getElementById("main-dashboard").style.display = "block";
-        //document.getElementById("main-profile").style.display = "none";
-    });
 </script>
