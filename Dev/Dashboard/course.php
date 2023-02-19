@@ -33,13 +33,11 @@ if ($result->num_rows > 0) {
 <div class="dashboard-container">
     <div class="dashboard-header">
         <div class="dashboard-title-box">
-            <span id="course-header-title" class="course-header-title" contenteditable="true"><?php echo $c_name; ?></span>
+            <span id="course-header-title" class="course-header-title" contenteditable="true" value=><?php echo $c_name; ?></span>
             <span class="course-type"><?php echo $c_type; ?></span>
         </div>
         <div class="dashboard-description-box">
-            <span id="course-description" class="course-description" contenteditable="true">
-                <?php echo $c_description; ?>
-            </span>
+            <span id="course-description" class="course-description" contenteditable="true"><?php echo $c_description; ?></span>
             <div class="dashboard-action-buttons-box">
                 <div class="dashboard-action-buttons">
                     <button class="action-btn" type="button">
@@ -61,81 +59,6 @@ if ($result->num_rows > 0) {
     <!--List of Topics-->
     <div id="dashboard-content" class="dashboard-content">
         <?php include 'topics.php'; ?>
-        <!--
-        <div class="dashboard-topic">
-            <span class="svg svg-folder"></span>
-            <span class="dashboard-topic-group">
-                <span class="dashboard-topic-title">Topic 1</span>
-                <span class="dashboard-topic-difficulty difficulty-advanced"></span>
-            </span>
-            <i class="fal fa-solid fa-ellipsis-h"></i>
-            <div id="folder-dropdown" class="folder-dropdown-content">
-                <div id="delete" class="folder-dropdown-box">
-                    <span>Delete</span>
-                    <i class="fal fa-regular fa-user"></i>
-                </div>
-                <div id="clone" class="folder-dropdown-box">
-                    <span>Clone</span>
-                    <i class="fal fa-regular fa-user"></i>
-                </div>
-            </div>
-        </div>
-        <div class="dashboard-topic">
-            <span class="svg svg-folder"></span>
-            <span class="dashboard-topic-group">
-                <span class="dashboard-topic-title">Topic 2</span>
-                <span class="dashboard-topic-difficulty difficulty-intermediate"></span>
-            </span>
-            <i class="fal fa-solid fa-ellipsis-h"></i>
-        </div>
-        <div class="dashboard-topic">
-            <span class="svg svg-folder"></span>
-            <span class="dashboard-topic-group">
-                <span class="dashboard-topic-title">Topic 3</span>
-                <span class="dashboard-topic-difficulty difficulty-beginner"></span>
-            </span>
-            <i class="fal fa-solid fa-ellipsis-h"></i>
-        </div>
-        <div class="dashboard-topic">
-            <span class="svg svg-folder"></span>
-            <span class="dashboard-topic-group">
-                <span class="dashboard-topic-title">Topic 4</span>
-                <span class="dashboard-topic-difficulty difficulty-beginner"></span>
-            </span>
-            <i class="fal fa-solid fa-ellipsis-h"></i>
-        </div>
-        <div class="dashboard-topic">
-            <span class="svg svg-folder"></span>
-            <span class="dashboard-topic-group">
-                <span class="dashboard-topic-title">Topic 5</span>
-                <span class="dashboard-topic-difficulty difficulty-advanced"></span>
-            </span>
-            <i class="fal fa-solid fa-ellipsis-h"></i>
-        </div>
-        <div class="dashboard-topic">
-            <span class="svg svg-folder"></span>
-            <span class="dashboard-topic-group">
-                <span class="dashboard-topic-title">Topic 6</span>
-                <span class="dashboard-topic-difficulty difficulty-intermediate"></span>
-            </span>
-            <i class="fal fa-solid fa-ellipsis-h"></i>
-        </div>
-        <div class="dashboard-topic">
-            <span class="svg svg-folder"></span>
-            <span class="dashboard-topic-group">
-                <span class="dashboard-topic-title">Topic 7</span>
-                <span class="dashboard-topic-difficulty difficulty-beginner"></span>
-            </span>
-            <i class="fal fa-solid fa-ellipsis-h"></i>
-        </div>
-        <div class="dashboard-topic">
-            <span class="svg svg-folder"></span>
-            <span class="dashboard-topic-group">
-                <span class="dashboard-topic-title">Topic 8</span>
-                <span class="dashboard-topic-difficulty difficulty-intermediate"></span>
-            </span>
-            <i class="fal fa-solid fa-ellipsis-h"></i>
-        </div>-->
     </div>
 </div>
 <script>
@@ -149,6 +72,35 @@ if ($result->num_rows > 0) {
             //change dashboard to list view
             document.getElementById('viewButton').innerHTML = '<i class="fal fa-solid fa-grip-vertical"></i>';
             document.getElementById("dashboard-content").classList.toggle("dashboard-list");
+        }
+    }
+
+    //Auto update course information
+    setInterval(autoSaveCourse, 2000);
+
+    function autoSaveCourse() {
+        var title = $('#course-header-title').html();
+        var description = $('#course-description').html();
+        var courseid = <?php echo $get_id ?>;
+
+        if (title == '') {
+            document.getElementById('course-header-title').innerHTML = 'Untitled';
+        }
+
+        if (description == '') {
+            document.getElementById('course-description').innerHTML = 'Add description here...';
+        }
+
+        if (title != '' || description != '') {
+            $.ajax({
+                url: 'Dashboard/course_update.php',
+                type: 'post',
+                data: {
+                    courseid: courseid,
+                    title: title,
+                    description: description,
+                }
+            });
         }
     }
 
