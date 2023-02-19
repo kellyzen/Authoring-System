@@ -58,7 +58,22 @@ if ($result->num_rows > 0) {
     </div>
     <!--List of Topics-->
     <div id="dashboard-content" class="dashboard-content">
-        <?php include 'topics.php'; ?>
+        <?php
+        include 'session.php';
+        include 'config.php';
+
+        $get_id = $_GET['id'];
+        $user_ID = "$_SESSION[id]";
+
+        $query = mysqli_query($conn, "SELECT * FROM topic where course_ID='$get_id';");
+        $count = mysqli_num_rows($query);
+
+        if ($count != '0') {
+            include 'topic.php';
+        } else {
+            include 'topic_invalid.php';
+        }
+        ?>
     </div>
 </div>
 <script>

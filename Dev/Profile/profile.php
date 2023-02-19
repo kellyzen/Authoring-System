@@ -18,6 +18,14 @@ if ($result->num_rows > 0) {
     }
 }
 
+$query = mysqli_query($conn, "SELECT * FROM course where user_ID='$user_ID';");
+$count = mysqli_num_rows($query);
+
+if ($count != '0') {
+    $row = mysqli_fetch_array($query);
+    $id = $row['course_ID'];
+}
+
 $cquery = mysqli_query($conn, "SELECT * FROM course where user_ID='$_SESSION[id]';");
 $course_count = mysqli_num_rows($cquery);
 
@@ -31,7 +39,7 @@ $topic_count = mysqli_num_rows($tquery);
             <span class="profile-title">Profile</span>
         </div>
         <div class="profile-action-buttons">
-            <button id="dashboardButton" class="profile-action-button action-btn" type="button">
+            <button id="dashboardButton" class="profile-action-button action-btn" type="button" onclick="location.href='<?php echo '?id='.$id; ?>'">
                 Back <i class="fal fa-solid fa-arrow-left"></i>
             </button>
             <button id="editButton" class="profile-action-button action-btn" type="button" onclick="editProfile()">

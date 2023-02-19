@@ -20,14 +20,16 @@ if ($result->num_rows > 0) {
 
 <body class="<?php echo $theme; ?>">
     <div class="main-container">
-        <?php include 'navbar.php'; ?>
+        <?php 
+        include 'navbar.php'; 
 
-        <div id="main-dashboard" class="main-dashboard">
-            <?php include 'Dashboard/dashboard.php'; ?>
-        </div>
-        <div id="main-profile" class="main-profile" style="display: none;">
-            <?php include 'Profile/profile.php'; ?>
-        </div>
+        if ($_GET['id'] == NULL) {
+            include 'Profile/profile.php';
+        } else {
+            include 'Dashboard/dashboard.php';
+        }
+        
+        ?>
     </div>
 </body>
 
@@ -44,15 +46,15 @@ if ($result->num_rows > 0) {
     let profile = document.querySelector("#profile");
 
     profile.addEventListener("click", () => {
-        document.getElementById("main-profile").style.display = "block";
-        document.getElementById("main-dashboard").style.display = "none";
+        //document.getElementById("main-profile").style.display = "block";
+        //document.getElementById("main-dashboard").style.display = "none";
     });
 
     //Switch to dashboard page
     let dashboardButton = document.querySelector("#dashboardButton");
 
     dashboardButton.addEventListener("click", () => {
-        document.getElementById("main-dashboard").style.display = "block";
-        document.getElementById("main-profile").style.display = "none";
+        //document.getElementById("main-dashboard").style.display = "block";
+        //document.getElementById("main-profile").style.display = "none";
     });
 </script>
