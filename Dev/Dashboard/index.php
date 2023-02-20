@@ -5,8 +5,8 @@ if (empty($_SESSION['loggedin'])) {
 } else {
     //new course
 }
-include 'head.php';
-include 'config.php';
+include '../head.php';
+include '../config.php';
 
 $sql = "SELECT theme FROM user where username='$_SESSION[username]';";
 $result = $conn->query($sql);
@@ -21,12 +21,12 @@ if ($result->num_rows > 0) {
 <body class="<?php echo $theme; ?>">
     <div class="main-container">
         <?php 
-        include 'navbar.php'; 
+        include '../navbar.php'; 
 
         if ($_GET['id'] == NULL) {
-            include 'Profile/profile.php';
+            include '../Profile/profile.php';
         } else {
-            include 'Dashboard/dashboard.php';
+            include 'dashboard.php';
         }
         
         ?>

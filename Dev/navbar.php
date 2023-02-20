@@ -65,7 +65,7 @@ if ($count != '0') {
                             <div class="toggle__fill"></div>
                         </label>
                     </div>
-                    <a href="Login/logout.php" id="logout" class="setting-dropdown-box">
+                    <a href="../Login/logout.php" id="logout" class="setting-dropdown-box">
                         <span>Logout</span>
                         <i class="fal fa-solid fa-sign-out"></i>
 </a>
@@ -110,7 +110,7 @@ if ($count != '0') {
         }
 
         $.ajax({
-            url: 'Theme/theme.php',
+            url: '../Theme/theme.php',
             type: 'post',
             data: {
                 theme: theme,

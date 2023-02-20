@@ -1,6 +1,6 @@
 <?php
-include 'session.php';
-include 'config.php';
+include '../session.php';
+include '../config.php';
 
 $get_id = $_GET['id'];
 $user_ID = "$_SESSION[id]";
@@ -22,7 +22,7 @@ if ($count != '0') {
 ?>
 
         <div class="dashboard-topic">
-            <a href="<?php echo '../Dev/Topic?id=' . $topic_ID; ?>"><span class="svg svg-folder"></span></a>
+            <a href="<?php echo '../Topic?id=' . $topic_ID; ?>"><span class="svg svg-folder"></span></a>
             <span class="dashboard-topic-group">
                 <span class="dashboard-topic-title"><?php echo $row['topic_name']; ?></span>
                 <span class="dashboard-topic-difficulty <?php echo $difficulty; ?>"></span>

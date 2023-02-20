@@ -1,6 +1,6 @@
 <?php
-include 'session.php';
-include 'config.php';
+include '../session.php';
+include '../config.php';
 
 $sql = "SELECT * FROM user where username='$_SESSION[username]';";
 $result = $conn->query($sql);
@@ -243,7 +243,7 @@ $topic_count = mysqli_num_rows($tquery);
                 return false;
             } else {
                 $.ajax({
-                    url: 'Profile/profile_update.php',
+                    url: '../Profile/profile_update.php',
                     type: 'post',
                     data: {
                         userid: userid,
