@@ -4,7 +4,7 @@
     <div class="main-container">
         <?php 
         include '../navbar.php';
-        include 'topic.php';
+        include 'profile.php';
         ?>
     </div>
 </body>

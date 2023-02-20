@@ -1,6 +1,6 @@
 <?php
-include 'session.php';
-include 'config.php';
+include '../session.php';
+include '../config.php';
 
 $get_id = $_GET['id'];
 $user_ID = "$_SESSION[id]";
@@ -59,8 +59,8 @@ if ($result->num_rows > 0) {
     <!--List of Topics-->
     <div id="dashboard-content" class="dashboard-content">
         <?php
-        include 'session.php';
-        include 'config.php';
+        include '../session.php';
+        include '../config.php';
 
         $get_id = $_GET['id'];
         $user_ID = "$_SESSION[id]";
@@ -108,7 +108,7 @@ if ($result->num_rows > 0) {
 
         if (title != '' || description != '') {
             $.ajax({
-                url: 'Dashboard/course_update.php',
+                url: 'course_update.php',
                 type: 'post',
                 data: {
                     courseid: courseid,

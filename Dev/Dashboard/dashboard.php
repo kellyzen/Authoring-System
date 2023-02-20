@@ -5,8 +5,8 @@
 
 <div class="content d-flex">
   <?php
-  include 'session.php';
-  include 'config.php';
+  include '../session.php';
+  include '../config.php';
 
   $get_id = $_GET['id'];
   $user_ID = "$_SESSION[id]";
@@ -18,7 +18,7 @@
     include 'sidebar.php';
     include 'course.php';
   } else {
-    include 'Dashboard/course_invalid.php';
+    include 'course_invalid.php';
   }
   ?>
   <div id="content-course-add" class="content-course-add" style="display: none;">

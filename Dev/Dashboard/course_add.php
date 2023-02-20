@@ -59,7 +59,7 @@ $count = mysqli_num_rows($query);
         }
 
         $.ajax({
-            url: 'Dashboard/course_add_action.php',
+            url: 'course_add_action.php',
             type: 'post',
             data: {
                 title: title,

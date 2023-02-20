@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $row = mysqli_fetch_array($query);
                 $id = $row['course_ID'];
               }
-              header('Location: ../?id=' . $id);
+              header('Location: ../Dashboard?id=' . $id);
             } else {
               $password_err = 'Incorrect password.';
             }
