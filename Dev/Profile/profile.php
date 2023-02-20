@@ -1,7 +1,4 @@
 <?php
-include '../session.php';
-include '../config.php';
-
 $sql = "SELECT * FROM user where username='$_SESSION[username]';";
 $result = $conn->query($sql);
 
@@ -39,7 +36,7 @@ $topic_count = mysqli_num_rows($tquery);
             <span class="profile-title">Profile</span>
         </div>
         <div class="profile-action-buttons">
-            <button id="dashboardButton" class="profile-action-button action-btn" type="button" onclick="location.href='<?php echo '?id=' . $id; ?>'">
+            <button id="dashboardButton" class="profile-action-button action-btn" type="button" onclick="location.href='<?php echo '../Dashboard?id=' . $id; ?>'">
                 Back <i class="fal fa-solid fa-arrow-left"></i>
             </button>
             <button id="editButton" class="profile-action-button action-btn" type="button" onclick="editProfile()">

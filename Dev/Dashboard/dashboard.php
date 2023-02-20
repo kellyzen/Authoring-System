@@ -18,7 +18,7 @@
     include 'sidebar.php';
     include 'course.php';
   } else {
-    include 'Dashboard/course_invalid.php';
+    include 'course_invalid.php';
   }
   ?>
   <div id="content-course-add" class="content-course-add" style="display: none;">

@@ -17,7 +17,7 @@ if ($count != '0') {
         <ul class="navbar-nav">
             <li class="nav-item">
                 <i class="fal fa-solid fa-bars" id="btn"></i>
-                <a class="navbar-logo text-decoration-none" href="<?php echo '?id=' . $id; ?>">stud.io</a>
+                <a class="navbar-logo text-decoration-none" href="<?php echo '../Dashboard?id=' . $id; ?>">stud.io</a>
             </li>
             <li class="nav-item search-container">
                 <div class="search-bar">
@@ -47,7 +47,7 @@ if ($count != '0') {
             <li class="nav-item setting-container" onclick="toggleSettingFunction()">
                 <i class="fal fa-solid fa-gear float-end"></i>
                 <div id="setting-dropdown" class="setting-dropdown-content">
-                    <a href="<?php echo '?id='; ?>" id="profile" class="setting-dropdown-box">
+                    <a href="../Profile/" id="profile" class="setting-dropdown-box">
                         <span>Profile</span>
                         <i class="fal fa-regular fa-user"></i>
                     </a>
