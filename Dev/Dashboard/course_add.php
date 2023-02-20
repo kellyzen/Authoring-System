@@ -76,7 +76,7 @@ $count = mysqli_num_rows($query);
                     $.jGrowl("Classs Successfully Added", {
                         header: 'Class Added'
                     });
-                    var delay = 1000;
+                    var delay = 3000;
                     setTimeout(function() {
                         window.location = ''
                     }, delay);

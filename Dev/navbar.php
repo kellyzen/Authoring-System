@@ -65,10 +65,10 @@ if ($count != '0') {
                             <div class="toggle__fill"></div>
                         </label>
                     </div>
-                    <div id="logout" class="setting-dropdown-box">
+                    <a href="Login/logout.php" id="logout" class="setting-dropdown-box">
                         <span>Logout</span>
                         <i class="fal fa-solid fa-sign-out"></i>
-                    </div>
+</a>
                 </div>
             </li>
         </ul>
