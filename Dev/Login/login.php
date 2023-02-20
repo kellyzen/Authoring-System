@@ -1,4 +1,5 @@
 <?php
+include '../head.php'; 
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
   include '../config.php';
@@ -10,6 +11,14 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     $id = $row['course_ID'];
   }
   header('Location: ../?id=' . $id);
+} else {
+  // Show a jGrowl notification message
+  echo "
+  <script>
+  $.jGrowl('You have been logged out successfully.', {
+      header: 'Logout Successful'
+  });
+  </script>";
 }
 
 $servername = "localhost";
