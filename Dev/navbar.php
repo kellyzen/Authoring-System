@@ -2,7 +2,8 @@
 include 'session.php';
 include 'config.php';
 
-$query = mysqli_query($conn, "SELECT * FROM course where user_ID='$_SESSION[id]';");
+$user_ID = "$_SESSION[id]";
+$query = mysqli_query($conn, "SELECT * FROM course where user_ID='$user_ID';");
 $count = mysqli_num_rows($query);
 
 if ($count != '0') {
@@ -16,7 +17,7 @@ if ($count != '0') {
         <ul class="navbar-nav">
             <li class="nav-item">
                 <i class="fal fa-solid fa-bars" id="btn"></i>
-                <a class="navbar-logo text-decoration-none" href="<?php echo '?id='.$id; ?>">stud.io</a>
+                <a class="navbar-logo text-decoration-none" href="<?php echo '../Dashboard?id=' . $id; ?>">stud.io</a>
             </li>
             <li class="nav-item search-container">
                 <div class="search-bar">
@@ -46,10 +47,10 @@ if ($count != '0') {
             <li class="nav-item setting-container" onclick="toggleSettingFunction()">
                 <i class="fal fa-solid fa-gear float-end"></i>
                 <div id="setting-dropdown" class="setting-dropdown-content">
-                    <div id="profile" class="setting-dropdown-box">
+                    <a href="../Profile/" id="profile" class="setting-dropdown-box">
                         <span>Profile</span>
                         <i class="fal fa-regular fa-user"></i>
-                    </div>
+                    </a>
                     <div class="setting-dropdown-box">
                         <span>User view</span>
                         <label class="toggle" for="viewToggle">
@@ -64,10 +65,10 @@ if ($count != '0') {
                             <div class="toggle__fill"></div>
                         </label>
                     </div>
-                    <div id="logout" class="setting-dropdown-box">
+                    <a href="../Login/logout.php" id="logout" class="setting-dropdown-box">
                         <span>Logout</span>
                         <i class="fal fa-solid fa-sign-out"></i>
-                    </div>
+</a>
                 </div>
             </li>
         </ul>
@@ -97,13 +98,30 @@ if ($count != '0') {
 
     //Change theme colour
     function toggleTheme() {
+        var userid = <?php echo $user_ID ?>;
         if (document.body.classList.contains("dark")) {
             document.body.classList.remove("dark");
             document.body.classList.toggle("light");
+            var theme = "light";
         } else {
             document.body.classList.remove("light");
             document.body.classList.toggle("dark");
+            var theme = "dark";
         }
 
+        $.ajax({
+            url: '../Theme/theme.php',
+            type: 'post',
+            data: {
+                theme: theme,
+                userid: userid,
+            }
+        });
+    }
+
+    if (document.body.classList.contains("light")) {
+        document.getElementById("themeToggle").checked = false;
+    } else {
+        document.getElementById("themeToggle").checked = true;
     }
 </script>

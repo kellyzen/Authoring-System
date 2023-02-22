@@ -1,7 +1,4 @@
 <?php
-include 'session.php';
-include 'config.php';
-
 $sql = "SELECT * FROM user where username='$_SESSION[username]';";
 $result = $conn->query($sql);
 
@@ -17,6 +14,20 @@ if ($result->num_rows > 0) {
         $password = $row["password"];
     }
 }
+
+$query = mysqli_query($conn, "SELECT * FROM course where user_ID='$user_ID';");
+$count = mysqli_num_rows($query);
+
+if ($count != '0') {
+    $row = mysqli_fetch_array($query);
+    $id = $row['course_ID'];
+}
+
+$cquery = mysqli_query($conn, "SELECT * FROM course where user_ID='$_SESSION[id]';");
+$course_count = mysqli_num_rows($cquery);
+
+$tquery = mysqli_query($conn, "SELECT * FROM topic INNER JOIN course ON course.course_ID = topic.course_ID where user_ID='$_SESSION[id]';");
+$topic_count = mysqli_num_rows($tquery);
 ?>
 
 <div class="profile-container">
@@ -25,7 +36,7 @@ if ($result->num_rows > 0) {
             <span class="profile-title">Profile</span>
         </div>
         <div class="profile-action-buttons">
-            <button id="dashboardButton" class="profile-action-button action-btn" type="button">
+            <button id="dashboardButton" class="profile-action-button action-btn" type="button" onclick="location.href='<?php echo '../Dashboard?id=' . $id; ?>'">
                 Back <i class="fal fa-solid fa-arrow-left"></i>
             </button>
             <button id="editButton" class="profile-action-button action-btn" type="button" onclick="editProfile()">
@@ -64,7 +75,6 @@ if ($result->num_rows > 0) {
                     <span>Password</span>
                     <input type="password" id="password" name="password" value="<?php echo $password; ?>" disabled required>
                     <input type="checkbox" id="pwVisibility" onclick="showPassword()" disabled><span style="font-size: 14px;">Show Password</span>
-                    <input type='hidden' id='profileid' value=''>
                     <div id="password_err" class="error_text"></div>
                 </div>
             </div>
@@ -77,12 +87,12 @@ if ($result->num_rows > 0) {
             <hr>
             <div class="profile-display-box">
                 <span>No. Course(s)</span>
-                <span>8</span>
+                <span><?php echo $course_count; ?></span>
             </div>
             <hr>
             <div class="profile-display-box">
                 <span>No. Topic(s)</span>
-                <span>18</span>
+                <span><?php echo $topic_count; ?></span>
             </div>
         </div>
     </div>
@@ -195,7 +205,6 @@ if ($result->num_rows > 0) {
 
     //Update profile to database
     function saveProfile() {
-        var profileid = $('#profileid').val().trim();
         var userid = <?php echo $user_ID ?>;
         var email = $('#email').val().trim();
         var username = $('#username').val().trim();
@@ -231,10 +240,9 @@ if ($result->num_rows > 0) {
                 return false;
             } else {
                 $.ajax({
-                    url: 'Profile/profile_update.php',
+                    url: '../Profile/profile_update.php',
                     type: 'post',
                     data: {
-                        profileid: profileid,
                         userid: userid,
                         email: email,
                         username: username,
@@ -242,8 +250,20 @@ if ($result->num_rows > 0) {
                         lastname: lastname,
                         password: password,
                     },
-                    success: function(response) {
-                        $('#profileid').val(response);
+                    success: function(html) {
+                        if (html == "true") {
+                            $.jGrowl("Profile Invalid", {
+                                header: 'Update Profile Failed'
+                            });
+                        } else {
+                            $.jGrowl("Profile Successfully  Updated", {
+                                header: 'Profile Updated'
+                            });
+                            var delay = 3000;
+                            setTimeout(function() {
+                                window.location = ''
+                            }, delay);
+                        }
                     }
                 });
                 return true;
