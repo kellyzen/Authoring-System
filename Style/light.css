@@ -1,0 +1,30 @@
+.light{
+    --bg: #fff;
+    --font: #000;
+    --font-hover: #bf1818;
+    --icon: #000;
+    --icon-hover: #bf1818;
+    --icon-disabled: #aaa;
+
+    /*Header*/
+    --header-bg: #fff;
+
+    /*Sidebar*/
+    --sidebar-bg: #f4f4f4;
+    --sidebar-item-bg-selected: rgba(0, 0, 0, 0.1);
+    --sidebar-item-bg-hover: rgba(0, 0, 0, 0.3);
+    --sidebar-button-bg: rgba(0, 0, 0, 0.1);
+    --sidebar-button-bg-hover: rgba(0, 0, 0, 0.3);
+
+    /*Search bar*/
+    --searchbar-bg: #f4f4f4;
+    --searchbar-border: #aaa;
+    --searchbar-icon: #aaa;
+    --searchbar-placeholder: #aaa;
+    --searchbar-cancel-opacity: 0.3;
+
+    /*Primary button*/
+
+    /*Secondary button*/
+    --secondary-btn-bg: #f4f4f4;
+}

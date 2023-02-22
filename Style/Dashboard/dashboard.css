@@ -270,6 +270,37 @@
     opacity: 0.6;
 }
 
+div#ellipsis-dropdown {
+    position: relative;
+    top: -200px;
+    right: -20px;
+}
+
+.ellipsis-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--header-dropdown-bg);
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: var(--box-shadow);
+    z-index: 1;
+    border-radius: 8px;
+    padding: 10px 0 10px 0;
+}
+
+.ellipsis-dropdown-content {
+    top: 65px;
+    right: 10px;
+}
+
+.ellipsis-dropdown-content .fal:hover {
+    opacity: 1;
+}
+
+.show {
+    display: block;
+}
+
 /*Responsive*/
 @media(max-width: 767px) {
     .course-description {

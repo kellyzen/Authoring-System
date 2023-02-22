@@ -42,9 +42,33 @@ if ($result->num_rows > 0) {
             </span>
             <div class="dashboard-action-buttons-box">
                 <div class="dashboard-action-buttons">
-                    <button class="action-btn" type="button">
+                    <button id = "filterButton" class="action-btn" type="button" onclick="showFilterMenu()">
                         Filter <i class="fal fa-solid fa-filter"></i>
                     </button>
+                    <div id = "filterDropdown" class = "filter-dropdown-content">
+                            <div id="BeginnerDifficulty" class="filter-dropdown-box">
+                                <span>Beginner</span>
+                                <label class = "toggle" for = "BeginnerFilterToggle">
+
+                                </label>
+                            </div>
+                        </div>
+                        <div id = "filterDropdown" class = "filter-dropdown-content">
+                            <div id="IntermediateDifficulty" class="filter-dropdown-box">
+                                <span>Intermediate</span>
+                                <label class = "toggle" for = "IntermediateFilterToggle">
+
+                                </label>
+                            </div>
+                        </div>
+                        <div id = "filterDropdown" class = "filter-dropdown-content">
+                            <div id="AdvancedDifficulty" class="filter-dropdown-box">
+                                <span>Advanced</span>
+                                <label class = "toggle" for = "AdvancedFilterToggle">
+                                    
+                                </label>
+                            </div>
+                        </div>
                     <button class="action-btn" type="button">
                         Add <i class="fal fa-regular fa-plus"></i>
                     </button>
@@ -60,7 +84,7 @@ if ($result->num_rows > 0) {
     </div>
     <!--List of Topics-->
     <div id="dashboard-content" class="dashboard-content">
-        <?php include 'topics.php'; ?>
+        <?php include 'folders.php'; ?>
         <!--
         <div class="dashboard-topic">
             <span class="svg svg-folder"></span>
@@ -150,6 +174,10 @@ if ($result->num_rows > 0) {
             document.getElementById('viewButton').innerHTML = '<i class="fal fa-solid fa-grip-vertical"></i>';
             document.getElementById("dashboard-content").classList.toggle("dashboard-list");
         }
+    }
+
+    function showFilterMenu() {
+        document.getElementById("filter-dropdown").classList.toggle("show");
     }
 
     //Ignore enter key while editing course title and course description
