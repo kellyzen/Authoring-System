@@ -1,6 +1,6 @@
 <?php
-include 'session.php';
-include 'config.php';
+include '../session.php';
+include '../config.php';
 
 $user_ID = "$_SESSION[id]";
 $query = mysqli_query($conn, "SELECT * FROM course_type ORDER BY c_type ASC;");
