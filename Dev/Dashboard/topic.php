@@ -30,11 +30,9 @@ if ($count != '0') {
             <i class="fal fa-solid fa-ellipsis-h" onclick="toggleEllipsisFunction()"></i>
             <div class="ellipsis-dropdown">
                     <div id="ellipsis-dropdown-content" class="ellipsis-dropdown-content">
-                        <div class="ellipsis-dropdown-box">
-                            <button>Delete</button>
+                        <div class="ellipsis-dropdown-box">Delete
                         </div>
-                        <div class="ellipsis-dropdown-box">
-                            <button>Clone</button>
+                        <div class="ellipsis-dropdown-box">Clone
                         </div>
                     </div>
             </div>
