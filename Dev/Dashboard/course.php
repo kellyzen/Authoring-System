@@ -40,9 +40,33 @@ if ($result->num_rows > 0) {
             <span id="course-description" class="course-description" contenteditable="true"><?php echo $c_description; ?></span>
             <div class="dashboard-action-buttons-box">
                 <div class="dashboard-action-buttons">
-                    <button class="action-btn" type="button">
+                    <button id = "filterButton" class="action-btn" type="button" onclick="showFilterMenu()">
                         Filter <i class="fal fa-solid fa-filter"></i>
                     </button>
+                    <div id = "filterDropdown" class = "filter-dropdown-content">
+                            <div id="BeginnerDifficulty" class="filter-dropdown-box">
+                                <span>Beginner</span>
+                                <label class = "toggle" for = "BeginnerFilterToggle">
+
+                                </label>
+                            </div>
+                        </div>
+                        <div id = "filterDropdown" class = "filter-dropdown-content">
+                            <div id="IntermediateDifficulty" class="filter-dropdown-box">
+                                <span>Intermediate</span>
+                                <label class = "toggle" for = "IntermediateFilterToggle">
+
+                                </label>
+                            </div>
+                        </div>
+                        <div id = "filterDropdown" class = "filter-dropdown-content">
+                            <div id="AdvancedDifficulty" class="filter-dropdown-box">
+                                <span>Advanced</span>
+                                <label class = "toggle" for = "AdvancedFilterToggle">
+                                    
+                                </label>
+                            </div>
+                        </div>
                     <button class="action-btn" type="button">
                         Add <i class="fal fa-regular fa-plus"></i>
                     </button>
@@ -90,6 +114,9 @@ if ($result->num_rows > 0) {
         }
     }
 
+    function showFilterMenu() {
+        document.getElementById("filter-dropdown").classList.toggle("show");
+    }
     //Auto update course information
     setInterval(autoSaveCourse, 2000);
 
