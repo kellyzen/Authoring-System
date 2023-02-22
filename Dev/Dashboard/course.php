@@ -114,10 +114,8 @@ if ($result->num_rows > 0) {
         }
     }
 
-<<<<<<< HEAD
     function showFilterMenu() {
         document.getElementById("filter-dropdown").classList.toggle("show");
-=======
     //Auto update course information
     setInterval(autoSaveCourse, 2000);
 
@@ -145,7 +143,6 @@ if ($result->num_rows > 0) {
                 }
             });
         }
->>>>>>> bf9e571f2bc0c0372ca558637f3f5651ac5e26f8
     }
 
     //Ignore enter key while editing course title and course description

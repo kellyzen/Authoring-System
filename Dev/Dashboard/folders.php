@@ -28,8 +28,8 @@ if ($count != '0') {
                 <span class="dashboard-topic-difficulty <?php echo $difficulty; ?>"></span>
             </span>
             
-            <div class="ellipsis-dropdown">
-                <i class="fal fa-solid fa-ellipsis-h ellipsis-icon" onclick="toggleEllipsisFunction()"></i>
+            <div class="ellipsis-dropdown" onclick="toggleEllipsisFunction()">
+                <i class="fal fa-solid fa-ellipsis-h ellipsis-icon""></i>
                     <div id="ellipsis-dropdown-content" class="ellipsis-dropdown-content">
                         <div class="ellipsis-dropdown-box">
                             <button>Delete</button>
