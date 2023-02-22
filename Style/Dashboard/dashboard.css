@@ -280,10 +280,10 @@
     opacity: 0.6;
 }
 
-div#ellipsis-dropdown {
-    position: relative;
+.ellipsis-dropdown-content {
     top: -200px;
-    right: -20px;
+    right: 0px;
+    position: relative;
 }
 
 .ellipsis-dropdown-content {
