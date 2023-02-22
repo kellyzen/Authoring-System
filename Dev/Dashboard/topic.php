@@ -28,8 +28,25 @@ if ($count != '0') {
                 <span class="dashboard-topic-difficulty <?php echo $difficulty; ?>"></span>
             </span>
             <i class="fal fa-solid fa-ellipsis-h"></i>
+            <div class="ellipsis-dropdown">
+                <i class="fal fa-solid fa-ellipsis-h ellipsis-icon""></i>
+                    <div id="ellipsis-dropdown-content" class="ellipsis-dropdown-content" onclick="toggleEllipsisFunction()">
+                        <div class="ellipsis-dropdown-box">
+                            <button>Delete</button>
+                        </div>
+                        <div class="ellipsis-dropdown-box">
+                            <button>Clone</button>
+                        </div>
+                    </div>
+            </div>
         </div>
 <?php
     }
 }
 ?>
+
+<script>
+    function toggleEllipsisFunction() {
+        document.getElementById("ellipsis-dropdown-content").classList.toggle("show");
+    }
+</script>
