@@ -22,19 +22,25 @@ if ($count != '0') {
 ?>
 
         <div class="dashboard-topic">
-            <a href="<?php echo '../Topic?id=' . $topic_ID; ?>"><span class="svg svg-folder"></span></a>
-            <span class="dashboard-topic-group">
-                <span class="dashboard-topic-title"><?php echo $row['topic_name']; ?></span>
-                <span class="dashboard-topic-difficulty <?php echo $difficulty; ?>"></span>
-            </span>
-            <i class="fal fa-solid fa-ellipsis-h" onclick="toggleEllipsisFunction()"></i>
+            <a href="<?php echo '../Topic?id=' . $topic_ID; ?>">
+                <span class="svg svg-folder"></span>
+                <span class="dashboard-topic-group">
+                    <span class="dashboard-topic-title"><?php echo $row['topic_name']; ?></span>
+                    <span class="dashboard-topic-difficulty <?php echo $difficulty; ?>"></span>
+                </span>
+            </a>
+            <i class="fal fa-solid fa-ellipsis-h" onclick="toggleEllipsisFunction(<?php echo $topic_ID; ?>)"></i>
             <div class="ellipsis-dropdown">
-                    <div id="ellipsis-dropdown-content" class="ellipsis-dropdown-content">
-                        <div class="ellipsis-dropdown-box">Delete
-                        </div>
-                        <div class="ellipsis-dropdown-box">Clone
-                        </div>
-                    </div>
+            <div id="<?php echo 'topic_ID' . $topic_ID; ?>" class="ellipsis-dropdown-content">
+                <div class="ellipsis-dropdown-box">
+                    <span>Delete</span>
+                    <i class="fal fa-solid fa-trash"></i>
+                </div>
+                <div class="ellipsis-dropdown-box">
+                    <span>Clone</span>
+                    <i class="fal fa-solid fa-clone"></i>
+                </div>
+            </div>
             </div>
         </div>
 <?php
@@ -43,7 +49,28 @@ if ($count != '0') {
 ?>
 
 <script>
-    function toggleEllipsisFunction() {
-        document.getElementById("ellipsis-dropdown-content").classList.toggle("show");
+    //Toggle dropdown for topics
+    function toggleEllipsisFunction(topic_ID) {
+        removeShow('.ellipsis-dropdown-content');
+
+        let topicID = 'topic_ID' + topic_ID.toString();
+        document.getElementById(topicID).classList.toggle("show");
+    }
+
+    //Remove show class
+    function removeShow(classList) {
+        const check = document.querySelectorAll(classList);
+        check.forEach(e => {
+            if (e.classList.contains('show')) {
+                e.classList.remove('show');
+            }
+        })
+    }
+
+    //Close all dropdowns if user clicks outside of it
+    document.onclick = function(event) {
+        if (!event.target.matches('.fa-ellipsis-h')) {
+            removeShow('.ellipsis-dropdown-content');
+        }
     }
 </script>
