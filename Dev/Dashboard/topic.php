@@ -68,7 +68,7 @@ if ($count != '0') {
     }
 
     //Close all dropdowns if user clicks outside of it
-    window.onclick = function(event) {
+    document.onclick = function(event) {
         if (!event.target.matches('.fa-ellipsis-h')) {
             removeShow('.ellipsis-dropdown-content');
         }

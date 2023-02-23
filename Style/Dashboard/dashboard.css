@@ -182,6 +182,13 @@
     display: inline;
     padding: 0 30px;
     top: 0;
+    max-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 
 .dashboard-list .dashboard-topic-difficulty{
