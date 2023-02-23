@@ -121,6 +121,7 @@
 
 .dashboard-topic a{
     text-decoration: none;
+    display: contents;
 }
 
 .dashboard-topic .fal{
@@ -165,7 +166,7 @@
 .dashboard-list .dashboard-topic{
     width: 100%;
     max-width: 100%;
-    max-height: 50px;
+    height: 50px;
     padding: 0 20px;
     display: flex;
     align-items: center;
@@ -192,8 +193,53 @@
 }
 
 .dashboard-list .dashboard-topic .fal{
-    width: 40px;
     position: static;
+}
+
+.ellipsis-dropdown {
+    width: 0px;
+    height: 0px;
+}
+
+.ellipsis-dropdown-content {
+    display: none;
+    background-color: var(--header-dropdown-bg);
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: var(--box-shadow);
+    z-index: 1;
+    border-radius: 8px;
+    padding: 10px 0 10px 0;
+    will-change: transform;
+    transform: translate3d(-10px, -200px, 0px);
+    position: sticky;
+}
+
+.ellipsis-dropdown-content span {
+    color: var(--font);
+    padding: 10px 15px;
+    display: block;
+}
+
+.ellipsis-dropdown-content .fal {
+    padding: 0 15px;
+    position: inherit;
+}
+
+.ellipsis-dropdown-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ellipsis-dropdown-box:hover {
+    background-color: var(--header-dropdown-bg-hover);
+}
+
+.dashboard-list .ellipsis-dropdown-content{
+    transform: translate3d(-160px, 15px, 0px);
 }
 
 /*Add Course*/
@@ -278,33 +324,6 @@
 .close-button:hover {
     color: var(--icon);
     opacity: 0.6;
-}
-
-.ellipsis-dropdown-content {
-    top: -200px;
-    right: 0px;
-    position: relative;
-}
-
-.ellipsis-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--header-dropdown-bg);
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: var(--box-shadow);
-    z-index: 1;
-    border-radius: 8px;
-    padding: 10px 0 10px 0;
-}
-
-.ellipsis-dropdown-content {
-    top: 65px;
-    right: 10px;
-}
-
-.ellipsis-dropdown-content .fal:hover {
-    opacity: 1;
 }
 
 .show {

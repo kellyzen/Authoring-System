@@ -4,14 +4,7 @@
     <div class="main-container">
         <?php 
         include '../navbar.php';
-        include 'dashboard.php'; 
-
-        /*if ($_GET['id'] == NULL) {
-            include '../Profile/profile.php';
-        } else {
-            include 'dashboard.php';
-        }*/
-        
+        include 'dashboard.php';         
         ?>
     </div>
 </body>
