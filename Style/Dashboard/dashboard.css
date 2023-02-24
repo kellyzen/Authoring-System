@@ -1,3 +1,7 @@
+@import "sidebar.css";
+@import "add_course.css";
+@import "add_topic.css";
+
 /*Dashboard*/
 .dashboard-container {
     width: 100%;
@@ -247,90 +251,6 @@
 
 .dashboard-list .ellipsis-dropdown-content{
     transform: translate3d(-160px, 15px, 0px);
-}
-
-/*Add Course*/
-.course-add-popup {
-    --backdrop: blur(8px);
-
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    background: var(--popup-bg);
-    backdrop-filter: var(--backdrop);
-    width: 100%;
-    height: 100%;
-}
-
-.popup-content {
-    width: 60%;
-    margin: 0 auto;
-    box-sizing: border-box;
-    padding: 20px;
-    margin-top: 10vh;
-    box-shadow: var(--box-shadow);
-    border-radius: 8px;
-    background: var(--header-bg);
-    position: relative;
-}
-
-.popup-header {
-    font: var(--font);
-    font-weight: 600;
-    font-size: 18px;
-    margin-left: 20px;
-}
-
-.popup-header-box {
-    border-left: 3px solid var(--font);
-    margin-bottom: 5px;
-}
-
-.popup-content-box {
-    margin-bottom: 20px;
-}
-
-.popup-content-small-box {
-    padding: 10px 0;
-}
-
-.popup-content-title {
-    font-weight: 600;
-}
-
-.popup-content-small-box input[type=text],
-.popup-content-small-box textarea,
-.popup-content-small-box select {
-    width: 100%;
-}
-
-.popup-footer-box {
-    display: flex;
-    justify-content: flex-end;
-
-}
-
-.popup-footer-btn {
-    margin-left: 10px;
-}
-
-.close-button {
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border-radius: 20px;
-    text-align: center;
-    color: var(--icon);
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.close-button:hover {
-    color: var(--icon);
-    opacity: 0.6;
 }
 
 .show {

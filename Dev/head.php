@@ -7,7 +7,6 @@
 	<link rel="stylesheet" href="../../Style/style.css">
 	<link rel="stylesheet" href="../../Style/index.css">
 	<link rel="stylesheet" href="../../Style/navbar.css">
-	<link rel="stylesheet" href="../../Style/Dashboard/sidebar.css">
 	<link rel="stylesheet" href="../../Style/Dashboard/dashboard.css">
 	<link rel="stylesheet" href="../../Style/Profile/profile.css">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
