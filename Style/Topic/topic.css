@@ -1,0 +1,209 @@
+@import "tab.css";
+
+/*Topic*/
+.topic-container {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+
+.topic-header {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.topic-header-box {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.topic-title-box {
+    width: 60%;
+    display: inline-flex;
+    justify-content: space-between;
+    border-left: 3px solid var(--font);
+    margin-bottom: 10px;
+}
+
+.topic-description-box {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.topic-header-title {
+    font: var(--font);
+    font-weight: 600;
+    font-size: 26px;
+    margin-left: 20px;
+    align-self: center;
+    line-height: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.topic-header-title:focus-visible {
+    outline : none;
+    text-decoration: underline;
+}
+
+.topic-description {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.topic-description:focus-visible {
+    outline : none;
+    text-decoration: underline;
+}
+
+.topic-action-buttons-box {
+    float: right;
+}
+
+.topic-action-buttons {
+    display: inline;
+}
+
+.topic-action-button {
+    border-radius: 8px !important;
+}
+
+.topic-action-button .fal{
+    margin: 0;
+    width: 24px;
+    justify-content: center;
+}
+
+.topic-content {
+    height: calc(100vh - 250px);
+    background-color: var(--container-bg-1);
+    border-radius: 8px;
+    padding: 10px;
+    overflow-y: overlay;
+    display: flex;
+    text-align: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.topic-content.topic-list {
+    display: block;
+    text-align: left;
+    padding: 0;
+}
+
+.topic-list .dashboard-topic{
+    width: 100%;
+    max-width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--table-border-bottom);
+}
+
+.topic-list .topic-file:hover{
+    background: var(--table-bg-hover);
+    opacity: 1;
+}
+
+.topic-list .topic-file-group{
+    display: inline;
+    padding: 0 30px;
+    top: 0;
+    max-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.topic-list .topic-file-difficulty{
+    margin-left: 10px;
+}
+
+.topic-list .topic-file .svg{
+    width: 40px;
+}
+
+.topic-list .topic-file .fal{
+    position: static;
+}
+
+.ellipsis-dropdown {
+    width: 0px;
+    height: 0px;
+}
+
+.ellipsis-dropdown-content {
+    display: none;
+    background-color: var(--header-dropdown-bg);
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: var(--box-shadow);
+    z-index: 1;
+    border-radius: 8px;
+    padding: 10px 0 10px 0;
+    will-change: transform;
+    transform: translate3d(-10px, -200px, 0px);
+    position: sticky;
+}
+
+.ellipsis-dropdown-content span {
+    color: var(--font);
+    padding: 10px 15px;
+    display: block;
+}
+
+.ellipsis-dropdown-content .fal {
+    padding: 0 15px;
+    position: inherit;
+}
+
+.ellipsis-dropdown-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ellipsis-dropdown-box:hover {
+    background-color: var(--header-dropdown-bg-hover);
+}
+
+.topic-list .ellipsis-dropdown-content{
+    transform: translate3d(-160px, 15px, 0px);
+}
+
+.show {
+    display: block;
+}
+
+/*Responsive*/
+@media(max-width: 767px) {
+    .topic-description {
+        max-width: calc(60% - 100px);
+    }
+}
+
+@media(max-width: 480px) {
+    .topic-description {
+        max-width: calc(50% - 60px);
+    }
+}
