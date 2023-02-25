@@ -67,7 +67,7 @@ if ($result->num_rows > 0) {
                                 </label>
                             </div>
                         </div>
-                    <button class="action-btn" type="button">
+                    <button id="topic-add" class="action-btn" type="button">
                         Add <i class="fal fa-regular fa-plus"></i>
                     </button>
                 </div>

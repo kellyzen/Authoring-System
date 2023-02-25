@@ -2,28 +2,29 @@
 include '../session.php';
 include '../config.php';
 
+$get_id = $_GET['id'];
 $user_ID = "$_SESSION[id]";
-$query = mysqli_query($conn, "SELECT * FROM course_type ORDER BY c_type ASC;");
+$query = mysqli_query($conn, "SELECT * FROM difficulty ORDER BY difficulty_ID ASC;");
 $count = mysqli_num_rows($query);
 ?>
 
-<div class="course-add-popup">
+<div class="topic-add-popup">
     <div class="popup-content">
         <div class="popup-header-box">
-            <span class="popup-header">Add new course</span>
+            <span class="popup-header">Add new topic</span>
         </div>
         <div class="popup-content-box" id="popup-content-box">
             <div class="popup-content-small-box">
                 <span class="popup-content-title">Title</span>
-                <input id="popup-course-title" type="text" placeholder="Add course title...">
+                <input id="popup-topic-title" type="text" placeholder="Add topic title...">
             </div>
             <div class="popup-content-small-box">
-                <span class="popup-content-title">Course Type</span>
-                <select class="dropdown" id="popup-course-type">
+                <span class="popup-content-title">Difficulty Level</span>
+                <select class="dropdown" id="popup-topic-difficulty">
                     <?php
                     if ($count != '0') {
                         while ($row = mysqli_fetch_array($query)) { ?>
-                            <option value="<?php echo $row['c_type_ID']; ?>"><?php echo $row['c_type']; ?></option><?php
+                            <option value="<?php echo $row['difficulty_ID']; ?>"><?php echo $row['difficulty']; ?></option><?php
                                                                                                                 }
                                                                                                             } ?>
                 </select>
@@ -31,24 +32,24 @@ $count = mysqli_num_rows($query);
             <input type='hidden' id='hidden' value=''>
             <div class="popup-content-small-box">
                 <span class="popup-content-title">Description</span>
-                <textarea id="popup-course-desc" rows="4" cols="50" placeholder="Add course description..."></textarea>
+                <textarea id="popup-topic-desc" rows="4" cols="50" placeholder="Add topic description..."></textarea>
             </div>
         </div>
         <div class="popup-footer-box">
-            <button id="course-cancel-btn" class="popup-footer-btn secondary-btn" type="button">Cancel</button>
+            <button id="topic-cancel-btn" class="popup-footer-btn secondary-btn" type="button">Cancel</button>
             <button class="popup-footer-btn primary-btn" type="button" onclick="create()">Create</button>
         </div>
-        <a id="course-close-btn" class="close-button">x</a>
+        <a id="topic-close-btn" class="close-button">x</a>
     </div>
 </div>
 
 <script>
     //Change theme colour
     function create() {
-        var userid = <?php echo $user_ID ?>;
-        var title = $('#popup-course-title').val().trim();
-        var type = $('#popup-course-type').val().trim();
-        var desc = $('#popup-course-desc').val().trim();
+        var courseid = <?php echo $get_id ?>;
+        var title = $('#popup-topic-title').val().trim();
+        var difficulty = $('#popup-topic-difficulty').val().trim();
+        var desc = $('#popup-topic-desc').val().trim();
 
         if (title == '') {
             title = 'Untitled';
@@ -59,22 +60,22 @@ $count = mysqli_num_rows($query);
         }
 
         $.ajax({
-            url: 'course_add_action.php',
+            url: 'topic_add_action.php',
             type: 'post',
             data: {
                 title: title,
-                type: type,
+                difficulty: difficulty,
                 desc: desc,
-                userid: userid,
+                courseid: courseid,
             },
             success: function(html) {
                 if (html == "true") {
-                    $.jGrowl("Add Course Failed", {
-                        header: 'Add Course Failed'
+                    $.jGrowl("Add Topic Failed", {
+                        header: 'Add Topic Failed'
                     });
                 } else {
-                    $.jGrowl("Course Successfully Added", {
-                        header: 'Course Added'
+                    $.jGrowl("Topic Successfully Added", {
+                        header: 'Topic Added'
                     });
                     var delay = 3000;
                     setTimeout(function() {

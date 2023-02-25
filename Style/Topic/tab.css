@@ -1,0 +1,17 @@
+.nav-tabs {
+    --bs-nav-tabs-border-width: 0px !important;
+    --bs-nav-tabs-link-active-color: none !important;
+    --bs-nav-tabs-link-active-bg: none !important;
+    border-bottom: none !important;
+}
+
+.nav-link {
+    font-weight: 600 !important;
+    color: var(--textbox-border) !important;
+    padding: 0px 20px 10px 0px !important;
+}
+
+.nav-link.active {
+    color: var(--font) !important;
+    text-decoration: underline;
+}
