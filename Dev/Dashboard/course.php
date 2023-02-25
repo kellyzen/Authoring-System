@@ -33,40 +33,40 @@ if ($result->num_rows > 0) {
 <div class="dashboard-container">
     <div class="dashboard-header">
         <div class="dashboard-title-box">
-            <span id="course-header-title" class="course-header-title" contenteditable="true" value=><?php echo $c_name; ?></span>
+            <span id="course-header-title" class="course-header-title" contenteditable="true" data-toggle="tooltip" data-placement="left" title="Click to edit course title" value=><?php echo $c_name; ?></span>
             <span class="course-type"><?php echo $c_type; ?></span>
         </div>
         <div class="dashboard-description-box">
-            <span id="course-description" class="course-description" contenteditable="true"><?php echo $c_description; ?></span>
+            <span id="course-description" class="course-description" contenteditable="true" data-toggle="tooltip" data-placement="left" title="Click to edit course description"><?php echo $c_description; ?></span>
             <div class="dashboard-action-buttons-box">
                 <div class="dashboard-action-buttons">
-                    <button id = "filterButton" class="action-btn" type="button" onclick="showFilterMenu()">
+                    <button id="filterButton" class="action-btn" type="button" onclick="showFilterMenu()">
                         Filter <i class="fal fa-solid fa-filter"></i>
                     </button>
-                    <div id = "filterDropdown" class = "filter-dropdown-content">
-                            <div id="BeginnerDifficulty" class="filter-dropdown-box">
-                                <span>Beginner</span>
-                                <label class = "toggle" for = "BeginnerFilterToggle">
+                    <div id="filterDropdown" class="filter-dropdown-content">
+                        <div id="BeginnerDifficulty" class="filter-dropdown-box">
+                            <span>Beginner</span>
+                            <label class="toggle" for="BeginnerFilterToggle">
 
-                                </label>
-                            </div>
+                            </label>
                         </div>
-                        <div id = "filterDropdown" class = "filter-dropdown-content">
-                            <div id="IntermediateDifficulty" class="filter-dropdown-box">
-                                <span>Intermediate</span>
-                                <label class = "toggle" for = "IntermediateFilterToggle">
+                    </div>
+                    <div id="filterDropdown" class="filter-dropdown-content">
+                        <div id="IntermediateDifficulty" class="filter-dropdown-box">
+                            <span>Intermediate</span>
+                            <label class="toggle" for="IntermediateFilterToggle">
 
-                                </label>
-                            </div>
+                            </label>
                         </div>
-                        <div id = "filterDropdown" class = "filter-dropdown-content">
-                            <div id="AdvancedDifficulty" class="filter-dropdown-box">
-                                <span>Advanced</span>
-                                <label class = "toggle" for = "AdvancedFilterToggle">
-                                    
-                                </label>
-                            </div>
+                    </div>
+                    <div id="filterDropdown" class="filter-dropdown-content">
+                        <div id="AdvancedDifficulty" class="filter-dropdown-box">
+                            <span>Advanced</span>
+                            <label class="toggle" for="AdvancedFilterToggle">
+
+                            </label>
                         </div>
+                    </div>
                     <button id="topic-add" class="action-btn" type="button">
                         Add <i class="fal fa-regular fa-plus"></i>
                     </button>
