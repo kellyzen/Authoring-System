@@ -22,4 +22,9 @@
     closeBtn.addEventListener("click", () => {
         sidebar.classList.toggle("close");
     });
+
+    //Tooltip
+    $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
 </script>
