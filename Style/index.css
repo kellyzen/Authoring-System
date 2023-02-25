@@ -4,16 +4,19 @@ body {
     background: var(--bg) !important;
 }
 
+/* Icon */
 .fal {
     font-size: 24px;
     display: inline-flex !important;
     align-items: center;
 }
 
+/* SVG */
 .svg {
     width: 30px;
 }
 
+/* Primary Button */
 .primary-btn {
     border-radius: 8px;
     border: 1px solid var(--primary-btn-border);
@@ -38,6 +41,7 @@ body {
     color: var(--primary-btn-font-disabled);
 }
 
+/* Secondary Button */
 .secondary-btn {
     border-radius: 8px;
     border: 1px solid var(--secondary-btn-border);
@@ -62,6 +66,7 @@ body {
     color: var(--secondary-btn-font-disabled);
 }
 
+/* Dropdown */
 .dropdown {
     border-radius: 8px;
     border: 1px solid var(--textbox-border);
@@ -73,6 +78,7 @@ body {
     outline: none;
 }
 
+/* Action button */
 .action-btn {
     border-radius: 0px;
     border: none;
@@ -114,6 +120,7 @@ body {
     color: var(--action-btn-font-disabled);
 }
 
+/* Difficulty */
 .difficulty-beginner {
     background: #008000;
 }
@@ -126,6 +133,7 @@ body {
     background: #FF0000;
 }
 
+/* Input */
 input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
     height: 24px;
@@ -141,7 +149,8 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     pointer-events: all;
 }
 
-input[type=text], input[type=password] {
+input[type=text],
+input[type=password] {
     border-radius: 8px;
     border: 1px solid var(--textbox-border);
     outline: none;
@@ -166,6 +175,23 @@ input::placeholder,
     font-size: 16px;
     font-weight: 500;
     font-style: italic;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
 }
 
 /*Responsive*/
