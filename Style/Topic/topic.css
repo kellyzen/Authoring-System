@@ -16,7 +16,6 @@
     width: 100%;
     display: inline-flex;
     justify-content: space-between;
-    margin-bottom: 10px;
 }
 
 .topic-title-box {
@@ -88,7 +87,7 @@
 }
 
 .topic-content {
-    height: calc(100vh - 250px);
+    height: calc(100vh - 230px);
     background-color: var(--container-bg-1);
     border-radius: 8px;
     padding: 10px;
