@@ -12,7 +12,7 @@ $count = mysqli_num_rows($query);
     <span class="course-badge"><?php echo $count; ?></span>
   </div>
 
-  <ul class="course-lists list-unstyled">
+  <ul id="course-lists" class="course-lists list-unstyled">
     <?php
     if ($count != '0') {
       while ($row = mysqli_fetch_array($query)) {

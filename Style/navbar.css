@@ -121,6 +121,7 @@
     flex-direction: row;
     justify-content: space-between;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .setting-dropdown-box:hover, .filter-dropdown-box:hover {

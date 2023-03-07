@@ -18,7 +18,7 @@
 
 form {
     width: 60%;
-    height: 70%;
+    max-height: 70%;
     padding: 30px;
     background: #363636;
     border-radius: 8px;
