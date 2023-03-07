@@ -259,7 +259,7 @@ $topic_count = mysqli_num_rows($tquery);
                             $.jGrowl("Profile Successfully  Updated", {
                                 header: 'Profile Updated'
                             });
-                            var delay = 3000;
+                            var delay = 2000;
                             setTimeout(function() {
                                 window.location = ''
                             }, delay);

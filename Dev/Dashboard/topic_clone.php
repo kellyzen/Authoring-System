@@ -5,7 +5,7 @@ if (isset($_POST["topicid"])) {
 
     if ($topic_id != '') {
         //update topic table
-        $sql = "Delete from topic where topic_ID = $topic_id";
+        $sql = "INSERT INTO topic (topic_name, topic_description, difficulty_ID, course_ID) SELECT topic_name, topic_description, difficulty_ID, course_ID FROM topic WHERE topic_ID = $topic_id";
         mysqli_query($conn, $sql);
     }
 }
