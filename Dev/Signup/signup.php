@@ -171,6 +171,18 @@ height: 100vh;
 flex-direction: column;
 }
 
+.button {
+background: #FF3838;
+border: 1px solid #FF3838;
+border-radius: 8px;
+box-sizing: border-box;
+display: block;
+width: 75%;
+padding: 10px;
+margin: 10px auto;
+color: #fff;
+}
+
 form {
 width: 1000px;
 height: 1000px;
@@ -179,7 +191,40 @@ background: #363636;
 border-radius: 8px;
 }
 
-input[type=email] {
+label {
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 10px;
+color: #CCCCCC;
+margin-left:130px; 
+}
+
+.centre {
+    display: block;
+    text-align: center;
+    font-size: 48px;
+    margin-left: 0px;
+    margin-top: 15px;
+}
+
+.error {
+  font-family: 'Montserrat';
+   font-size: 14px;
+   color: #D8000C;
+}
+
+
+input::placeholder, a {
+font-family: 'Montserrat';
+font-style: italic;
+font-weight: 400;
+font-size: 24px;
+color: #666666;
+}
+
+/* input[type=email] {
 background:  #464646;
 border: 1px solid #666666;
 border-radius: 2px;
@@ -187,10 +232,8 @@ box-sizing: border-box;
 display: block;
 width: 75%;
 padding: 10px;
-/* margin: 0px auto; */
 margin-left:120px; 
 color: white;
-
 }
 
 input[type=text] {
@@ -202,7 +245,6 @@ box-sizing: border-box;
 display: block;
 width: 75%;
 padding: 15px;
-/* margin: 0px auto; */
 margin-left:120px; 
 color: white;
 }
@@ -216,59 +258,34 @@ box-sizing: border-box;
 display: block;
 width: 75%;
 padding: 15px;
+margin-left:120px; 
+color: white;
+} */
+
+input[type=text], input[type=password]  {
+font-family: 'Montserrat';
+font-style: italic;
+font-weight: 600;
+font-size: 25px;
+height: 50px;
+background:  #464646;
+border: 2px solid #666666;
+border-radius: 2px;
+box-sizing: border-box;
+display: block;
+width: 75%;
+padding: 5px;
 /* margin: 0px auto; */
 margin-left:120px; 
 color: white;
 }
 
-.button {
-background: #FF3838;
-border: 1px solid #FF3838;
-border-radius: 8px;
-box-sizing: border-box;
-display: block;
-width: 75%;
-padding: 10px;
-margin: 10px auto;
-color: #fff;
 
-}
-
-
-label {
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 32px;
-line-height: 39px;
-color: #CCCCCC;
-margin-left:130px; 
-}
-
-
-.centre {
-    display: block;
-    text-align: center;
-    font-size: 48px;
-    margin-left: 0px;
-}
-
-.error {
-  font-family: 'Montserrat';
-   font-size: 14px;
-   color: #D8000C;
-}
-
-input::placeholder, a {
-font-family: 'Montserrat';
-font-style: italic;
-font-weight: 400;
-font-size: 24px;
-color: #666666;
-}
 
 </style>
-  </head>
+</head>
+
+
 <body>
   <div class="body">
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">

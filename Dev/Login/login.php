@@ -110,6 +110,18 @@ height: 100vh;
 flex-direction: column;
 }
 
+.button {
+background: #FF3838;
+border: 1px solid #FF3838;
+border-radius: 8px;
+box-sizing: border-box;
+display: block;
+width: 75%;
+padding: 10px;
+margin-left:120px; 
+color: #fff;
+}
+
 form {
 width: 1000px;
 height: 550px;
@@ -129,7 +141,6 @@ margin-left:120px;
 }
 
 input[type=text], input[type=password]  {
-
 font-family: 'Montserrat';
 font-style: italic;
 font-weight: 600;
@@ -145,22 +156,16 @@ padding: 5px;
 /* margin: 0px auto; */
 margin-left:120px; 
 color: white;
-
 }
 
-.button {
 
-background: #FF3838;
-border: 1px solid #FF3838;
-border-radius: 8px;
-box-sizing: border-box;
-display: block;
-width: 75%;
-padding: 10px;
-/* margin: 10px auto; */
-margin-left:120px; 
-color: #fff;
 
+.centre {
+    display: block;
+    text-align: center;
+    font-size: 48px;
+    margin-left: 0px;
+    margin-top: 15px;
 }
 
 input::placeholder, a {
@@ -172,29 +177,10 @@ color: #666666;
 }
 
 
-
-/* ::placeholder { 
-font-family: 'Montserrat';
-font-style: italic;
-font-weight: 400;
-font-size: 24px; 
-line-height: 29px;
-color: blue;
-} */
-
-.centre {
-    display: block;
-    text-align: center;
-    font-size: 48px;
-    margin-left: 0px;
-    margin-top: 15px;
-}
-
 </style>
 </head>
 
 <body>
-  <main>
     <div class="body">
       <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
       <label class="centre" >Login</label><br><br>
@@ -219,7 +205,6 @@ color: blue;
         <a style="margin-right:130px; float:right; color: white" href="../Reset/reset.php">Forgot Password?</a>
       </form>
     </section>
-  </main>
 </body>
 
 </html>
