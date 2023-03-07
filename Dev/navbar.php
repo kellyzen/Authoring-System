@@ -21,7 +21,7 @@ if ($count != '0') {
             </li>
             <li class="nav-item search-container">
                 <div class="search-bar">
-                    <input type="search" placeholder="Search for...">
+                    <input id="search-input" type="search" placeholder="Search for...">
                     <span class="search-bar_icons">
                         <i class="fal fa-brands fa-search"></i>
                         <i id="filter-icon" class="fal fa-solid fa-sliders"></i>
@@ -61,7 +61,7 @@ if ($count != '0') {
                     <a href="../Login/logout.php" id="logout" class="setting-dropdown-box">
                         <span>Logout</span>
                         <i class="fal fa-solid fa-sign-out"></i>
-</a>
+                    </a>
                 </div>
             </li>
         </ul>
