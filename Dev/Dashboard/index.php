@@ -27,4 +27,13 @@
     $(function() {
         $('[data-toggle="tooltip"]').tooltip()
     })
+
+    //Show search bar filter dropdown on click
+    let dropdown = document.querySelector("#filter-dropdown");
+    let icon = document.querySelector("#filter-icon");
+
+    icon.addEventListener("click", () => {
+        dropdown.classList.toggle("show");
+        icon.classList.toggle("active");
+    });
 </script>
