@@ -52,13 +52,6 @@ if ($count != '0') {
                         <i class="fal fa-regular fa-user"></i>
                     </a>
                     <div class="setting-dropdown-box">
-                        <span>User view</span>
-                        <label class="toggle" for="viewToggle">
-                            <input class="toggle__input" name="" type="checkbox" id="viewToggle">
-                            <div class="toggle__fill"></div>
-                        </label>
-                    </div>
-                    <div class="setting-dropdown-box">
                         <span>Dark theme</span>
                         <label class="toggle" for="themeToggle">
                             <input class="toggle__input" name="" type="checkbox" id="themeToggle" onclick="toggleTheme()">

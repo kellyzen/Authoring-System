@@ -31,16 +31,16 @@ if ($count != '0') {
             </a>
             <i class="fal fa-solid fa-ellipsis-h" onclick="toggleEllipsisFunction(<?php echo $topic_ID; ?>)"></i>
             <div class="ellipsis-dropdown">
-            <div id="<?php echo 'topic_ID' . $topic_ID; ?>" class="ellipsis-dropdown-content">
-                <div class="ellipsis-dropdown-box">
-                    <span>Delete</span>
-                    <i class="fal fa-solid fa-trash"></i>
+                <div id="<?php echo 'topic_ID' . $topic_ID; ?>" class="ellipsis-dropdown-content">
+                    <span id="delete-topic-btn" class="ellipsis-dropdown-box" data-id="<?php echo $topic_ID; ?>" onclick="deleteTopic(<?php echo $topic_ID; ?>)">
+                        <span>Delete</span>
+                        <i class="fal fa-solid fa-trash"></i>
+                    </span>
+                    <span id="clone-topic-btn" class="ellipsis-dropdown-box" data-id="<?php echo $topic_ID; ?>" onclick="cloneTopic(<?php echo $topic_ID; ?>)">
+                        <span>Clone</span>
+                        <i class="fal fa-solid fa-clone"></i>
+                    </span>
                 </div>
-                <div class="ellipsis-dropdown-box">
-                    <span>Clone</span>
-                    <i class="fal fa-solid fa-clone"></i>
-                </div>
-            </div>
             </div>
         </div>
 <?php
@@ -48,7 +48,133 @@ if ($count != '0') {
 }
 ?>
 
+<!-- Confirm Delete Modal -->
+<div class="modal fade" id="confirm-delete-modal" tabindex="-1" role="dialog" aria-labelledby="confirm-delete-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content flex-column">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirm-delete-modal-label">Confirm Delete</h5>
+                <button type="button" class="btn close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="icon-box">
+                    <i class="fal fa-solid fa-times-circle"></i>
+                </div>
+                <h3>Are you sure?</h3>
+                <p>Do you really want to delete this topic? This process cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="cancelbtn secondary-btn" data-bs-dismiss="modal">Cancel</button>
+                <input type="hidden" name="id" id="delete-id">
+                <button type="button" class="deletebtn primary-btn" onclick="confirmDeleteTopic()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Confirm Clone Modal -->
+<div class="modal fade" id="confirm-clone-modal" tabindex="-1" role="dialog" aria-labelledby="confirm-clone-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content flex-column">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirm-clone-modal-label">Confirm Clone</h5>
+                <button type="button" class="btn close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="icon-box">
+                    <i class="fal fa-solid fa-times-circle"></i>
+                </div>
+                <h3>Are you sure?</h3>
+                <p>Do you really want to clone this topic? This process cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="cancelbtn secondary-btn" data-bs-dismiss="modal">Cancel</button>
+                <input type="hidden" name="id" id="clone-id">
+                <button type="button" class="clonebtn primary-btn" onclick="confirmCloneTopic()">Clone</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
+    //confirm delete topic
+    function deleteTopic(topic_ID) {
+        // Get the ID of the item to delete
+        var id = topic_ID;
+        // Set the ID in the confirmation modal
+        $('#delete-id').val(id);
+        $('#confirm-delete-modal').modal('show');
+    }
+
+    //confirm delete topic
+    function confirmDeleteTopic() {
+        var topicid = $('#delete-id').val();
+
+        if (topicid != '') {
+            $.ajax({
+                url: 'topic_delete.php',
+                type: 'post',
+                data: {
+                    topicid: topicid,
+                },
+                success: function(html) {
+                    if (html == "true") {
+                        $.jGrowl("Delete Topic Failed", {
+                            header: 'Delete Topic'
+                        });
+                    } else {
+                        $.jGrowl("Topic Successfully Deleted", {
+                            header: 'Delete Topic'
+                        });
+                        var delay = 2000;
+                        setTimeout(function() {
+                            window.location = ''
+                        }, delay);
+                    }
+                }
+            });
+        }
+    }
+
+    //clone topic
+    function cloneTopic(topic_ID) {
+        // Get the ID of the item to clone
+        var id = topic_ID;
+        // Set the ID in the confirmation modal
+        $('#clone-id').val(id);
+        $('#confirm-clone-modal').modal('show');
+    }
+
+    //confirm clone topic
+    function confirmCloneTopic() {
+        var topicid = $('#clone-id').val();
+
+        if (topicid != '') {
+            $.ajax({
+                url: 'topic_clone.php',
+                type: 'post',
+                data: {
+                    topicid: topicid,
+                },
+                success: function(html) {
+                    if (html == "true") {
+                        $.jGrowl("Clone Topic Failed", {
+                            header: 'Clone Topic'
+                        });
+                    } else {
+                        $.jGrowl("Topic Successfully Cloned", {
+                            header: 'Clone Topic'
+                        });
+                        var delay = 2000;
+                        setTimeout(function() {
+                            window.location = ''
+                        }, delay);
+                    }
+                }
+            });
+        }
+    }
+
     //Toggle dropdown for topics
     function toggleEllipsisFunction(topic_ID) {
         removeShow('.ellipsis-dropdown-content');
