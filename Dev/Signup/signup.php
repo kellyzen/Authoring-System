@@ -224,45 +224,8 @@ font-size: 24px;
 color: #666666;
 }
 
-/* input[type=email] {
-background:  #464646;
-border: 1px solid #666666;
-border-radius: 2px;
-box-sizing: border-box;
-display: block;
-width: 75%;
-padding: 10px;
-margin-left:120px; 
-color: white;
-}
 
-input[type=text] {
-
-background:  #464646;
-border: 1px solid #666666;
-border-radius: 2px;
-box-sizing: border-box;
-display: block;
-width: 75%;
-padding: 15px;
-margin-left:120px; 
-color: white;
-}
-
-input[type=password] {
-
-background:  #464646;
-border: 1px solid #666666;
-border-radius: 2px;
-box-sizing: border-box;
-display: block;
-width: 75%;
-padding: 15px;
-margin-left:120px; 
-color: white;
-} */
-
-input[type=text], input[type=password]  {
+input[type=text], input[type=password], input[type=email]  {
 font-family: 'Montserrat';
 font-style: italic;
 font-weight: 600;
@@ -279,7 +242,6 @@ padding: 5px;
 margin-left:120px; 
 color: white;
 }
-
 
 
 </style>
