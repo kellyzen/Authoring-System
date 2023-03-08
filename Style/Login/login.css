@@ -26,7 +26,7 @@ form {
 }
 
 label {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: #CCCCCC;
     margin-bottom: 15px;
@@ -34,7 +34,7 @@ label {
 
 input[type=text],
 input[type=password] {
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 8px;
     border: 1px solid #666;
     outline: none;
@@ -65,7 +65,7 @@ input::placeholder,
     border: 1px solid #ff3838;
     background-color: #ff3838;
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     padding: 4px 26px;
     outline: none;

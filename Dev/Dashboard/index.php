@@ -1,6 +1,6 @@
 <?php
-include '../skeleton.php'; 
-include '../session.php'; 
+include '../skeleton.php';
+include '../session.php';
 $user_ID = "$_SESSION[id]";
 $course_ID = $_GET['id'];
 ?>
@@ -45,6 +45,9 @@ $course_ID = $_GET['id'];
     //Search bar
     let search = document.querySelector("#search-input");
     let courses = document.querySelector("#course-lists");
+    let topics = document.querySelector("#dashboard-content");
+    let courseToggle = document.querySelector("#courseToggle");
+    let topicToggle = document.querySelector("#topicToggle");
 
     $(function() {
         var userid = <?php echo $user_ID ?>;
@@ -53,24 +56,41 @@ $course_ID = $_GET['id'];
         $(search).on('input', function() {
             // Get the search query
             var query = $(this).val();
-            console.log(query);///////////////////////////////
 
             // If the search query is not empty
             if (query.length > 0) {
-                // Send an AJAX request to the server to perform the search
-                $.ajax({
-                    url: 'course_search.php',
-                    type: 'GET',
-                    data: {
-                        q: query,
-                        userid: userid,
-                        courseid: courseid,
-                    },
-                    success: function(data) {
-                        // Display the search results in the search-results div
-                        $(courses).html(data);
-                    }
-                });
+                if (courseToggle.checked == true) {
+                    // Send an AJAX request to the server to perform course search
+                    $.ajax({
+                        url: 'course_search.php',
+                        type: 'GET',
+                        data: {
+                            q: query,
+                            userid: userid,
+                            courseid: courseid,
+                        },
+                        success: function(data) {
+                            // Display the search results in course
+                            $(courses).html(data);
+                        }
+                    });
+                } else {
+                    // Send an AJAX request to the server to perform topic search
+                    $.ajax({
+                        url: 'topic_search.php',
+                        type: 'GET',
+                        data: {
+                            q: query,
+                            userid: userid,
+                            courseid: courseid,
+                        },
+                        success: function(data) {
+                            // Display the search results in topics
+                            $(topics).html(data);
+                        }
+                    });
+                }
+
             } else {
                 // Reload window if the search query is empty
                 window.location = ''

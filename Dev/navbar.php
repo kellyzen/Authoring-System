@@ -26,17 +26,17 @@ if ($count != '0') {
                         <i class="fal fa-brands fa-search"></i>
                         <i id="filter-icon" class="fal fa-solid fa-sliders"></i>
                         <div id="filter-dropdown" class="filter-dropdown-content">
-                            <div class="filter-dropdown-box" onclick="toggleFilterFunction()">
+                            <div class="filter-dropdown-box">
                                 <span>Course</span>
                                 <label class="toggle" for="courseToggle">
-                                    <input id="courseToggle" class="toggle__input" name="" type="checkbox" checked>
+                                    <input id="courseToggle" class="toggle__input" onclick="toggleFilterFunction()" name="filterToggle" type="radio" checked>
                                     <div class="toggle__fill"></div>
                                 </label>
                             </div>
-                            <div class="filter-dropdown-box" onclick="toggleFilterFunction()">
+                            <div class="filter-dropdown-box">
                                 <span>Topic</span>
                                 <label class="toggle" for="topicToggle">
-                                    <input id="topicToggle" class="toggle__input" name="" type="checkbox">
+                                    <input id="topicToggle" class="toggle__input" onclick="toggleFilterFunction()" name="filterToggle" type="radio">
                                     <div class="toggle__fill"></div>
                                 </label>
                             </div>
@@ -51,10 +51,10 @@ if ($count != '0') {
                         <span>Profile</span>
                         <i class="fal fa-regular fa-user"></i>
                     </a>
-                    <div class="setting-dropdown-box" onclick="toggleTheme()">
+                    <div class="setting-dropdown-box">
                         <span>Dark theme</span>
                         <label class="toggle" for="themeToggle">
-                            <input class="toggle__input" name="" type="checkbox" id="themeToggle">
+                            <input class="toggle__input" name="" type="checkbox" id="themeToggle" onclick="toggleTheme()">
                             <div class="toggle__fill"></div>
                         </label>
                     </div>
@@ -81,17 +81,6 @@ if ($count != '0') {
     //Show setting dropdown on click
     function toggleSettingFunction() {
         document.getElementById("setting-dropdown").classList.toggle("show");
-    }
-
-    //Change filter setting in searchbar
-    function toggleFilterFunction() {
-        if (document.getElementById("courseToggle").checked == true) {
-            document.getElementById("courseToggle").checked = false;
-            document.getElementById("topicToggle").checked = true;
-        } else {
-            document.getElementById("courseToggle").checked = true;
-            document.getElementById("topicToggle").checked = false;
-        }
     }
 
     //Change theme colour

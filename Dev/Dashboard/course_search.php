@@ -5,9 +5,8 @@ include '../config.php';
   $result = $_GET['q'];
   $user_id = $_GET['userid'];
   $course_id = $_GET['courseid'];
-
-$query = mysqli_query($conn, "SELECT * FROM course where user_ID='$user_id' AND (c_name like '%$result%' OR c_description like '%$result%');");
-$count = mysqli_num_rows($query);
+  $query = mysqli_query($conn, "SELECT * FROM course where user_ID='$user_id' AND (c_name like '%$result%' OR c_description like '%$result%');");
+  $count = mysqli_num_rows($query);
 
   // Display the search results
     if ($count != '0') {
@@ -21,7 +20,7 @@ $count = mysqli_num_rows($query);
             echo '<li class="course">';
         }
         echo "
-          <a href='<?php echo '?id='.$id; ?>' class='course-list text-decoration-none d-block'>
+          <a href='?id=";echo $id;echo "' class='course-list text-decoration-none d-block'>
             <span class='course-title'>
               <i class='fal fa-regular fa-book'></i>
         ";
