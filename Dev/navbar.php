@@ -21,22 +21,22 @@ if ($count != '0') {
             </li>
             <li class="nav-item search-container">
                 <div class="search-bar">
-                    <input type="search" placeholder="Search for...">
+                    <input id="search-input" type="search" placeholder="Search for...">
                     <span class="search-bar_icons">
                         <i class="fal fa-brands fa-search"></i>
-                        <i id="filter-icon" class="fal fa-solid fa-sliders" onclick="toggleFilterFunction()"></i>
+                        <i id="filter-icon" class="fal fa-solid fa-sliders"></i>
                         <div id="filter-dropdown" class="filter-dropdown-content">
                             <div class="filter-dropdown-box">
                                 <span>Course</span>
                                 <label class="toggle" for="courseToggle">
-                                    <input class="toggle__input" name="" type="checkbox" id="courseToggle">
+                                    <input id="courseToggle" class="toggle__input" onclick="toggleFilterFunction()" name="filterToggle" type="radio" checked>
                                     <div class="toggle__fill"></div>
                                 </label>
                             </div>
                             <div class="filter-dropdown-box">
                                 <span>Topic</span>
                                 <label class="toggle" for="topicToggle">
-                                    <input class="toggle__input" name="" type="checkbox" id="topicToggle">
+                                    <input id="topicToggle" class="toggle__input" onclick="toggleFilterFunction()" name="filterToggle" type="radio">
                                     <div class="toggle__fill"></div>
                                 </label>
                             </div>
@@ -52,13 +52,6 @@ if ($count != '0') {
                         <i class="fal fa-regular fa-user"></i>
                     </a>
                     <div class="setting-dropdown-box">
-                        <span>User view</span>
-                        <label class="toggle" for="viewToggle">
-                            <input class="toggle__input" name="" type="checkbox" id="viewToggle">
-                            <div class="toggle__fill"></div>
-                        </label>
-                    </div>
-                    <div class="setting-dropdown-box">
                         <span>Dark theme</span>
                         <label class="toggle" for="themeToggle">
                             <input class="toggle__input" name="" type="checkbox" id="themeToggle" onclick="toggleTheme()">
@@ -68,7 +61,7 @@ if ($count != '0') {
                     <a href="../Login/logout.php" id="logout" class="setting-dropdown-box">
                         <span>Logout</span>
                         <i class="fal fa-solid fa-sign-out"></i>
-</a>
+                    </a>
                 </div>
             </li>
         </ul>
@@ -88,12 +81,6 @@ if ($count != '0') {
     //Show setting dropdown on click
     function toggleSettingFunction() {
         document.getElementById("setting-dropdown").classList.toggle("show");
-    }
-
-    //Show search bar filter dropdown on click
-    function toggleFilterFunction() {
-        document.getElementById("filter-dropdown").classList.toggle("show");
-        document.getElementById("filter-icon").classList.toggle("active");
     }
 
     //Change theme colour

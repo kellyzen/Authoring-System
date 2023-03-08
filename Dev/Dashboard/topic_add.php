@@ -77,7 +77,7 @@ $count = mysqli_num_rows($query);
                     $.jGrowl("Topic Successfully Added", {
                         header: 'Topic Added'
                     });
-                    var delay = 3000;
+                    var delay = 2000;
                     setTimeout(function() {
                         window.location = ''
                     }, delay);
