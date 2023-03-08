@@ -5,7 +5,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Montserrat';
-    background: #363636;
 }
 
 .body {
@@ -18,83 +17,85 @@
 }
 
 form {
-    width: 1000px;
-    height: 550px;
-    padding: 20px;
+    width: 60%;
+    max-height: 70%;
+    padding: 30px;
     background: #363636;
     border-radius: 8px;
+    overflow: overlay;
 }
 
 label {
-    font-family: 'Montserrat';
-    font-style: normal;
+    font-size: 18px;
     font-weight: 600;
-    font-size: 32px;
-    line-height: 10px;
     color: #CCCCCC;
-    margin-left: 120px;
+    margin-bottom: 15px;
 }
 
 input[type=text],
 input[type=password] {
-
-    font-family: 'Montserrat';
-    font-style: italic;
-    font-weight: 600;
-    font-size: 25px;
-    height: 50px;
-    background: #464646;
-    border: 2px solid #666666;
-    border-radius: 2px;
-    box-sizing: border-box;
-    display: block;
-    width: 75%;
-    padding: 5px;
-    /* margin: 0px auto; */
-    margin-left: 120px;
-    color: white;
-
-}
-
-.button {
-
-    background: #FF3838;
-    border: 1px solid #FF3838;
+    font-size: 18px;
     border-radius: 8px;
-    box-sizing: border-box;
-    display: block;
-    width: 75%;
-    padding: 10px;
-    /* margin: 10px auto; */
-    margin-left: 120px;
-    color: #fff;
-
+    border: 1px solid #666;
+    outline: none;
+    background: #363636;
+    padding: 10px 15px;
+    height: 32px;
+    width: 100%;
+    color: #ccc;
+    margin-bottom: 18px;
 }
 
 input::placeholder,
-a {
-    font-family: 'Montserrat';
+::placeholder {
+    color: #666;
+    font-size: 16px;
+    font-weight: 500;
     font-style: italic;
-    font-weight: 400;
-    font-size: 24px;
-    color: #666666;
 }
 
+.button-box {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
 
+.button {
+    border-radius: 8px;
+    border: 1px solid #ff3838;
+    background-color: #ff3838;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 4px 26px;
+    outline: none;
+    width: 100%;
+    min-height: 32px;
+    margin: 12px 0px;
+}
 
-/* ::placeholder { 
-    font-family: 'Montserrat';
-    font-style: italic;
-    font-weight: 400;
-    font-size: 24px; 
-    line-height: 29px;
-    color: blue;
-    } */
+.button:hover {
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #000;
+}
+
+.link-box {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link-box a{
+    color: #666;
+}
+
+.link-box a:hover{
+    color: #ccc;
+}
 
 .centre {
     display: block;
     text-align: center;
-    font-size: 48px;
-    margin-left: 0px;
-    margin-top: 15px;
+    font-size: 26px;
 }

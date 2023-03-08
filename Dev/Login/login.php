@@ -1,5 +1,6 @@
 <?php
 include_once('../head.php');
+
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
   include '../config.php';
@@ -92,133 +93,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>stud.io | Login</title>
-  <link rel="text/stylesheet" href="../../Style/Login/login.css">
-</head>
-<?php include '../head.php'; ?>
-  
-<style>
-
-.body {
-background: #464646;
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-flex-direction: column;
-}
-
-form {
-width: 1000px;
-height: 550px;
-padding: 20px;
-background: #363636;
-border-radius: 8px;
-}
-
-label {
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 32px;
-line-height: 10px;
-color: #CCCCCC;
-margin-left:120px; 
-}
-
-input[type=text], input[type=password]  {
-
-font-family: 'Montserrat';
-font-style: italic;
-font-weight: 600;
-font-size: 25px;
-height: 50px;
-background:  #464646;
-border: 2px solid #666666;
-border-radius: 2px;
-box-sizing: border-box;
-display: block;
-width: 75%;
-padding: 5px;
-/* margin: 0px auto; */
-margin-left:120px; 
-color: white;
-
-}
-
-.button {
-
-background: #FF3838;
-border: 1px solid #FF3838;
-border-radius: 8px;
-box-sizing: border-box;
-display: block;
-width: 75%;
-padding: 10px;
-/* margin: 10px auto; */
-margin-left:120px; 
-color: #fff;
-
-}
-
-input::placeholder, a {
-font-family: 'Montserrat';
-font-style: italic;
-font-weight: 400;
-font-size: 24px;
-color: #666666;
-}
-
-
-
-/* ::placeholder { 
-font-family: 'Montserrat';
-font-style: italic;
-font-weight: 400;
-font-size: 24px; 
-line-height: 29px;
-color: blue;
-} */
-
-.centre {
-    display: block;
-    text-align: center;
-    font-size: 48px;
-    margin-left: 0px;
-    margin-top: 15px;
-}
-
-</style>
+  <link rel="stylesheet" href="../../Style/Login/login.css">
 </head>
 
 <body>
   <main>
     <div class="body">
       <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-      <label class="centre" >Login</label><br><br>
+        <label class="centre">Login</label>
 
         <div <?php (!empty($username_err)) ? 'has_error' : ''; ?>">
-          <label for="username">Username</label><br><br>
-          <input type="text" name="username" id="username" placeholder="Enter Username..." value="<?php echo $username ?>"><br><br>
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" placeholder="Enter Username..." value="<?php echo $username ?>">
           <!-- <span ><?php echo $username_err; ?></span> -->
         </div>
 
         <div <?php (!empty($password_err)) ? 'has_error' : ''; ?>">
-          <label for="password">Password</label><br><br>
-          <input type="password" name="password" id="password" placeholder="Enter Password..." value="<?php echo $password ?>"><br><br>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" placeholder="Enter Password..." value="<?php echo $password ?>">
           <!-- <span ><?php echo $password_err; ?></span> -->
         </div>
 
-        <div>
-          <input style="font-size: 25px;" class="button" type="submit" value="Login">
+        <div class="button-box">
+          <input class="button" type="submit" value="Login">
         </div>
-        
-        <a style="margin-left:130px; color: white" href="../Register/register.php">No Account</a>
-        <a style="margin-right:130px; float:right; color: white" href="../Reset/reset.php">Forgot Password?</a>
+
+        <div class="link-box">
+          <a href="../Register/register.php">No Account?</a>
+          <a href="../Reset/reset.php">Forgot Password?</a>
+        </div>
       </form>
-    </section>
+      </section>
   </main>
 </body>
 
