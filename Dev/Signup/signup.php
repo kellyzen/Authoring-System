@@ -159,92 +159,7 @@ mysqli_close($conn);
   <meta charset="UTF-8">
   <title>stud.io | Login</title>
   <?php include '../head.php'; ?>
-  
-<style>
-
-.body {
-background: #464646;
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-flex-direction: column;
-}
-
-.button {
-background: #FF3838;
-border: 1px solid #FF3838;
-border-radius: 8px;
-box-sizing: border-box;
-display: block;
-width: 75%;
-padding: 10px;
-margin: 10px auto;
-color: #fff;
-}
-
-form {
-width: 1000px;
-height: 1000px;
-padding: 20px;
-background: #363636;
-border-radius: 8px;
-}
-
-label {
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 32px;
-line-height: 10px;
-color: #CCCCCC;
-margin-left:130px; 
-}
-
-.centre {
-    display: block;
-    text-align: center;
-    font-size: 48px;
-    margin-left: 0px;
-    margin-top: 15px;
-}
-
-.error {
-  font-family: 'Montserrat';
-   font-size: 14px;
-   color: #D8000C;
-}
-
-
-input::placeholder, a {
-font-family: 'Montserrat';
-font-style: italic;
-font-weight: 400;
-font-size: 24px;
-color: #666666;
-}
-
-
-input[type=text], input[type=password], input[type=email]  {
-font-family: 'Montserrat';
-font-style: italic;
-font-weight: 600;
-font-size: 25px;
-height: 50px;
-background:  #464646;
-border: 2px solid #666666;
-border-radius: 2px;
-box-sizing: border-box;
-display: block;
-width: 75%;
-padding: 5px;
-/* margin: 0px auto; */
-margin-left:120px; 
-color: white;
-}
-
-
-</style>
+  <link rel="stylesheet" href="../../Style/Signup/signup.css">
 </head>
 
 
@@ -252,37 +167,37 @@ color: white;
   <div class="body">
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
       <label class="centre" >Signup</label><br><br>
-      <div <?php echo (!empty($firstname_err)) ? 'has-error' : ''; ?>">
+      <div class="input-field" <?php echo (!empty($firstname_err)) ? 'has-error' : ''; ?>">
         <label>First Name</label>
         <input class="inputfield" type="text" name="firstname" placeholder="First Name" value="<?php echo $firstname; ?>">
         <label class="error"><?php echo $firstname_err; ?></label><br><br>
 
       </div>
-      <div <?php echo (!empty($lastname_err)) ? 'has-error' : ''; ?>">
+      <div class="input-field" <?php echo (!empty($lastname_err)) ? 'has-error' : ''; ?>">
         <label>Last Name</label>
         <input class="inputfield" type="text" name="lastname" placeholder="Last Name" value="<?php echo $lastname; ?>">
         <label class="error"><?php echo $lastname_err; ?></label><br><br>
         
       </div>
-      <div <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+      <div class="input-field" <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
         <label>Username</label>
         <input class="inputfield" type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
         <label class="error"><?php echo $username_err; ?></label><br><br>
        
       </div>
-      <div <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
+      <div class="input-field" <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
         <label>Email</label>
         <input class="inputfield" type="text" name="email" placeholder="Email" value="<?php echo $email; ?>">
         <label class="error"><?php echo $email_err; ?></label><br><br>
 
       </div>
-      <div <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+      <div class="input-field" <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
         <label>Password</label>
         <input class="inputfield" type="password" name="password" placeholder="Password" value="<?php echo $password; ?>">
         <label class="error"><?php echo $password_err; ?></label><br><br>
         
       </div>
-      <div <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+      <div class="input-field" <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
         <label>Confirm Password</label>
         <input class="inputfield" type="password" name="confirmpassword" placeholder="Confirm Password" value="<?php echo $password; ?>">
         <label class="error"><?php echo $confirmpassword_err; ?></label><br><br>
@@ -291,7 +206,7 @@ color: white;
       <div>
         <input style="font-size: 25px;" class="button" type="submit" value="Submit">
       </div>
-      <a style="margin-left:130px; color: white" href="login.php">Already a member? Log-in...</a>
+      <a style="margin-left:130px; color: white" href="../Login/login.php">Already a member? Log-in...</a>
     </form>
   </div>
 </body>

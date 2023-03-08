@@ -122,16 +122,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <div class="link-box">
-          <a href="../Register/register.php">No Account?</a>
+          <a href="../Signup/signup.php">No Account?</a>
           <a href="../Reset/reset.php">Forgot Password?</a>
         </div>
       </form>
-<<<<<<< HEAD
-    </section>
-=======
       </section>
   </main>
->>>>>>> e654c824e4ebd090893fb6e64741e9b9c9318891
 </body>
 
 </html>
