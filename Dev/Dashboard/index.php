@@ -45,7 +45,7 @@ $course_ID = $_GET['id'];
     //Search bar
     let search = document.querySelector("#search-input");
     let courses = document.querySelector("#course-lists");
-    let topics = document.querySelector("#dashboard-content");
+    let topics = document.querySelector("#topic-lists");
     let courseToggle = document.querySelector("#courseToggle");
     let topicToggle = document.querySelector("#topicToggle");
 
