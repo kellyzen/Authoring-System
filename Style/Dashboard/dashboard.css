@@ -1,6 +1,7 @@
 @import "sidebar.css";
 @import "add_course.css";
 @import "add_topic.css";
+@import "invalid.css";
 
 /*Dashboard*/
 .dashboard-container {

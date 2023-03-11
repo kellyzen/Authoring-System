@@ -182,7 +182,7 @@ if ($result->num_rows > 0) {
     }
 
     function showFilterMenu() {
-        document.getElementById("filter-dropdown").classList.toggle("show");
+        document.getElementById("filter-dropdown-content").classList.toggle("show");
     }
     //Auto update course information
     setInterval(autoSaveCourse, 2000);
