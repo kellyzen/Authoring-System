@@ -37,13 +37,13 @@ $username = $password = $username_err = $password_err = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (empty(trim($_POST['username']))) {
-    $username_err = 'Please enter a username.';
+    $username_err = 'Incorrect username.';
   } else {
     $username = trim($_POST['username']);
   }
 
   if (empty(trim($_POST['password']))) {
-    $password_err = 'Please enter your password.';
+    $password_err = 'Incorrect password.';
   } else {
     $password = trim($_POST['password']);
   }

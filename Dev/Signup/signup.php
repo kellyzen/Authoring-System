@@ -22,14 +22,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Validate first name
   if (empty(trim($_POST["firstname"]))) {
-    $firstname_err = "Please enter your first name.";
+    $firstname_err = "Incorrect first name.";
   } else {
     $firstname = trim($_POST["firstname"]);
   }
 
   // Validate last name
   if (empty(trim($_POST["lastname"]))) {
-    $lastname_err = "Please enter your last name.";
+    $lastname_err = "Incorrect last name.";
   } else {
     $lastname = trim($_POST["lastname"]);
   }
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Validate username
 
   if (empty(trim($_POST["username"]))) {
-    $username_err = "Please enter a username.";
+    $username_err = "Incorrect username.";
   } elseif (!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))) {
     $username_err = "Username can only contain letters, numbers, and underscores.";
   } else {
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Validate email
   $verifyemail = trim($_POST["email"]);
   if (empty(trim($_POST["email"]))) {
-    $email_err = "Please enter your email address.";
+    $email_err = "Incorrect email address.";
   } elseif (!(str_contains($verifyemail, '@'))) {
     $email_err = "Invalid email address";
   } else {
@@ -96,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Validate password
   if (empty(trim($_POST["password"]))) {
-    $password_err = "Please enter a password.";
+    $password_err = "Incorrect password.";
   } elseif (strlen(trim($_POST["password"])) < 8) {
     $password_err = "Password must have at least 8 characters.";
   } else {
@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Validate confirm password
   if (empty(trim($_POST["confirmpassword"]))) {
-    $confirm_password_err = "Please confirm password.";
+    $confirm_password_err = "Incorrect password.";
   } else {
     $confirmpassword = trim($_POST["confirmpassword"]);
     if (empty($password_err) && ($password != $confirmpassword)) {
