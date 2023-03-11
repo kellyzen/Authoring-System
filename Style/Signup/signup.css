@@ -33,7 +33,7 @@
 }
 
 form {
-    width: 60%;
+    width: 90%;
     max-height: 70%;
     padding: 30px;
     background: #363636;
@@ -42,24 +42,31 @@ form {
 }
 
 label {
+    font-weight: 600;
+    color: #CCCCCC;
+}
+
+.input-title {
     font-size: 18px;
     font-weight: 600;
     color: #CCCCCC;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 .centre {
     display: block;
     text-align: center;
-    font-size: 48px;
-    margin-left: 0px;
-    margin-top: 15px;
+}
+
+.title {
+    font-size: 26px;
+    margin-bottom: 15px;
 }
 
 .error {
-    font-family: 'Montserrat';
     font-size: 14px;
     color: #D8000C;
+    margin-bottom: 18px;
 }
 
 
@@ -84,5 +91,29 @@ input[type=email] {
     height: 32px;
     width: 100%;
     color: #ccc;
-    margin-bottom: 18px;
+}
+
+.button-field {
+    display: grid;
+}
+.link {
+    color: #666;
+}
+
+.link:hover {
+    color: #ccc;
+}
+
+.signup-box {
+    display: flex;
+}
+
+.left {
+    width: 50%;
+    padding-right: 10px;
+}
+
+.right {
+    width: 50%; 
+    padding-left: 10px;
 }

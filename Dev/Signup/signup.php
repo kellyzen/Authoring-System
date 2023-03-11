@@ -38,9 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (empty(trim($_POST["username"]))) {
     $username_err = "Please enter a username.";
-  }  elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))){
+  } elseif (!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))) {
     $username_err = "Username can only contain letters, numbers, and underscores.";
-  }  else {
+  } else {
     // Prepare a select statement
     $sql = "SELECT user_ID FROM user WHERE username = ?";
 
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $verifyemail = trim($_POST["email"]);
   if (empty(trim($_POST["email"]))) {
     $email_err = "Please enter your email address.";
-  } elseif(!(str_contains($verifyemail, '@'))){ 
+  } elseif (!(str_contains($verifyemail, '@'))) {
     $email_err = "Invalid email address";
   } else {
     // Prepare a select statement
@@ -109,55 +109,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $confirmpassword = trim($_POST["confirmpassword"]);
     if (empty($password_err) && ($password != $confirmpassword)) {
-    $confirmpassword_err = "Password did not match.";
-  }
-  }
-
-
-//   // Check input errors before inserting into database
-if (empty($username_err) && empty($email_err) && empty($password_err) && empty($confirmpassword_err)) {
-  // Prepare an insert statement
-$sql = 'INSERT INTO user (firstname, lastname, username, email, password) VALUES (?, ?, ?, ?, ?)';
-
-
-if ($stmt = mysqli_prepare($conn, $sql)) {
-  // Bind variables to the prepared statement as parameters
-  mysqli_stmt_bind_param($stmt, "sssss", $param_firstname, $param_lastname, $param_username, $param_email, $param_password);
-
-  // Set parameters
-  $param_firstname = $firstname;
-  $param_lastname = $lastname;
-  $param_username = $username;
-  $param_email = $email;
-  $param_password = $password;
-
-  // Attempt to execute the prepared statement
-  if ((mysqli_stmt_execute($stmt)) && empty($username_err) && empty($email_err) && empty($password_err) && empty($confirmpassword_err)) {
-    //Redirect to login page
-    header("location: ../Login/login.php");
-    echo "Registartion completed. Please login to access your account.";
-  } else {
-    echo "Something went wrong. Please try again later.";
+      $confirmpassword_err = "Password did not match.";
+    }
   }
 
-  // Close statement
-  // mysqli_stmt_close($stmt);
-}
-}
 
-// Close connection
-mysqli_close($conn);
+  //   // Check input errors before inserting into database
+  if (empty($username_err) && empty($email_err) && empty($password_err) && empty($confirmpassword_err)) {
+    // Prepare an insert statement
+    $sql = 'INSERT INTO user (firstname, lastname, username, email, password) VALUES (?, ?, ?, ?, ?)';
+
+
+    if ($stmt = mysqli_prepare($conn, $sql)) {
+      // Bind variables to the prepared statement as parameters
+      mysqli_stmt_bind_param($stmt, "sssss", $param_firstname, $param_lastname, $param_username, $param_email, $param_password);
+
+      // Set parameters
+      $param_firstname = $firstname;
+      $param_lastname = $lastname;
+      $param_username = $username;
+      $param_email = $email;
+      $param_password = $password;
+
+      // Attempt to execute the prepared statement
+      if ((mysqli_stmt_execute($stmt)) && empty($username_err) && empty($email_err) && empty($password_err) && empty($confirmpassword_err)) {
+        //Redirect to login page
+        header("location: ../Login/login.php");
+        echo "Registartion completed. Please login to access your account.";
+      } else {
+        echo "Something went wrong. Please try again later.";
+      }
+
+      // Close statement
+      // mysqli_stmt_close($stmt);
+    }
+  }
+
+  // Close connection
+  mysqli_close($conn);
 }
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
-  <title>Sign-Up</title>
-  <head>
-  <meta charset="UTF-8">
-  <title>stud.io | Login</title>
+  <title>stud.io | Sign-Up</title>
   <?php include '../head.php'; ?>
   <link rel="stylesheet" href="../../Style/Signup/signup.css">
 </head>
@@ -166,48 +164,57 @@ mysqli_close($conn);
 <body>
   <div class="body">
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-      <label class="centre" >Signup</label><br><br>
-      <div class="input-field" <?php echo (!empty($firstname_err)) ? 'has-error' : ''; ?>">
-        <label>First Name</label>
-        <input class="inputfield" type="text" name="firstname" placeholder="First Name" value="<?php echo $firstname; ?>">
-        <label class="error"><?php echo $firstname_err; ?></label><br><br>
+      <label class="title centre">Sign-Up</label>
+      <div class="signup-content">
+        <div class="signup-box">
+          <div class="input-field left" <?php echo (!empty($firstname_err)) ? 'has-error' : ''; ?>">
+            <label class="input-title">First Name</label>
+            <input class="inputfield" type="text" name="firstname" placeholder="First Name" value="<?php echo $firstname; ?>">
+            <label class="error"><?php echo $firstname_err; ?></label>
 
-      </div>
-      <div class="input-field" <?php echo (!empty($lastname_err)) ? 'has-error' : ''; ?>">
-        <label>Last Name</label>
-        <input class="inputfield" type="text" name="lastname" placeholder="Last Name" value="<?php echo $lastname; ?>">
-        <label class="error"><?php echo $lastname_err; ?></label><br><br>
-        
-      </div>
-      <div class="input-field" <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-        <label>Username</label>
-        <input class="inputfield" type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
-        <label class="error"><?php echo $username_err; ?></label><br><br>
-       
-      </div>
-      <div class="input-field" <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
-        <label>Email</label>
-        <input class="inputfield" type="text" name="email" placeholder="Email" value="<?php echo $email; ?>">
-        <label class="error"><?php echo $email_err; ?></label><br><br>
+          </div>
+          <div class="input-field right" <?php echo (!empty($lastname_err)) ? 'has-error' : ''; ?>">
+            <label class="input-title">Last Name</label>
+            <input class="inputfield" type="text" name="lastname" placeholder="Last Name" value="<?php echo $lastname; ?>">
+            <label class="error"><?php echo $lastname_err; ?></label>
 
+          </div>
+        </div>
+        <div class="signup-box">
+          <div class="input-field left" <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+            <label class="input-title">Username</label>
+            <input class="inputfield" type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
+            <label class="error"><?php echo $username_err; ?></label>
+
+          </div>
+          <div class="input-field right" <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
+            <labe class="input-title" l>Email</label>
+              <input class="inputfield" type="text" name="email" placeholder="Email" value="<?php echo $email; ?>">
+              <label class="error"><?php echo $email_err; ?></label>
+
+          </div>
+        </div>
+        <div class="signup-box">
+          <div class="input-field left" <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+            <label class="input-title">Password</label>
+            <input class="inputfield" type="password" name="password" placeholder="Password" value="<?php echo $password; ?>">
+            <label class="error"><?php echo $password_err; ?></label>
+
+          </div>
+          <div class="input-field right" <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+            <label class="input-title">Confirm Password</label>
+            <input class="inputfield" type="password" name="confirmpassword" placeholder="Confirm Password" value="<?php echo $password; ?>">
+            <label class="error"><?php echo $confirmpassword_err; ?></label>
+
+          </div>
+        </div>
       </div>
-      <div class="input-field" <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-        <label>Password</label>
-        <input class="inputfield" type="password" name="password" placeholder="Password" value="<?php echo $password; ?>">
-        <label class="error"><?php echo $password_err; ?></label><br><br>
-        
+      <div class="button-field">
+        <input class="button" type="submit" value="Sign-up">
       </div>
-      <div class="input-field" <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-        <label>Confirm Password</label>
-        <input class="inputfield" type="password" name="confirmpassword" placeholder="Confirm Password" value="<?php echo $password; ?>">
-        <label class="error"><?php echo $confirmpassword_err; ?></label><br><br>
-       
-      </div>
-      <div>
-        <input style="font-size: 25px;" class="button" type="submit" value="Submit">
-      </div>
-      <a style="margin-left:130px; color: white" href="../Login/login.php">Already a member? Log-in...</a>
+      <a class="link centre" href="../Login/login.php">Already a member? Log in...</a>
     </form>
   </div>
 </body>
+
 </html>

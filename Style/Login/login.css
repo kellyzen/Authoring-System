@@ -99,7 +99,3 @@ input::placeholder,
     text-align: center;
     font-size: 26px;
 }
-
-.input-field {
-    max-height: 100px;
-}
