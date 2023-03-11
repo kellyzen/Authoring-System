@@ -29,14 +29,14 @@ if ($count != '0') {
                             <div class="filter-dropdown-box">
                                 <span>Course</span>
                                 <label class="toggle" for="courseToggle">
-                                    <input id="courseToggle" class="toggle__input" onclick="toggleFilterFunction()" name="filterToggle" type="radio" checked>
+                                    <input id="courseToggle" class="toggle__input" name="filterToggle" type="radio" checked>
                                     <div class="toggle__fill"></div>
                                 </label>
                             </div>
                             <div class="filter-dropdown-box">
                                 <span>Topic</span>
                                 <label class="toggle" for="topicToggle">
-                                    <input id="topicToggle" class="toggle__input" onclick="toggleFilterFunction()" name="filterToggle" type="radio">
+                                    <input id="topicToggle" class="toggle__input" name="filterToggle" type="radio">
                                     <div class="toggle__fill"></div>
                                 </label>
                             </div>

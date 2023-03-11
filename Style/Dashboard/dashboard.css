@@ -1,6 +1,7 @@
 @import "sidebar.css";
 @import "add_course.css";
 @import "add_topic.css";
+@import "invalid.css";
 
 /*Dashboard*/
 .dashboard-container {
@@ -261,6 +262,12 @@
     border-bottom: none !important;
 }
 
+.modal-body {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+}
+
 .modal-header .btn {
     position: absolute;
     right: 10px;
@@ -286,12 +293,19 @@
 }
 
 .modal-body h3 {
-    font-weight: 600x;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
 .modal-footer {
     border-top: none !important;
+}
+
+.topic-lists {
+    display: flex;
+    text-align: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .show {

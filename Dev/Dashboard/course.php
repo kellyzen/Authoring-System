@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
             <span id="course-description" class="course-description" contenteditable="true" data-toggle="tooltip" data-placement="left" title="Click to edit course description"><?php echo $c_description; ?></span>
             <div class="dashboard-action-buttons-box">
                 <div class="dashboard-action-buttons">
-                    <button id="filterButton" class="action-btn" type="button" onclick="showFilterMenu()">
+                    <!--<button id="filterButton" class="action-btn" type="button" onclick="showFilterMenu()">
                         Filter <i class="fal fa-solid fa-filter"></i>
                     </button>
                     <div id="filterDropdown" class="filter-dropdown-content">
@@ -66,7 +66,10 @@ if ($result->num_rows > 0) {
 
                             </label>
                         </div>
-                    </div>
+                    </div>-->
+                    <button id="course-delete" class="action-btn" type="button" data-id="<?php echo $get_id; ?>" onclick="deleteCourse(<?php echo $get_id; ?>)">
+                        Delete <i class="fal fa-regular fa-trash"></i>
+                    </button>
                     <button id="topic-add" class="action-btn" type="button">
                         Add <i class="fal fa-regular fa-plus"></i>
                     </button>
@@ -80,6 +83,7 @@ if ($result->num_rows > 0) {
 
         </div>
     </div>
+
     <!--List of Topics-->
     <div id="dashboard-content" class="dashboard-content">
         <?php
@@ -100,7 +104,70 @@ if ($result->num_rows > 0) {
         ?>
     </div>
 </div>
+
+<!-- Confirm Delete Modal -->
+<div class="modal fade" id="course-delete-modal" tabindex="-1" role="dialog" aria-labelledby="course-delete-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content flex-column">
+            <div class="modal-header">
+                <h5 class="modal-title" id="course-delete-modal-label">Confirm Delete Course</h5>
+                <button type="button" class="btn close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="icon-box">
+                    <i class="fal fa-solid fa-times-circle"></i>
+                </div>
+                <h3>Are you sure?</h3>
+                <p class="text-center">Do you really want to delete this course? This process cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="cancelbtn secondary-btn" data-bs-dismiss="modal">Cancel</button>
+                <input type="hidden" name="id" id="course-delete-id">
+                <button type="button" class="deletebtn primary-btn" onclick="confirmDeleteCourse()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
+    //delete course
+    function deleteCourse(course_ID) {
+        // Get the ID of the item to delete
+        var id = course_ID;
+        // Set the ID in the confirmation modal
+        $('#course-delete-id').val(id);
+        $('#course-delete-modal').modal('show');
+    }
+
+    //confirm delete course
+    function confirmDeleteCourse() {
+        var courseid = $('#course-delete-id').val();
+
+        if (courseid != '') {
+            $.ajax({
+                url: 'course_delete.php',
+                type: 'post',
+                data: {
+                    courseid: courseid,
+                },
+                success: function(html) {
+                    if (html == "true") {
+                        $.jGrowl("Delete Course Failed", {
+                            header: 'Delete Course'
+                        });
+                    } else {
+                        $.jGrowl("Course Successfully Deleted", {
+                            header: 'Delete Course'
+                        });
+                        var delay = 2000;
+                        setTimeout(function() {
+                            window.location = ''
+                        }, delay);
+                    }
+                }
+            });
+        }
+    }
+
     //Toggle between edit and save function
     function changeView() {
         if (document.getElementById("dashboard-content").classList.contains("dashboard-list")) {
@@ -115,7 +182,7 @@ if ($result->num_rows > 0) {
     }
 
     function showFilterMenu() {
-        document.getElementById("filter-dropdown").classList.toggle("show");
+        document.getElementById("filter-dropdown-content").classList.toggle("show");
     }
     //Auto update course information
     setInterval(autoSaveCourse, 2000);
