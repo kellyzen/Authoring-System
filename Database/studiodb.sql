@@ -239,6 +239,12 @@ INSERT INTO `user` (`user_ID`, `username`, `firstname`, `lastname`, `email`, `pa
 -- Indexes for dumped tables
 --
 
+CREATE TABLE `password_reset_temp` (
+  `email` varchar(250) NOT NULL,
+  `key` varchar(250) NOT NULL,
+  `expDate` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for table `course`
 --

@@ -43,7 +43,6 @@ input[type=password] {
     height: 32px;
     width: 100%;
     color: #ccc;
-    margin-bottom: 18px;
 }
 
 input::placeholder,
@@ -98,4 +97,10 @@ input::placeholder,
     display: block;
     text-align: center;
     font-size: 26px;
+}
+
+.error {
+    font-size: 14px;
+    color: #D8000C;
+    margin-bottom: 18px;
 }

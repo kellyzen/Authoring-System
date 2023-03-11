@@ -37,13 +37,13 @@ $username = $password = $username_err = $password_err = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (empty(trim($_POST['username']))) {
-    $username_err = 'Please enter a username.';
+    $username_err = 'Incorrect username.';
   } else {
     $username = trim($_POST['username']);
   }
 
   if (empty(trim($_POST['password']))) {
-    $password_err = 'Please enter your password.';
+    $password_err = 'Incorrect password.';
   } else {
     $password = trim($_POST['password']);
   }
@@ -101,7 +101,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-  <main>
     <div class="body">
       <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
         <label class="centre">Login</label>
@@ -109,13 +108,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div <?php (!empty($username_err)) ? 'has_error' : ''; ?>">
           <label for="username">Username</label>
           <input type="text" name="username" id="username" placeholder="Enter Username..." value="<?php echo $username ?>">
-          <!-- <span ><?php echo $username_err; ?></span> -->
+          <label class="error"><?php echo $username_err; ?></label>
         </div>
 
         <div <?php (!empty($password_err)) ? 'has_error' : ''; ?>">
           <label for="password">Password</label>
           <input type="password" name="password" id="password" placeholder="Enter Password..." value="<?php echo $password ?>">
-          <!-- <span ><?php echo $password_err; ?></span> -->
+          <label class="error"><?php echo $password_err; ?></label>
         </div>
 
         <div class="button-box">
@@ -123,8 +122,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <div class="link-box">
-          <a href="../Register/register.php">No Account?</a>
-          <a href="../Reset/reset.php">Forgot Password?</a>
+          <a href="../Signup/signup.php">No Account?</a>
+          <a href="../Reset/resetpassword.php">Forgot Password?</a>
         </div>
       </form>
       </section>
