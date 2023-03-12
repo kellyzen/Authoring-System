@@ -2,8 +2,8 @@
     content: url("../Svg/folder.svg");
 }
 
-.svg-file {
-    content: url("../Svg/file.svg");
+.svg-document {
+    content: url("../Svg/document.svg");
 }
 
 .svg-audio {

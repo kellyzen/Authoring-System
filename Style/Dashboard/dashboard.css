@@ -142,6 +142,8 @@
 
 .dashboard-topic .svg {
     width: 180px;
+    height: 180px;
+    display: block;
 }
 
 .dashboard-topic-group {
@@ -176,6 +178,7 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--table-border-bottom);
+    text-align: left;
 }
 
 .dashboard-list .dashboard-topic:hover {
