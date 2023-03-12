@@ -22,7 +22,7 @@ form {
     padding: 30px;
     background: #363636;
     border-radius: 8px;
-    overflow: auto;
+    /* overflow: overlay; */
 }
 
 label {
@@ -33,18 +33,16 @@ label {
 }
 
 input[type=text],
-input[type=password],
-select {
+input[type=password] {
     font-size: 18px;
     border-radius: 8px;
     border: 1px solid #666;
     outline: none;
     background: #363636;
-    /* padding: 10px 15px; */
+    padding: 10px 15px;
     height: 32px;
     width: 100%;
     color: #ccc;
-    padding: 0.25em 0.5em;
 }
 
 input::placeholder,
