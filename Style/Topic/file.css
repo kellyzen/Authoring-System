@@ -34,7 +34,11 @@
 
 .topic-file .fal {
     position: relative;
+<<<<<<< HEAD
     top: -210px;
+=======
+    top: -190px;
+>>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
     right: -50px;
     border-radius: 20px;
     text-align: center;
@@ -56,6 +60,7 @@
     display: inline-flex;
     justify-content: center;
     width: 100%;
+<<<<<<< HEAD
     min-height: 23%;
     padding: 0 30px;
 }
@@ -68,6 +73,11 @@
     text-overflow: ellipsis;
 }
 
+=======
+    padding: 0 30px;
+}
+
+>>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
 .tab-content.topic-list {
     display: block;
     text-align: left;
@@ -110,14 +120,23 @@
 .topic-list .topic-file .fal{
     position: static;
 }
+<<<<<<< HEAD
 
 /*File Dropdown*/
 .file-dropdown {
+=======
+/*
+.ellipsis-dropdown {
+>>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
     width: 0px;
     height: 0px;
 }
 
+<<<<<<< HEAD
 .file-dropdown-content {
+=======
+.ellipsis-dropdown-content {
+>>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
     display: none;
     background-color: var(--header-dropdown-bg);
     min-width: 160px;
@@ -131,6 +150,7 @@
     position: sticky;
 }
 
+<<<<<<< HEAD
 .file-dropdown-content span, .file-dropdown-content a {
     color: var(--font);
     padding: 5px 8px;
@@ -138,11 +158,24 @@
 }
 
 .file-dropdown-content .fal {
+=======
+.ellipsis-dropdown-content span {
+    color: var(--font);
+    padding: 10px 15px;
+    display: block;
+}
+
+.ellipsis-dropdown-content .fal {
+>>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
     padding: 0 15px;
     position: inherit;
 }
 
+<<<<<<< HEAD
 .file-dropdown-box {
+=======
+.ellipsis-dropdown-box {
+>>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -150,6 +183,7 @@
     cursor: pointer;
 }
 
+<<<<<<< HEAD
 .file-dropdown-box:hover {
     background-color: var(--header-dropdown-bg-hover);
 }
@@ -157,3 +191,13 @@
 .topic-list .file-dropdown-content{
     transform: translate3d(-160px, 15px, 0px);
 }
+=======
+.ellipsis-dropdown-box:hover {
+    background-color: var(--header-dropdown-bg-hover);
+}
+
+.topic-list .ellipsis-dropdown-content{
+    transform: translate3d(-160px, 15px, 0px);
+}
+*/
+>>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
