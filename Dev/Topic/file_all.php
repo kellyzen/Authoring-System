@@ -21,12 +21,14 @@ if ($result->num_rows > 0) {
             $file_type = $row["file_type"];
             $file_path = $row["file_path"];
 
-            if ($file_type == "image/jpeg" || $file_type == "image/png") {
+            if ($file_type == "image/jpeg" || $file_type == "image/png" || $file_type == "image/gif") {
                 $file_svg = "svg-image";
             } else  if ($file_type == "application/pdf") {
                 $file_svg = "svg-document";
             } else  if ($file_type == "audio/x-m4a" || $file_type == "audio/mpeg") {
                 $file_svg = "svg-audio";
+            } else  if ($file_type == "video/mp4") {
+                $file_svg = "svg-video";
             } else {
                 $file_svg = "svg-folder";
             }
