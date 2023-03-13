@@ -34,11 +34,7 @@
 
 .topic-file .fal {
     position: relative;
-<<<<<<< HEAD
     top: -210px;
-=======
-    top: -190px;
->>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
     right: -50px;
     border-radius: 20px;
     text-align: center;
@@ -114,18 +110,28 @@
 .topic-list .topic-file .fal{
     position: static;
 }
+<<<<<<< HEAD
 /*
 .ellipsis-dropdown {
 >>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
+=======
+
+/*File Dropdown*/
+.file-dropdown {
+>>>>>>> 6daf92c (Added delete file function)
     width: 0px;
     height: 0px;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .file-dropdown-content {
 =======
 .ellipsis-dropdown-content {
 >>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
+=======
+.file-dropdown-content {
+>>>>>>> 6daf92c (Added delete file function)
     display: none;
     background-color: var(--header-dropdown-bg);
     min-width: 160px;
@@ -140,6 +146,7 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .file-dropdown-content span, .file-dropdown-content a {
     color: var(--font);
     padding: 5px 8px;
@@ -149,22 +156,33 @@
 .file-dropdown-content .fal {
 =======
 .ellipsis-dropdown-content span {
+=======
+.file-dropdown-content span, .file-dropdown-content a {
+>>>>>>> 6daf92c (Added delete file function)
     color: var(--font);
-    padding: 10px 15px;
-    display: block;
+    padding: 5px 8px;
+    display: flex;
 }
 
+<<<<<<< HEAD
 .ellipsis-dropdown-content .fal {
 >>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
+=======
+.file-dropdown-content .fal {
+>>>>>>> 6daf92c (Added delete file function)
     padding: 0 15px;
     position: inherit;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .file-dropdown-box {
 =======
 .ellipsis-dropdown-box {
 >>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
+=======
+.file-dropdown-box {
+>>>>>>> 6daf92c (Added delete file function)
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -172,6 +190,7 @@
     cursor: pointer;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 .file-dropdown-box:hover {
     background-color: var(--header-dropdown-bg-hover);
@@ -182,11 +201,17 @@
 }
 =======
 .ellipsis-dropdown-box:hover {
+=======
+.file-dropdown-box:hover {
+>>>>>>> 6daf92c (Added delete file function)
     background-color: var(--header-dropdown-bg-hover);
 }
 
-.topic-list .ellipsis-dropdown-content{
+.topic-list .file-dropdown-content{
     transform: translate3d(-160px, 15px, 0px);
 }
+<<<<<<< HEAD
 */
 >>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
+=======
+>>>>>>> 6daf92c (Added delete file function)
