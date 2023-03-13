@@ -60,8 +60,6 @@
     display: inline-flex;
     justify-content: center;
     width: 100%;
-<<<<<<< HEAD
-    min-height: 23%;
     padding: 0 30px;
 }
 
@@ -71,10 +69,6 @@
     overflow: hidden;
     text-align: start;
     text-overflow: ellipsis;
-}
-
-=======
-    padding: 0 30px;
 }
 
 >>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
@@ -120,11 +114,6 @@
 .topic-list .topic-file .fal{
     position: static;
 }
-<<<<<<< HEAD
-
-/*File Dropdown*/
-.file-dropdown {
-=======
 /*
 .ellipsis-dropdown {
 >>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
