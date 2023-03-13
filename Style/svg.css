@@ -13,3 +13,7 @@
 .svg-video {
     content: url("../Svg/video.svg");
 }
+
+.svg-image {
+    content: url("../Svg/image.svg");
+}
