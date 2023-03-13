@@ -1,3 +1,19 @@
 .svg-folder {
     content: url("../Svg/folder.svg");
 }
+
+.svg-document {
+    content: url("../Svg/document.svg");
+}
+
+.svg-audio {
+    content: url("../Svg/audio.svg");
+}
+
+.svg-video {
+    content: url("../Svg/video.svg");
+}
+
+.svg-image {
+    content: url("../Svg/image.svg");
+}

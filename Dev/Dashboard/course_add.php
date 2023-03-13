@@ -36,15 +36,15 @@ $count = mysqli_num_rows($query);
         </div>
         <div class="popup-footer-box">
             <button id="course-cancel-btn" class="popup-footer-btn secondary-btn" type="button">Cancel</button>
-            <button class="popup-footer-btn primary-btn" type="button" onclick="create()">Create</button>
+            <button class="popup-footer-btn primary-btn" type="button" onclick="createCourse()">Create</button>
         </div>
         <a id="course-close-btn" class="close-button">x</a>
     </div>
 </div>
 
 <script>
-    //Change theme colour
-    function create() {
+    //Create new course
+    function createCourse() {
         var userid = <?php echo $user_ID ?>;
         var title = $('#popup-course-title').val().trim();
         var type = $('#popup-course-type').val().trim();

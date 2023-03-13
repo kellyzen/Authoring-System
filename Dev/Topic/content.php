@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {
                     <button id="topicButton" class="action-btn" type="button" onclick="location.href='<?php echo '../Dashboard?id=' . $course_ID; ?>'">
                         Back <i class="fal fa-solid fa-arrow-left"></i>
                     </button>
-                    <button id="editButton" class="action-btn" type="button">
+                    <button id="file-add" class="action-btn" type="button">
                         Add <i class="fal fa-solid fa-file-plus"></i>
                     </button>
                 </div>
@@ -55,14 +55,16 @@ if ($result->num_rows > 0) {
 <script>
     //Toggle between edit and save function
     function changeView() {
-        if (document.getElementById("topic-content").classList.contains("topic-list")) {
+        let tabContent = document.querySelector("#nav-tabContent");
+
+        if (tabContent.classList.contains("topic-list")) {
             //change topic to grid view
             document.getElementById('viewBtn').innerHTML = '<i class="fal fa-regular fa-list"></i>';
-            document.getElementById("topic-content").classList.remove("topic-list");
+            tabContent.classList.remove("topic-list");
         } else {
             //change topic to list view
             document.getElementById('viewBtn').innerHTML = '<i class="fal fa-solid fa-grip-vertical"></i>';
-            document.getElementById("topic-content").classList.toggle("topic-list");
+            tabContent.classList.toggle("topic-list");
         }
     }
 
