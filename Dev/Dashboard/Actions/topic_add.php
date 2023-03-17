@@ -1,5 +1,5 @@
 <?php
-include "../config.php";
+include "../../config.php";
 if (isset($_POST["title"]) && isset($_POST["difficulty"]) && isset($_POST["desc"])) {
     $topic_title = mysqli_real_escape_string($conn, $_POST["title"]);
     $topic_difficulty = mysqli_real_escape_string($conn, $_POST["difficulty"]);
