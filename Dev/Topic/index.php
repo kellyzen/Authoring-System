@@ -14,9 +14,4 @@
     </div>
 </body>
 
-<script>
-    //Tooltip
-    $(function() {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-</script>
+<script type="text/javascript" src="index.js"></script>  
