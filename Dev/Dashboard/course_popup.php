@@ -38,50 +38,9 @@ $count = mysqli_num_rows($query);
             <button id="course-cancel-btn" class="popup-footer-btn secondary-btn" type="button">Cancel</button>
             <button class="popup-footer-btn primary-btn" type="button" onclick="createCourse()">Create</button>
         </div>
+        <input type='hidden' id='user_ID' value='<?php echo $user_ID ?>'>
         <a id="course-close-btn" class="close-button">x</a>
     </div>
 </div>
 
-<script>
-    //Create new course
-    function createCourse() {
-        var userid = <?php echo $user_ID ?>;
-        var title = $('#popup-course-title').val().trim();
-        var type = $('#popup-course-type').val().trim();
-        var desc = $('#popup-course-desc').val().trim();
-
-        if (title == '') {
-            title = 'Untitled';
-        }
-
-        if (desc == '') {
-            desc = 'Add description here...';
-        }
-
-        $.ajax({
-            url: 'course_add_action.php',
-            type: 'post',
-            data: {
-                title: title,
-                type: type,
-                desc: desc,
-                userid: userid,
-            },
-            success: function(html) {
-                if (html == "true") {
-                    $.jGrowl("Add Course Failed", {
-                        header: 'Add Course Failed'
-                    });
-                } else {
-                    $.jGrowl("Course Successfully Added", {
-                        header: 'Course Added'
-                    });
-                    var delay = 2000;
-                    setTimeout(function() {
-                        window.location = ''
-                    }, delay);
-                }
-            }
-        });
-    }
-</script>
+<script type="text/javascript" src="course_popup.js"></script>  
