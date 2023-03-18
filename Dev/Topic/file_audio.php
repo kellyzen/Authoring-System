@@ -12,7 +12,7 @@ $file_id = $file_name = $file_size = $file_type = $file_path = $file_svg = "";
 
 if ($result->num_rows > 0) {
 ?>
-    <div class="file-lists">
+    <div class="file-lists" id="file-lists-audio">
         <?php
         while ($row = $result->fetch_assoc()) {
             $file_id = $row["file_ID"];
