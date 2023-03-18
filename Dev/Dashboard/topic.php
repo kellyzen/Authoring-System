@@ -32,7 +32,7 @@ $count = mysqli_num_rows($query);
                         <span class="dashboard-topic-difficulty <?php echo $difficulty; ?>"></span>
                     </span>
                 </a>
-                <i class="fal fa-solid fa-ellipsis-h" onclick="toggleEllipsisFunction(<?php echo $topic_ID; ?>)"></i>
+                <i class="fal fa-solid fa-ellipsis-h user-view" onclick="toggleEllipsisFunction(<?php echo $topic_ID; ?>)"></i>
                 <div class="ellipsis-dropdown">
                     <div id="<?php echo 'topic_ID' . $topic_ID; ?>" class="ellipsis-dropdown-content">
                         <span id="delete-topic-btn" class="ellipsis-dropdown-box" data-id="<?php echo $topic_ID; ?>" onclick="deleteTopic(<?php echo $topic_ID; ?>)">
