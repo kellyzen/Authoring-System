@@ -10,6 +10,8 @@ if ($count != '0') {
     $row = mysqli_fetch_array($query);
     $id = $row['course_ID'];
 }
+
+//Cookie for userview
 function detect_userview()
 {
     // Read cookie value
@@ -20,6 +22,28 @@ function detect_userview()
     return "unchecked";
 }
 $userview = detect_userview();
+
+//Cookie for filter toggle
+function detect_coursetoggle()
+{
+    // Read cookie value
+    if (isset($_COOKIE["coursetoggle"])) {
+        return $_COOKIE["coursetoggle"];
+    }
+    // If cookie not found, use default coursetoggle
+    return "checked";
+}
+function detect_topictoggle()
+{
+    // Read cookie value
+    if (isset($_COOKIE["topictoggle"])) {
+        return $_COOKIE["topictoggle"];
+    }
+    // If cookie not found, use default topictoggle
+    return "unchecked";
+}
+$coursetoggle = detect_coursetoggle();
+$topictoggle = detect_topictoggle();
 ?>
 
 <nav class="navbar navbar-expand-md">
@@ -39,14 +63,14 @@ $userview = detect_userview();
                             <div class="filter-dropdown-box">
                                 <span>Course</span>
                                 <label class="toggle" for="courseToggle">
-                                    <input id="courseToggle" class="toggle__input" name="filterToggle" type="radio" checked>
+                                    <input id="courseToggle" class="toggle__input" name="filterToggle" type="checkbox" <?php echo $coursetoggle; ?>>
                                     <div class="toggle__fill"></div>
                                 </label>
                             </div>
                             <div class="filter-dropdown-box">
                                 <span>Topic</span>
                                 <label class="toggle" for="topicToggle">
-                                    <input id="topicToggle" class="toggle__input" name="filterToggle" type="radio">
+                                    <input id="topicToggle" class="toggle__input" name="filterToggle" type="checkbox" <?php echo $topictoggle; ?>>
                                     <div class="toggle__fill"></div>
                                 </label>
                             </div>
@@ -106,6 +130,18 @@ $userview = detect_userview();
         document.cookie = "userview=" + userview + "; expires=" + new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString() + "; path=/";
     }
 
+    // Function to set coursetoggle
+    function set_coursetoggle(coursetoggle) {
+        // Set cookie with coursetoggle value
+        document.cookie = "coursetoggle=" + coursetoggle + "; expires=" + new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString() + "; path=/";
+    }
+
+    // Function to set topictoggle
+    function set_topictoggle(topictoggle) {
+        // Set cookie with topictoggle value
+        document.cookie = "topictoggle=" + topictoggle + "; expires=" + new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString() + "; path=/";
+    }
+
     $(document).ready(function() {
         if ($('#userViewToggle').is(":checked")) {
             $('.user-view').attr('style', 'display: none !important');
@@ -114,6 +150,40 @@ $userview = detect_userview();
             $(".user-view").show();
             $("#course-lists").css("max-height", "calc(100vh - 12rem)");
         }
+
+        //Change coursetoggle cookie value
+        let topictoggle = document.querySelector("#topicToggle");
+
+        topictoggle.addEventListener("click", () => {
+            if ($('#topicToggle').is(":checked")) {
+                set_coursetoggle("unchecked");
+                set_topictoggle("checked");
+                $( "#topicToggle" ).prop( "checked", true );
+                $( "#courseToggle" ).prop( "checked", false );
+            } else {
+                set_coursetoggle("checked");
+                set_topictoggle("unchecked");
+                $( "#topicToggle" ).prop( "checked", false );
+                $( "#courseToggle" ).prop( "checked", true );
+            }
+        });
+
+        //Change coursetoggle cookie value
+        let coursetoggle = document.querySelector("#courseToggle");
+
+        coursetoggle.addEventListener("click", () => {
+            if ($('#courseToggle').is(":checked")) {
+                set_coursetoggle("checked");
+                set_topictoggle("unchecked");
+                $( "#topicToggle" ).prop( "checked", false );
+                $( "#courseToggle" ).prop( "checked", true );
+            } else {
+                set_coursetoggle("unchecked");
+                set_topictoggle("checked");
+                $( "#topicToggle" ).prop( "checked", true );
+                $( "#courseToggle" ).prop( "checked", false );
+            }
+        });
     });
 
     //Change user view
