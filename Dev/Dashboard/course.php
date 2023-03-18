@@ -67,19 +67,19 @@ if ($result->num_rows > 0) {
                             </label>
                         </div>
                     </div>-->
-                    <button id="course-delete" class="action-btn" type="button" data-id="<?php echo $get_id; ?>" onclick="deleteCourse(<?php echo $get_id; ?>)">
+                    <button id="course-delete" class="action-btn user-view" type="button" data-id="<?php echo $get_id; ?>" onclick="deleteCourse(<?php echo $get_id; ?>)">
                         Delete <i class="fal fa-regular fa-trash"></i>
                     </button>
-                    <button id="topic-add" class="action-btn" type="button">
+                    <button id="topic-add" class="action-btn user-view" type="button">
                         Add <i class="fal fa-regular fa-plus"></i>
                     </button>
-                    <input type='hidden' id='get_id' value='<?php echo $get_id ?>'>
                 </div>
                 <div class="dashboard-action-buttons">
                     <button id="viewButton" class="dashboard-action-button action-btn" type="button" onclick="changeView()">
                         <i class="fal fa-regular fa-list"></i>
                     </button>
                 </div>
+                <input type='hidden' id='get_id' value='<?php echo $get_id ?>'>
             </div>
 
         </div>

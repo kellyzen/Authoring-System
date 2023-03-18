@@ -33,7 +33,7 @@ if ($count != '0') {
                     <span class='dashboard-topic-difficulty";echo $difficulty;echo "'></span>
                 </span>
             </a>
-            <i class='fal fa-solid fa-ellipsis-h' onclick='toggleEllipsisFunction(";echo $topic_ID;echo ")'></i>
+            <i class='fal fa-solid fa-ellipsis-h user-view' onclick='toggleEllipsisFunction(";echo $topic_ID;echo ")'></i>
             <div class='ellipsis-dropdown'>
                 <div id='<?php echo 'topic_ID";echo $topic_ID;echo "' class='ellipsis-dropdown-content'>
                     <span id='delete-topic-btn' class='ellipsis-dropdown-box' data-id='";echo $topic_ID;echo "' onclick='deleteTopic("; echo $topic_ID; echo ")'>

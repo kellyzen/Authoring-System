@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
                         <span class="topic-file-title"><?php echo $file_name; ?></span>
                     </span>
                 </a>
-                <i class="fal fa-solid fa-ellipsis-h" onclick="toggleFileDropdown(<?php echo $file_id; ?>)"></i>
+                <i class="fal fa-solid fa-ellipsis-h user-view" onclick="toggleFileDropdown(<?php echo $file_id; ?>)"></i>
                 <div class="file-dropdown">
                     <div id="<?php echo 'file_ID' . $file_id; ?>" class="file-dropdown-content">
                         <span id="delete-file-btn" class="file-dropdown-box" data-id="<?php echo $file_id; ?>" onclick="deleteFile(<?php echo $file_id; ?>)">
