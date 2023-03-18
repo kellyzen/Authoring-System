@@ -10,6 +10,16 @@ if ($count != '0') {
     $row = mysqli_fetch_array($query);
     $id = $row['course_ID'];
 }
+function detect_userview()
+{
+    // Read cookie value
+    if (isset($_COOKIE["userview"])) {
+        return $_COOKIE["userview"];
+    }
+    // If cookie not found, use default userview
+    return "unchecked";
+}
+$userview = detect_userview();
 ?>
 
 <nav class="navbar navbar-expand-md">
@@ -52,6 +62,13 @@ if ($count != '0') {
                         <i class="fal fa-regular fa-user"></i>
                     </a>
                     <div class="setting-dropdown-box">
+                        <span>User view</span>
+                        <label class="toggle" for="userViewToggle">
+                            <input class="toggle__input" name="" type="checkbox" id="userViewToggle" onclick="toggleUserView()" <?php echo $userview; ?>>
+                            <div class="toggle__fill"></div>
+                        </label>
+                    </div>
+                    <div class="setting-dropdown-box">
                         <span>Dark theme</span>
                         <label class="toggle" for="themeToggle">
                             <input class="toggle__input" name="" type="checkbox" id="themeToggle" onclick="toggleTheme()">
@@ -81,6 +98,35 @@ if ($count != '0') {
     //Show setting dropdown on click
     function toggleSettingFunction() {
         document.getElementById("setting-dropdown").classList.toggle("show");
+    }
+
+    // Function to set userview
+    function set_userview(userview) {
+        // Set cookie with userview value
+        document.cookie = "userview=" + userview + "; expires=" + new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString() + "; path=/";
+    }
+
+    $(document).ready(function() {
+        if ($('#userViewToggle').is(":checked")) {
+            $('.user-view').attr('style', 'display: none !important');
+            $("#course-lists").css("max-height", "calc(100vh - 8rem)");
+        } else {
+            $(".user-view").show();
+            $("#course-lists").css("max-height", "calc(100vh - 12rem)");
+        }
+    });
+
+    //Change user view
+    function toggleUserView() {
+        if ($('#userViewToggle').is(":checked")) {
+            $('.user-view').attr('style', 'display: none !important');
+            $("#course-lists").css("max-height", "calc(100vh - 8rem)");
+            set_userview("checked");
+        } else {
+            $(".user-view").show();
+            $("#course-lists").css("max-height", "calc(100vh - 12rem)");
+            set_userview("unchecked");
+        }
     }
 
     //Change theme colour

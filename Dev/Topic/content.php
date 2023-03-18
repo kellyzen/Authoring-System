@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {
                     <button id="topicButton" class="action-btn" type="button" onclick="location.href='<?php echo '../Dashboard?id=' . $course_ID; ?>'">
                         Back <i class="fal fa-solid fa-arrow-left"></i>
                     </button>
-                    <button id="file-add" class="action-btn" type="button">
+                    <button id="file-add" class="action-btn user-view" type="button">
                         Add <i class="fal fa-solid fa-file-plus"></i>
                     </button>
                 </div>
