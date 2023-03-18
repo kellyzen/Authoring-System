@@ -30,12 +30,12 @@ if ($count != '0') {
         echo $row['topic_name'];
         echo "
                     </span>
-                    <span class='dashboard-topic-difficulty";echo $difficulty;echo "'></span>
+                    <span class='dashboard-topic-difficulty ";echo $difficulty;echo "'></span>
                 </span>
             </a>
-            <i class='fal fa-solid fa-ellipsis-h user-view' onclick='toggleEllipsisFunction(";echo $topic_ID;echo ")'></i>
+            <i class='fal fa-solid fa-ellipsis-h user-view' onclick='toggleEllipsisDropdown(";echo $topic_ID;echo ")'></i>
             <div class='ellipsis-dropdown'>
-                <div id='<?php echo 'topic_ID";echo $topic_ID;echo "' class='ellipsis-dropdown-content'>
+                <div id='searchtopic_id";echo $topic_ID;echo "' class='ellipsis-dropdown-content'>
                     <span id='delete-topic-btn' class='ellipsis-dropdown-box' data-id='";echo $topic_ID;echo "' onclick='deleteTopic("; echo $topic_ID; echo ")'>
                         <span>Delete</span>
                         <i class='fal fa-solid fa-trash'></i>
@@ -47,6 +47,21 @@ if ($count != '0') {
                 </div>
             </div>
         </div>
+        <script>
+        function toggleEllipsisDropdown(topic_ID) {
+            removeShow('.ellipsis-dropdown-content');
+            let topicID = 'searchtopic_id' + topic_ID.toString();
+            document.getElementById(topicID).classList.toggle('show');
+        }
+        function removeShow(classList) {
+            const check = document.querySelectorAll(classList);
+            check.forEach(e => {
+                if (e.classList.contains('show')) {
+                    e.classList.remove('show');
+                }
+            })
+        }
+        </script>
         ";
     }
 }
