@@ -21,7 +21,9 @@ if ($result->num_rows > 0) {
             $file_type = $row["file_type"];
             $file_path = $row["file_path"];
 
-            if ($file_type == "image/jpeg" || $file_type == "image/png" || $file_type == "image/gif") {
+            $image_array = array('image/jpg', 'image/jpeg', 'image/png', 'image/gif');
+
+            if (in_array($file_type, $image_array)) {
                 $file_svg = "svg-image";
         ?>
                 <div class="topic-file">
