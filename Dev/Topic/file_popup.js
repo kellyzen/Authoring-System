@@ -45,8 +45,7 @@ $(document).ready(function () {
             contentType: false,
             success: function (response) {
                 if (response == "true") {
-                    console.log(response);
-                    $.jGrowl("Invalid File Type", {
+                    $.jGrowl("Invalid File Type or File Already Exists", {
                         header: 'Add File Failed'
                     });
                 } else {
