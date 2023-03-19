@@ -17,7 +17,9 @@ if ($count != '0') {
         $file_type = $row["file_type"];
         $file_path = $row["file_path"];
 
-        if ($file_type == "audio/x-m4a" || $file_type == "audio/mpeg") {
+        $audio_array = array('audio/x-m4a', 'audio/mpeg');
+
+        if (in_array($file_type, $audio_array)) {
             $file_svg = "svg-audio";
         echo "
         <div class='topic-file'>

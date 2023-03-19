@@ -21,7 +21,9 @@ if ($result->num_rows > 0) {
             $file_type = $row["file_type"];
             $file_path = $row["file_path"];
 
-            if ($file_type == "application/pdf") {
+            $doc_array = array('application/pdf', 'text/plain', 'text/html', 'text/css', 'text/js', 'text/php', 'text/java', 'text/py');
+
+            if (in_array($file_type, $doc_array)) {
                 $file_svg = "svg-document";
         ?>
                 <div class="topic-file">
