@@ -8,7 +8,7 @@ if (isset($_FILES['file']) && $_FILES['file']['error'] == 0) {
     $topic_ID = $_POST["topicid"];
 
     $fileExt = pathinfo($fileName, PATHINFO_EXTENSION);
-    $allowedExt = array('jpg', 'jpeg', 'png', 'gif', 'pdf', 'mp3', 'mp4', 'm4a', 'txt', 'html', 'css', 'js', 'php', 'java', 'py', 'zip');
+    $allowedExt = array('jpg', 'jpeg', 'png', 'gif', 'pdf','doc','docx','pptx', 'mp3', 'mp4', 'm4a', 'txt', 'html', 'css', 'js', 'php', 'java', 'py', 'zip');
 
     // Check if file size exceeds 10MB
     if ($fileSize > 10 * 1024 * 1024) {
