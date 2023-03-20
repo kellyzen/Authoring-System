@@ -59,7 +59,7 @@
     margin-bottom: 15px;
 }
 
-.profile-edit-box input{
+.profile-edit-box input, .profile-edit-box .dropdown{
     width: 100%;
     margin-top: 5px;
 }
@@ -112,6 +112,34 @@
 
 .profile-display-box span:last-child {
     font-size: 30px;
+}
+
+.accordion-item.profile-edit-box {
+    margin-bottom: 0px;
+}
+
+.accordion-item:first-of-type {
+    margin-top: 5px;
+}
+
+.profile-edit-box .dropdown:disabled,
+.profile-edit-box .dropdown[disabled] {
+    color: var(--textbox-border);
+}
+
+.accordion span{
+    font-weight: 600;
+}
+
+.accordion {
+    --bs-accordion-color: var(--font) !important;
+    --bs-accordion-bg: none !important;
+    --bs-accordion-border-color: var(--container-bg-2) !important;
+    --bs-accordion-btn-color: var(--font) !important;
+    --bs-accordion-btn-focus-border-color: var(--font) !important;
+    --bs-accordion-btn-focus-box-shadow: none !important;
+    --bs-accordion-active-color: var(--font) !important;
+    --bs-accordion-active-bg: var(--container-bg-2) !important;
 }
 
 .error_text {
