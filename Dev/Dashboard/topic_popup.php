@@ -44,6 +44,4 @@ $count = mysqli_num_rows($query);
     </div>
 </div>
 
-<script>
-
-</script>
+<script type="text/javascript" src="topic_popup.js"></script>  
