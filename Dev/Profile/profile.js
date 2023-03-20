@@ -43,6 +43,37 @@ function showPassword() {
     }
 }
 
+//Toggle security question visibility
+function showQ1() {
+    var checkbox = document.getElementById('q1Visibility');
+    var q = document.getElementById("security-ques1");
+    if (checkbox.checked == true) {
+        q.type = "text";
+    } else {
+        q.type = "password";
+    }
+}
+
+function showQ2() {
+    var checkbox = document.getElementById('q2Visibility');
+    var q = document.getElementById("security-ques2");
+    if (checkbox.checked == true) {
+        q.type = "text";
+    } else {
+        q.type = "password";
+    }
+}
+
+function showQ3() {
+    var checkbox = document.getElementById('q3Visibility');
+    var q = document.getElementById("security-ques3");
+    if (checkbox.checked == true) {
+        q.type = "text";
+    } else {
+        q.type = "password";
+    }
+}
+
 // Validate new email
 function validateEmail(emailV) {
     // Email validation rule
@@ -102,6 +133,16 @@ function validatePassword(passwordV) {
     }
 }
 
+// Validate new password
+function validateSecurityAns(ansV) {
+    // Check if the password meets the length requirement
+    if (ansV.length > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 //Update profile to database
 function saveProfile() {
     var userid = $('#user_ID').val().trim();
@@ -110,9 +151,16 @@ function saveProfile() {
     var firstname = $('#firstname').val().trim();
     var lastname = $('#lastname').val().trim();
     var password = $('#password').val().trim();
+    var q1 = $('#profile-dropdown-q1').val().trim();
+    var q2 = $('#profile-dropdown-q2').val().trim();
+    var q3 = $('#profile-dropdown-q3').val().trim();
+    var ans1 = $('#security-ques1').val().trim();
+    var ans2 = $('#security-ques2').val().trim();
+    var ans3 = $('#security-ques3').val().trim();
+
 
     if (email != '' || username != '' || firstname != '' || lastname != '' || password != '') {
-        if (!validateEmail(email) || !validateUsername(username) || !validateName(firstname) || !validateName(lastname) || !validatePassword(password)) {
+        if (!validateEmail(email) || !validateUsername(username) || !validateName(firstname) || !validateName(lastname) || !validatePassword(password) || !validateSecurityAns(ans1) || !validateSecurityAns(ans2) || !validateSecurityAns(ans3)) {
             if (!validateEmail(email)) {
                 document.getElementById('email_err').innerHTML = "Invalid email address!";
             } else {
@@ -136,6 +184,30 @@ function saveProfile() {
             } else {
                 document.getElementById('password_err').innerHTML = "";
             }
+
+            if (!validateSecurityAns(ans1)) {
+                document.getElementById('q1_err').innerHTML = "Invalid answer";
+            } else {
+                document.getElementById('q1_err').innerHTML = "";
+            }
+
+            if (!validateSecurityAns(ans2)) {
+                document.getElementById('q2_err').innerHTML = "Invalid answer";
+            } else {
+                document.getElementById('q2_err').innerHTML = "";
+            }
+
+            if (!validateSecurityAns(ans3)) {
+                document.getElementById('q3_err').innerHTML = "Invalid answer";
+            } else {
+                document.getElementById('q3_err').innerHTML = "";
+            }
+
+            if (!validateSecurityAns(ans1) || !validateSecurityAns(ans2) || !validateSecurityAns(ans3)) {
+                document.getElementById('q_err').innerHTML = "Invalid answer";
+            } else {
+                document.getElementById('q_err').innerHTML = "";
+            }
             return false;
         } else {
             $.ajax({
@@ -148,6 +220,12 @@ function saveProfile() {
                     firstname: firstname,
                     lastname: lastname,
                     password: password,
+                    q1: q1,
+                    q2: q2,
+                    q3: q3,
+                    ans1: ans1,
+                    ans2: ans2,
+                    ans3: ans3,
                 },
                 success: function (html) {
                     if (html == "true") {

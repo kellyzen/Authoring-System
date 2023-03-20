@@ -78,6 +78,11 @@ body {
     outline: none;
 }
 
+.dropdown:disabled,
+.dropdown[disabled] {
+    color: var(--textbox-border);
+}
+
 /* Action button */
 .action-btn {
     border-radius: 0px;
