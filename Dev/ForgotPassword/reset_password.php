@@ -1,96 +1,91 @@
+<?php
+include '../config.php';
+include '../header.php';
+session_start();
+
+$new_password = $confirm_password = "";
+$password_err = $confirm_password_err = "";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['reset_password'])) {
+    $user_ID = $_SESSION['user_ID'];
+
+    // Validate password
+    $verifypassword = trim($_POST["new_password"]);
+    if (empty($verifypassword)) {
+        $password_err = "Please enter a password.";
+    } elseif (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/',$verifypassword)) {
+        $password_err = "Password should be of length 8-20 characters containing at least 1 lowercase letter, 1 uppercase letter, 1 digit and 1 special character (@$!%*?&)";
+    } else {
+        $new_password = $verifypassword;
+    }
+
+    // Validate confirm password
+    if (empty(trim($_POST["confirm_password"]))) {
+        $confirm_password_err = "Please confirm your password.";
+    } else {
+        $confirm_password = trim($_POST["confirm_password"]);
+        if (empty($password_err) && ($new_password != $confirm_password)) {
+            $confirm_password_err = "Password did not match.";
+        }
+    }
+
+    if (empty($password_err) && empty($confirm_password_err)) {
+        $stmt = $conn->prepare("UPDATE user SET password = ? WHERE user_ID = ?");
+        $stmt->bind_param("si", $new_password, $user_ID);
+        $stmt->execute();
+
+        unset($_SESSION['user_ID']);
+        unset($_SESSION['reset_password']);
+        header("Location: ../Login/login.php");
+        exit;
+    }
+}
+
+?>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <title>stud.io | Reset Password</title>
-    <!-- Include Bootstrap CSS and JavaScript -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-DmY9Wu2aKs7vFb1TU2nRp2n4DouUGTlvpfwBk5Kg /QG6jmxhXk49j5g06U6ikJX" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../Style/Reset/reset.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Reset Password</h1>
-        <form id="resetPasswordForm" method="post">
-            <div class="form-group">
-                <label for="password">New Password</label>
-                <input type="password" class="form-control" id="password" name="password" required>
+
+    <div class="body">
+        <form action="reset_password.php" method="post">
+            <label class="centre">Reset Password</label>
+
+            <?php if (isset($error)): ?>
+            <div class="error-box">
+                <label class="error"><?= $error ?></label>
             </div>
-            <div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
-                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+            <?php endif; ?>
+
+            <div>
+                <label for="new_password">New Password:</label><br><br>
+                <input type="password" name="new_password" id="new_password" placeholder="Enter New Password..." required><br><br>
+                <label class="error"><?php echo $password_err; ?></label>
             </div>
-            <button type="submit" class="btn btn-primary">Reset Password</button>
+
+            <div>
+                <label for="confirm_password">Confirm New Password:</label><br><br>
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm New Password..." required><br><br>
+                <label class="error"><?php echo $confirm_password_err; ?></label>
+            </div>
+
+            <div class="button-box">
+                <input class="button" type="submit" name="submit1" value="Submit">
+            </div>
+
+            <div class="link-box">
+                <a href="../Signup/signup.php">Return to Signup page</a>
+                <a href="../Login/login.php">Return to Login page</a>
+            </div>
         </form>
     </div>
-    <!-- Include Bootstrap and SweetAlert2 JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.3/dist/sweetalert2.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        $(function() {
-            $('#resetPasswordForm').on('submit', function(e) {
-                e.preventDefault();
-                var password = $('#password').val();
-                var confirmPassword = $('#confirmPassword').val();
-                var token = '<?php echo $_GET['token']; ?>';
-                if (password != confirmPassword) {
-                    Swal.fire({
-                        title: 'Passwords do not match!',
-                        icon: 'error',
-                        confirmButtonText: 'OK'
-                    });
-                    return;
-                }
-
-                $.ajax({
-                    type: 'POST',
-                    url: 'reset_password_handler.php',
-                    data: {
-                        password: password,
-                        token: token
-                    },
-                    success: function(response) {
-                        if (response == 'success') {
-                            Swal.fire({
-                                title: 'Password reset successfully!',
-                                icon: 'success',
-                                confirmButtonText: 'OK'
-                            }).then(function() {
-                                window.location.href = 'login.php';
-                            });
-                        } else if (response == 'error') {
-                            Swal.fire({
-                                title: 'Error resetting password!',
-                                text: 'There was an error resetting your password. Please try again later.',
-                                icon: 'error',
-                                confirmButtonText: 'OK'
-                            });
-                        } else if (response == 'invalid_token') {
-                            Swal.fire({
-                                title: 'Invalid token!',
-                                text: 'The reset password token is invalid. Please try again.',
-                                icon: 'error',
-                                confirmButtonText: 'OK'
-                            }).then(function() {
-                                window.location.href = 'forgot_password.php';
-                            });
-                        }
-                    },
-                    error: function() {
-                        Swal.fire({
-                            title: 'Error resetting password!',
-                            text: 'There was an error resetting your password. Please try again later.',
-                            icon: 'error',
-                            confirmButtonText: 'OK'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>

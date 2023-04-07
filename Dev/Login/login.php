@@ -1,37 +1,9 @@
 <?php
+include '../config.php';
+include '../header.php';
 include_once('../head.php');
 
 session_start();
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-  include '../config.php';
-  $query = mysqli_query($conn, "SELECT * FROM course where user_ID='$_SESSION[id]';");
-  $count = mysqli_num_rows($query);
-
-  if ($count != '0') {
-    $row = mysqli_fetch_array($query);
-    $id = $row['course_ID'];
-  }
-  header('Location: ../?id=' . $id);
-} else {
-  // Show a jGrowl notification message
-  echo "
-  <script>
-  $.jGrowl('You have been logged out successfully.', {
-      header: 'Logout Successful'
-  });
-  </script>";
-}
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "studiodb";
-// Create connection 
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection 
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
 
 $username = $password = $username_err = $password_err = '';
 
@@ -67,14 +39,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               $_SESSION['id'] = $id;
               $_SESSION['username'] = $username;
 
-              $query = mysqli_query($conn, "SELECT * FROM course where user_ID='$_SESSION[id]';");
-              $count = mysqli_num_rows($query);
+              $query = mysqli_query($conn, "SELECT * FROM user_security WHERE user_ID='$_SESSION[id]';");
+              $security_questions_exist = mysqli_num_rows($query);
 
-              if ($count != '0') {
-                $row = mysqli_fetch_array($query);
-                $id = $row['course_ID'];
+              if ($security_questions_exist > 0) {
+                header('Location: ../Dashboard?id=' . $id);
+              } else {
+                header('Location: ../Login/security_questions.php');
               }
-              header('Location: ../Dashboard?id=' . $id);
             } else {
               $password_err = 'Incorrect password.';
             }
@@ -90,7 +62,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
   }
 }
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -101,19 +76,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
+    
     <div class="body">
       <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
         <label class="centre">Login</label>
 
         <div <?php (!empty($username_err)) ? 'has_error' : ''; ?>">
           <label for="username">Username</label>
-          <input type="text" name="username" id="username" placeholder="Enter Username..." value="<?php echo $username ?>">
+          <input type="text" name="username" id="username" placeholder="Enter username..." value="<?php echo $username ?>">
           <label class="error"><?php echo $username_err; ?></label>
         </div>
 
         <div <?php (!empty($password_err)) ? 'has_error' : ''; ?>">
           <label for="password">Password</label>
-          <input type="password" name="password" id="password" placeholder="Enter Password..." value="<?php echo $password ?>">
+          <input type="password" name="password" id="password" placeholder="Enter password..." value="<?php echo $password ?>">
           <label class="error"><?php echo $password_err; ?></label>
         </div>
 

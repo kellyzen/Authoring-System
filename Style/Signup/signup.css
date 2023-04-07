@@ -6,10 +6,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 50px);
     flex-direction: column;
-
-
 }
 
 .button {
@@ -115,4 +113,16 @@ input[type=email] {
 .right {
     width: 50%; 
     padding-left: 10px;
+}
+
+@media(max-width: 767px) {
+    form {
+        width: 80%;
+    }
+}
+
+@media(max-width: 480px) {
+    form {
+        width: 90%;
+    }
 }

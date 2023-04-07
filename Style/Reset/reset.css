@@ -1,0 +1,121 @@
+/* Google Font Import - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+}
+
+.body {
+    background: #464646;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 50px);
+    flex-direction: column;
+}
+
+form {
+    width: 60%;
+    max-height: 70%;
+    padding: 30px;
+    background: #363636;
+    border-radius: 8px;
+    overflow: overlay;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #CCCCCC;
+    margin-bottom: 15px;
+}
+
+input[type=text],
+input[type=password] {
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid #666;
+    outline: none;
+    background: #363636;
+    padding: 10px 15px;
+    height: 32px;
+    width: 100%;
+    color: #ccc;
+}
+
+input::placeholder,
+::placeholder {
+    color: #666;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.button-box {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    border-radius: 8px;
+    border: 1px solid #ff3838;
+    background-color: #ff3838;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 4px 26px;
+    outline: none;
+    width: 100%;
+    min-height: 32px;
+    margin: 12px 0px;
+}
+
+.button:hover {
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #000;
+}
+
+.link-box {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link-box a{
+    color: #666;
+}
+
+.link-box a:hover{
+    color: #ccc;
+}
+
+.centre {
+    display: block;
+    text-align: center;
+    font-size: 26px;
+}
+
+.error {
+    font-size: 14px;
+    color: #D8000C;
+}
+
+.sec_ques {
+    margin-bottom: 18px;
+}
+
+@media(max-width: 767px) {
+    form {
+        width: 80%;
+    }
+}
+
+@media(max-width: 480px) {
+    form {
+        width: 90%;
+    }
+}

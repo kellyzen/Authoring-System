@@ -1,5 +1,6 @@
 <?php
 include '../config.php';
+include '../header.php';
 session_start();
 
 $servername = "localhost";
@@ -169,13 +170,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="signup-box">
           <div class="input-field left" <?php echo (!empty($firstname_err)) ? 'has-error' : ''; ?>">
             <label class="input-title">First Name</label>
-            <input class="inputfield" type="text" name="firstname" placeholder="First Name" value="<?php echo $firstname; ?>">
+            <input class="inputfield" type="text" name="firstname" placeholder="Enter first name..." value="<?php echo $firstname; ?>">
             <label class="error"><?php echo $firstname_err; ?></label>
 
           </div>
           <div class="input-field right" <?php echo (!empty($lastname_err)) ? 'has-error' : ''; ?>">
             <label class="input-title">Last Name</label>
-            <input class="inputfield" type="text" name="lastname" placeholder="Last Name" value="<?php echo $lastname; ?>">
+            <input class="inputfield" type="text" name="lastname" placeholder="Enter last name..." value="<?php echo $lastname; ?>">
             <label class="error"><?php echo $lastname_err; ?></label>
 
           </div>
@@ -183,13 +184,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="signup-box">
           <div class="input-field left" <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
             <label class="input-title">Username</label>
-            <input class="inputfield" type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
+            <input class="inputfield" type="text" name="username" placeholder="Enter username..." value="<?php echo $username; ?>">
             <label class="error"><?php echo $username_err; ?></label>
 
           </div>
           <div class="input-field right" <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
             <labe class="input-title" l>Email</label>
-              <input class="inputfield" type="text" name="email" placeholder="Email" value="<?php echo $email; ?>">
+              <input class="inputfield" type="text" name="email" placeholder="Enter email address..." value="<?php echo $email; ?>">
               <label class="error"><?php echo $email_err; ?></label>
 
           </div>
@@ -197,13 +198,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="signup-box">
           <div class="input-field left" <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
             <label class="input-title">Password</label>
-            <input class="inputfield" type="password" name="password" placeholder="Password" value="<?php echo $password; ?>">
+            <input class="inputfield" type="password" name="password" placeholder="Enter password" value="<?php echo $password; ?>">
             <label class="error"><?php echo $password_err; ?></label>
 
           </div>
           <div class="input-field right" <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
             <label class="input-title">Confirm Password</label>
-            <input class="inputfield" type="password" name="confirmpassword" placeholder="Confirm Password" value="<?php echo $password; ?>">
+            <input class="inputfield" type="password" name="confirmpassword" placeholder="Enter confirm password..." value="<?php echo $password; ?>">
             <label class="error"><?php echo $confirmpassword_err; ?></label>
 
           </div>
