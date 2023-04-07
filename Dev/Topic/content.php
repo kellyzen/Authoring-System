@@ -2,6 +2,7 @@
 include '../session.php';
 include '../config.php';
 
+$course_ID="";
 $get_id = $_GET['id'];
 $user_ID = "$_SESSION[id]";
 

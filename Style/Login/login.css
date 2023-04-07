@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 50px);
     flex-direction: column;
 }
 
@@ -22,7 +22,7 @@ form {
     padding: 30px;
     background: #363636;
     border-radius: 8px;
-    overflow: overlay;
+    overflow: auto;
 }
 
 label {
@@ -33,7 +33,8 @@ label {
 }
 
 input[type=text],
-input[type=password] {
+input[type=password],
+select {
     font-size: 18px;
     border-radius: 8px;
     border: 1px solid #666;
@@ -103,4 +104,17 @@ input::placeholder,
     font-size: 14px;
     color: #D8000C;
     margin-bottom: 18px;
+}
+
+/*Responsive*/
+@media(max-width: 767px) {
+    form {
+        width: 80%;
+    }
+}
+
+@media(max-width: 480px) {
+    form {
+        width: 90%;
+    }
 }

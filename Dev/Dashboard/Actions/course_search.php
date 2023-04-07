@@ -1,5 +1,6 @@
 <?php
 include '../../config.php';
+$id="";
 
   // Get the search query
   $result = $_GET['q'];

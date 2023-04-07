@@ -10,6 +10,7 @@ function deleteCourse(course_ID) {
 //confirm delete course
 function confirmDeleteCourse() {
     var courseid = $('#course-delete-id').val();
+    var id1 = $('#id1').val().trim();
 
     if (courseid != '') {
         $.ajax({
@@ -29,7 +30,7 @@ function confirmDeleteCourse() {
                     });
                     var delay = 2000;
                     setTimeout(function () {
-                        window.location = ''
+                        window.location = '?id=' + id1;
                     }, delay);
                 }
             }

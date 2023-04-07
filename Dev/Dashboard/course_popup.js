@@ -32,8 +32,9 @@ function createCourse() {
                     header: 'Course Added'
                 });
                 var delay = 2000;
+                var loc = html;
                 setTimeout(function () {
-                    window.location = ''
+                    window.location = '?id=' + loc;
                 }, delay);
             }
         }

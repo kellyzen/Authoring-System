@@ -56,7 +56,6 @@
     display: inline-flex;
     justify-content: center;
     width: 100%;
-    min-height: 23%;
     padding: 0 30px;
 }
 
@@ -68,6 +67,7 @@
     text-overflow: ellipsis;
 }
 
+>>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
 .tab-content.topic-list {
     display: block;
     text-align: left;
@@ -110,14 +110,28 @@
 .topic-list .topic-file .fal{
     position: static;
 }
+<<<<<<< HEAD
+/*
+.ellipsis-dropdown {
+>>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
+=======
 
 /*File Dropdown*/
 .file-dropdown {
+>>>>>>> 6daf92c (Added delete file function)
     width: 0px;
     height: 0px;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 .file-dropdown-content {
+=======
+.ellipsis-dropdown-content {
+>>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
+=======
+.file-dropdown-content {
+>>>>>>> 6daf92c (Added delete file function)
     display: none;
     background-color: var(--header-dropdown-bg);
     min-width: 160px;
@@ -131,6 +145,8 @@
     position: sticky;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 .file-dropdown-content span, .file-dropdown-content a {
     color: var(--font);
     padding: 5px 8px;
@@ -138,11 +154,35 @@
 }
 
 .file-dropdown-content .fal {
+=======
+.ellipsis-dropdown-content span {
+=======
+.file-dropdown-content span, .file-dropdown-content a {
+>>>>>>> 6daf92c (Added delete file function)
+    color: var(--font);
+    padding: 5px 8px;
+    display: flex;
+}
+
+<<<<<<< HEAD
+.ellipsis-dropdown-content .fal {
+>>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
+=======
+.file-dropdown-content .fal {
+>>>>>>> 6daf92c (Added delete file function)
     padding: 0 15px;
     position: inherit;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 .file-dropdown-box {
+=======
+.ellipsis-dropdown-box {
+>>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
+=======
+.file-dropdown-box {
+>>>>>>> 6daf92c (Added delete file function)
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -150,6 +190,8 @@
     cursor: pointer;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 .file-dropdown-box:hover {
     background-color: var(--header-dropdown-bg-hover);
 }
@@ -157,3 +199,19 @@
 .topic-list .file-dropdown-content{
     transform: translate3d(-160px, 15px, 0px);
 }
+=======
+.ellipsis-dropdown-box:hover {
+=======
+.file-dropdown-box:hover {
+>>>>>>> 6daf92c (Added delete file function)
+    background-color: var(--header-dropdown-bg-hover);
+}
+
+.topic-list .file-dropdown-content{
+    transform: translate3d(-160px, 15px, 0px);
+}
+<<<<<<< HEAD
+*/
+>>>>>>> 9ea2c6a (Added file toggle view function (list & grid))
+=======
+>>>>>>> 6daf92c (Added delete file function)

@@ -1,6 +1,7 @@
 <?php
 include '../session.php';
 include '../config.php';
+$id="";
 
 $query = mysqli_query($conn, "SELECT * FROM course where user_ID='$_SESSION[id]';");
 $count = mysqli_num_rows($query);
