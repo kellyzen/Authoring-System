@@ -1,7 +1,7 @@
 <?php
 include 'session.php';
 include 'config.php';
-$id="";
+$id1="";
 
 $user_ID = "$_SESSION[id]";
 $query = mysqli_query($conn, "SELECT * FROM course where user_ID='$user_ID';");
@@ -9,7 +9,7 @@ $count = mysqli_num_rows($query);
 
 if ($count != '0') {
     $row = mysqli_fetch_array($query);
-    $id = $row['course_ID'];
+    $id1 = $row['course_ID'];
 }
 
 //Cookie for userview
@@ -52,7 +52,7 @@ $topictoggle = detect_topictoggle();
         <ul class="navbar-nav">
             <li class="nav-item">
                 <i class="fal fa-solid fa-bars" id="btn"></i>
-                <a class="navbar-logo text-decoration-none" href="<?php echo '../Dashboard?id=' . $id; ?>">stud.io</a>
+                <a class="navbar-logo text-decoration-none" href="<?php echo '../Dashboard?id=' . $id1; ?>">stud.io</a>
             </li>
             <li class="nav-item search-container">
                 <div class="search-bar">
