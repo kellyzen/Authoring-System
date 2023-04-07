@@ -35,6 +35,7 @@ if ($result->num_rows > 0) {
         <div class="dashboard-title-box">
             <span id="course-header-title" class="course-header-title" contenteditable="true" data-toggle="tooltip" data-placement="left" title="Click to edit course title" value=><?php echo $c_name; ?></span>
             <span class="course-type"><?php echo $c_type; ?></span>
+            <input type='hidden' id='id1' value='<?php echo $id1 ?>'>
         </div>
         <div class="dashboard-description-box">
             <span id="course-description" class="course-description" contenteditable="true" data-toggle="tooltip" data-placement="left" title="Click to edit course description"><?php echo $c_description; ?></span>
