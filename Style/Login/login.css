@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 50px);
     flex-direction: column;
 }
 
@@ -40,11 +40,10 @@ select {
     border: 1px solid #666;
     outline: none;
     background: #363636;
-    /* padding: 10px 15px; */
+    padding: 10px 15px;
     height: 32px;
     width: 100%;
     color: #ccc;
-    padding: 0.25em 0.5em;
 }
 
 input::placeholder,

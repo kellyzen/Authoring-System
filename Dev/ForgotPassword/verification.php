@@ -1,6 +1,7 @@
 <?php
 include '../config.php';
 include '../header.php';
+include_once('../head.php');
 session_start();
 
 $stmt = $conn->prepare("SELECT * FROM user_security WHERE user_ID = ?");
@@ -46,15 +47,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 <body>
     <div class="body">
         <form action="verification.php" method="post">
-            <label class="centre">Security Questions Verification</label><br><br>
+            <label class="centre">Security Questions Verification</label>
             
             <?php if (!empty($error_message)): ?>
                 <div class="error" role="alert">
                     <?= $error_message ?>
                 </div>
             <?php endif; ?>
-            
-            <input type="hidden" name="email" value="<?= $email ?>">
 
             <?php for ($i = 1; $i <= 3; $i++): ?>
                 <?php
@@ -63,9 +62,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                 $stmt->execute();
                 $question = $stmt->get_result()->fetch_assoc()["question"];
                 ?>
-                <div>
-                    <label for="answer<?= $i ?>">Question <?= $i ?>: <?= $question ?></label><br><br>
-                    <input type="text" name="answer<?= $i ?>" id="answer<?= $i ?>" placeholder="Enter Answer..." required><br><br>
+                <div class="sec_ques">
+                    <label for="answer<?= $i ?>">Question <?= $i ?>: <?= $question ?></label>
+                    <input type="text" name="answer<?= $i ?>" id="answer<?= $i ?>" placeholder="Enter Answer..." required>
                 </div>
             <?php endfor; ?>
 
@@ -74,8 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
             </div>
 
             <div class="link-box">
-                <a href="../Signup/signup.php">Return to Signup page</a>
-                <a href="../Login/login.php">Return to Login page</a>
+                <a href="../Signup/signup.php">No account?</a>
+                <a href="../Login/login.php">Already a member? Log in...</a>
             </div>
         </form>
     </div>

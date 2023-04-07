@@ -39,8 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['reset_password'])) 
         header("Location: ../Login/login.php");
         exit;
     }
-} else {
-    echo "Session reset_password not set or request method not POST.<br>";
 }
 
 ?>

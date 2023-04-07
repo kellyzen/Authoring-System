@@ -1,7 +1,9 @@
 <?php
 include '../config.php';
 include '../header.php';
+include_once('../head.php');
 session_start();
+$error_message = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email'])) {
   $email = $_POST['email'];
@@ -38,15 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email'])) {
     <form action="forgot_password.php" method="post">
       <label class="centre">Forgot Password</label>
 
-      <?php if (!empty($error_message)): ?>
-                <div class="error" role="alert">
-                    <?= $error_message ?>
-                </div>
-            <?php endif; ?>
-
       <div>
-        <label for="email">Email</label><br><br>
-        <input type="text" name="email" id="email" placeholder="Enter Email..." required><br><br>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" placeholder="Enter email eddress..." required>
+        <label class="error" role="alert"><?php echo $error_message; ?></label>
+        
       </div>
 
       <div class="button-box">
@@ -54,8 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email'])) {
       </div>
 
       <div class="link-box">
-        <a href="../Signup/signup.php">Return to Signup page</a>
-        <a href="../Login/login.php">Return to Login Page</a>
+        <a href="../Signup/signup.php">No account?</a>
+        <a href="../Login/login.php">Already a member? Log in...</a>
       </div>
     </form>
   </div>

@@ -83,13 +83,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div <?php (!empty($username_err)) ? 'has_error' : ''; ?>">
           <label for="username">Username</label>
-          <input type="text" name="username" id="username" placeholder="Enter Username..." value="<?php echo $username ?>">
+          <input type="text" name="username" id="username" placeholder="Enter username..." value="<?php echo $username ?>">
           <label class="error"><?php echo $username_err; ?></label>
         </div>
 
         <div <?php (!empty($password_err)) ? 'has_error' : ''; ?>">
           <label for="password">Password</label>
-          <input type="password" name="password" id="password" placeholder="Enter Password..." value="<?php echo $password ?>">
+          <input type="password" name="password" id="password" placeholder="Enter password..." value="<?php echo $password ?>">
           <label class="error"><?php echo $password_err; ?></label>
         </div>
 
