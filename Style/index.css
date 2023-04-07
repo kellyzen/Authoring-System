@@ -199,6 +199,11 @@ input::placeholder,
     background: rgba(0, 0, 0, 0.3);
 }
 
+/* Popup Notification */
+.jGrowl-notification {
+    background-color : var(--bg) !important;
+}
+
 /*Responsive*/
 @media(max-width: 767px) {}
 
