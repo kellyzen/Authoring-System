@@ -105,3 +105,16 @@ input::placeholder,
     color: #D8000C;
     margin-bottom: 18px;
 }
+
+/*Responsive*/
+@media(max-width: 767px) {
+    form {
+        width: 80%;
+    }
+}
+
+@media(max-width: 480px) {
+    form {
+        width: 90%;
+    }
+}
