@@ -1,6 +1,7 @@
 <?php
 include '../../config.php';
 
+$topic_ID="";
 // Get the search query
 $result = $_GET['q'];
 $user_id = $_GET['userid'];

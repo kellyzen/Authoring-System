@@ -1,6 +1,7 @@
 <?php
 include 'session.php';
 include 'config.php';
+$id="";
 
 $user_ID = "$_SESSION[id]";
 $query = mysqli_query($conn, "SELECT * FROM course where user_ID='$user_ID';");

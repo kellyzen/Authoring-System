@@ -2,6 +2,7 @@
 include '../config.php';
 include '../header.php';
 session_start();
+$id="";
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
   $query = mysqli_query($conn, "SELECT * FROM course where user_ID='$_SESSION[id]';");
