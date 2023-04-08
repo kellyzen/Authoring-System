@@ -69,10 +69,10 @@ if ($result->num_rows > 0) {
                         </div>
                     </div>-->
                     <button id="course-delete" class="action-btn user-view" type="button" data-id="<?php echo $get_id; ?>" onclick="deleteCourse(<?php echo $get_id; ?>)">
-                        Delete <i class="fal fa-regular fa-trash"></i>
+                        <span>Delete</span> <i class="fal fa-regular fa-trash"></i>
                     </button>
                     <button id="topic-add" class="action-btn user-view" type="button">
-                        Add <i class="fal fa-regular fa-plus"></i>
+                    <span>Add</span> <i class="fal fa-regular fa-plus"></i>
                     </button>
                 </div>
                 <div class="dashboard-action-buttons">

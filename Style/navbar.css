@@ -72,11 +72,13 @@
     color: var(--searchbar-icon);
 }
 
-.search-bar_icons .fal:hover, .search-bar_icons .fal.active {
+.search-bar_icons .fal:hover,
+.search-bar_icons .fal.active {
     color: var(--icon);
 }
 
-.setting-dropdown-content, .filter-dropdown-content {
+.setting-dropdown-content,
+.filter-dropdown-content {
     display: none;
     position: absolute;
     background-color: var(--header-dropdown-bg);
@@ -98,7 +100,8 @@
     right: 0px;
 }
 
-.setting-dropdown-content span, .filter-dropdown-content span {
+.setting-dropdown-content span,
+.filter-dropdown-content span {
     color: var(--font);
     padding: 10px 15px;
     display: block;
@@ -116,7 +119,8 @@
     color: var(--font);
 }
 
-.setting-dropdown-box, .filter-dropdown-box {
+.setting-dropdown-box,
+.filter-dropdown-box {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -124,7 +128,8 @@
     cursor: pointer;
 }
 
-.setting-dropdown-box:hover, .filter-dropdown-box:hover {
+.setting-dropdown-box:hover,
+.filter-dropdown-box:hover {
     background-color: var(--header-dropdown-bg-hover);
 }
 
@@ -137,31 +142,31 @@
     --width: 40px;
     --height: calc(var(--width) / 2);
     --border-radius: calc(var(--height) / 2);
-  
+
     display: inline-block;
     cursor: pointer;
     align-self: center;
     padding: 0 10px;
-  }
-  
-  .toggle__input {
+}
+
+.toggle__input {
     display: none;
-  }
-  
-  .toggle__fill {
+}
+
+.toggle__fill {
     position: relative;
     width: var(--width);
     height: var(--height);
     border-radius: var(--border-radius);
     background: #dddddd;
     transition: background 0.2s;
-  }
-  
-  .toggle__input:checked ~ .toggle__fill {
+}
+
+.toggle__input:checked~.toggle__fill {
     background: #33B67F;
-  }
-  
-  .toggle__fill::after {
+}
+
+.toggle__fill::after {
     content: "";
     position: absolute;
     top: 0;
@@ -172,8 +177,22 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     border-radius: var(--border-radius);
     transition: transform 0.2s;
-  }
-  
-  .toggle__input:checked ~ .toggle__fill::after {
+}
+
+.toggle__input:checked~.toggle__fill::after {
     transform: translateX(var(--height));
-  }
+}
+
+/*Responsive*/
+@media(max-width: 767px) {
+}
+
+@media(max-width: 480px) {
+    .search-bar_icons {
+        padding-right: 10px;
+    }
+
+    .search-bar_icons .fa-search{
+        display: none !important;
+    }
+}

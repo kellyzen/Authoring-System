@@ -112,3 +112,32 @@
 .course-add:hover {
     background: var(--sidebar-button-bg-hover);
 }
+
+/*Responsive*/
+@media(max-width: 767px) {
+    .sidebar {
+        width: 100vh;
+        min-width: 100%;
+        max-width: 100%;
+        height: max-content;
+        max-height: 80%;
+        position: fixed;
+        z-index: 3;
+        overflow: overlay;
+    }
+
+    .course-add {
+        position: relative;
+        max-width: 100%;
+    }
+}
+
+@media(max-width: 480px) {
+    .action-btn span{
+        display: none;
+    }
+
+    .action-btn .fal {
+        margin: 0 8px;
+    }
+}

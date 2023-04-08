@@ -62,10 +62,10 @@ if ($security_count != '0') {
         </div>
         <div class="profile-action-buttons">
             <button id="dashboardButton" class="profile-action-button action-btn" type="button" onclick="location.href='<?php echo '../Dashboard?id=' . $id; ?>'">
-                Back <i class="fal fa-solid fa-arrow-left"></i>
+            <span>Back</span> <i class="fal fa-solid fa-arrow-left"></i>
             </button>
             <button id="editButton" class="profile-action-button action-btn" type="button" onclick="editProfile()">
-                Edit <i class="fal fa-regular fa-edit"></i>
+            <span>Edit</span> <i class="fal fa-regular fa-edit"></i>
             </button>
         </div>
     </div>

@@ -317,13 +317,9 @@
 
 /*Responsive*/
 @media(max-width: 767px) {
-    .course-description {
-        max-width: calc(60% - 100px);
+    .content-topic-add {
+        z-index: 9;
     }
 }
 
-@media(max-width: 480px) {
-    .course-description {
-        max-width: calc(50% - 60px);
-    }
-}
+@media(max-width: 480px) {}
