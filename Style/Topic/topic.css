@@ -93,14 +93,6 @@
 }
 
 /*Responsive*/
-@media(max-width: 767px) {
-    .topic-description {
-        max-width: calc(60% - 100px);
-    }
-}
+@media(max-width: 767px) {}
 
-@media(max-width: 480px) {
-    .topic-description {
-        max-width: calc(50% - 60px);
-    }
-}
+@media(max-width: 480px) {}

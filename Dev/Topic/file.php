@@ -14,8 +14,6 @@ if ($count != '0') { ?>
     <div class="tab-pane fade" id="nav-video" role="tabpanel" aria-labelledby="nav-video-tab"><?php include 'file_video.php'; ?></div>
     <div class="tab-pane fade" id="nav-audio" role="tabpanel" aria-labelledby="nav-audio-tab"><?php include 'file_audio.php'; ?></div>
     <div class="tab-pane fade" id="nav-image" role="tabpanel" aria-labelledby="nav-image-tab"><?php include 'file_image.php'; ?></div>
-    <div class="tab-pane fade" id="nav-text" role="tabpanel" aria-labelledby="nav-text-tab">Text</div> 
-    <div class="tab-pane fade" id="nav-quiz" role="tabpanel" aria-labelledby="nav-quiz-tab">Quiz</div> 
 <?php } else {
     include 'file_invalid.php';
 }
