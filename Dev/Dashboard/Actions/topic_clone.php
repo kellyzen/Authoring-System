@@ -4,8 +4,17 @@ if (isset($_POST["topicid"])) {
     $topic_id = mysqli_real_escape_string($conn, $_POST["topicid"]);
 
     if ($topic_id != '') {
-        //update topic table
-        $sql = "INSERT INTO topic (topic_name, topic_description, difficulty_ID, course_ID) SELECT topic_name, topic_description, difficulty_ID, course_ID FROM topic WHERE topic_ID = $topic_id";
+        // Find the topic to clone
+        $clone = "SELECT * FROM topic WHERE topic_ID = $topic_id";
+        $result = $conn->query($clone);
+        $row = $result->fetch_assoc();
+        $topic_name = $row["topic_name"] . ' -copy';
+        $topic_description = $row["topic_description"];
+        $difficulty_ID = $row["difficulty_ID"];
+        $course_ID = $row["course_ID"];
+
+        // Update topic table
+        $sql = "INSERT INTO topic (topic_name, topic_description, difficulty_ID, course_ID) VALUES ('$topic_name', '$topic_description', '$difficulty_ID', '$course_ID')";
         mysqli_query($conn, $sql);
 
         $query = "SELECT MAX(topic_ID) AS topic_ID FROM topic";

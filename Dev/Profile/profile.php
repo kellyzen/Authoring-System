@@ -2,7 +2,7 @@
 include '../session.php';
 include '../config.php';
 
-$id="";
+$id = "";
 $sql = "SELECT * FROM user where username='$_SESSION[username]';";
 $result = $conn->query($sql);
 
@@ -62,14 +62,30 @@ if ($security_count != '0') {
         </div>
         <div class="profile-action-buttons">
             <button id="dashboardButton" class="profile-action-button action-btn" type="button" onclick="location.href='<?php echo '../Dashboard?id=' . $id; ?>'">
-                Back <i class="fal fa-solid fa-arrow-left"></i>
+                <span>Back</span> <i class="fal fa-solid fa-arrow-left"></i>
             </button>
             <button id="editButton" class="profile-action-button action-btn" type="button" onclick="editProfile()">
-                Edit <i class="fal fa-regular fa-edit"></i>
+                <span>Edit</span> <i class="fal fa-regular fa-edit"></i>
             </button>
         </div>
     </div>
     <div id="profile-content" class="profile-content">
+        <div class="profile-right">
+            <div class="profile-display-box">
+                <i class="fal fa fa-user-circle-o"></i>
+                <span id="username-display"><?php echo $username; ?></span>
+            </div>
+            <hr>
+            <div class="profile-display-box">
+                <span>No. Course(s)</span>
+                <span><?php echo $course_count; ?></span>
+            </div>
+            <hr>
+            <div class="profile-display-box">
+                <span>No. Topic(s)</span>
+                <span><?php echo $topic_count; ?></span>
+            </div>
+        </div>
         <div class="profile-left">
             <div id="profile-edit">
                 <input type='hidden' id='user_ID' value='<?php echo $user_ID ?>'>
@@ -111,7 +127,7 @@ if ($security_count != '0') {
                     <div class="accordion-item profile-edit-box">
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <span>Question 1</span>
+                                <span>Question 1</span>
                             </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -120,9 +136,9 @@ if ($security_count != '0') {
                                     <?php
                                     if ($ques1_count != '0') {
                                         while ($row = mysqli_fetch_array($ques1)) { ?>
-                                            <option value="<?php echo $row['ques_ID']; ?>" <?= ($ques1_ID ==$row['ques_ID'])?"selected": ""?>><?php echo $row['question']; ?></option><?php
-                                        }
-                                    } ?>
+                                            <option value="<?php echo $row['ques_ID']; ?>" <?= ($ques1_ID == $row['ques_ID']) ? "selected" : "" ?>><?php echo $row['question']; ?></option><?php
+                                                                                                                                                                                    }
+                                                                                                                                                                                } ?>
                                 </select>
                                 <input type="password" id="security-ques1" name="q1" value="<?php echo $ques1_ans; ?>" placeholder="Enter question 1 answer..." disabled required>
                                 <input type="checkbox" id="q1Visibility" onclick="showQ1()" disabled><span style="font-size: 14px;">Show Answer</span>
@@ -133,7 +149,7 @@ if ($security_count != '0') {
                     <div class="accordion-item profile-edit-box">
                         <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <span>Question 2</span>
+                                <span>Question 2</span>
                             </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -142,9 +158,9 @@ if ($security_count != '0') {
                                     <?php
                                     if ($ques2_count != '0') {
                                         while ($row = mysqli_fetch_array($ques2)) { ?>
-                                            <option value="<?php echo $row['ques_ID']; ?>" <?= ($ques2_ID ==$row['ques_ID'])?"selected": ""?>><?php echo $row['question']; ?></option><?php
-                                        }
-                                    } ?>
+                                            <option value="<?php echo $row['ques_ID']; ?>" <?= ($ques2_ID == $row['ques_ID']) ? "selected" : "" ?>><?php echo $row['question']; ?></option><?php
+                                                                                                                                                                                    }
+                                                                                                                                                                                } ?>
                                 </select>
                                 <input type="password" id="security-ques2" name="q2" value="<?php echo $ques2_ans; ?>" placeholder="Enter question 2 answer..." disabled required>
                                 <input type="checkbox" id="q2Visibility" onclick="showQ2()" disabled><span style="font-size: 14px;">Show Answer</span>
@@ -155,7 +171,7 @@ if ($security_count != '0') {
                     <div class="accordion-item profile-edit-box">
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            <span>Question 3</span>
+                                <span>Question 3</span>
                             </button>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -164,9 +180,9 @@ if ($security_count != '0') {
                                     <?php
                                     if ($ques3_count != '0') {
                                         while ($row = mysqli_fetch_array($ques3)) { ?>
-                                            <option value="<?php echo $row['ques_ID']; ?>" <?= ($ques3_ID ==$row['ques_ID'])?"selected": ""?>><?php echo $row['question']; ?></option><?php
-                                        }
-                                    } ?>
+                                            <option value="<?php echo $row['ques_ID']; ?>" <?= ($ques3_ID == $row['ques_ID']) ? "selected" : "" ?>><?php echo $row['question']; ?></option><?php
+                                                                                                                                                                                    }
+                                                                                                                                                                                } ?>
                                 </select>
                                 <input type="password" id="security-ques3" name="q3" value="<?php echo $ques3_ans; ?>" placeholder="Enter question 3 answer..." disabled required>
                                 <input type="checkbox" id="q3Visibility" onclick="showQ3()" disabled><span style="font-size: 14px;">Show Answer</span>
@@ -176,22 +192,6 @@ if ($security_count != '0') {
                     </div>
                     <div id="q_err" class="error_text"></div>
                 </div>
-            </div>
-        </div>
-        <div class="profile-right">
-            <div class="profile-display-box">
-                <i class="fal fa fa-user-circle-o"></i>
-                <span id="username-display"><?php echo $username; ?></span>
-            </div>
-            <hr>
-            <div class="profile-display-box">
-                <span>No. Course(s)</span>
-                <span><?php echo $course_count; ?></span>
-            </div>
-            <hr>
-            <div class="profile-display-box">
-                <span>No. Topic(s)</span>
-                <span><?php echo $topic_count; ?></span>
             </div>
         </div>
     </div>
