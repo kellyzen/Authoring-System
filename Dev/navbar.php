@@ -59,7 +59,7 @@ $topictoggle = detect_topictoggle();
                     <input id="search-input" type="search" placeholder="Search for...">
                     <span class="search-bar_icons">
                         <i class="fal fa-brands fa-search"></i>
-                        <i id="filter-icon" class="fal fa-solid fa-sliders"></i>
+                        <i id="filter-icon" data-toggle="tooltip" data-placement="top" title="Click to search courses or topics" class="fal fa-solid fa-sliders"></i>
                         <div id="filter-dropdown" class="filter-dropdown-content">
                             <div class="filter-dropdown-box">
                                 <span>Course</span>

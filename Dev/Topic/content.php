@@ -25,19 +25,19 @@ if ($result->num_rows > 0) {
     <div class="topic-header">
         <div class="topic-header-box">
             <div class="topic-title-box">
-                <span id="topic-header-title" class="topic-header-title" contenteditable="true" value=><?php echo $topic_name; ?></span>
+                <span id="topic-header-title" data-toggle="tooltip" data-placement="top" title="Click to edit topic title" class="topic-header-title" contenteditable="true" value=><?php echo $topic_name; ?></span>
             </div>
             <div class="topic-action-buttons-box">
                 <div class="topic-action-buttons">
-                    <button id="topicButton" class="action-btn" type="button" onclick="location.href='<?php echo '../Dashboard?id=' . $course_ID; ?>'">
+                    <button id="topicButton" class="action-btn" data-toggle="tooltip" data-placement="top" title="Click to return to dashboard" type="button" onclick="location.href='<?php echo '../Dashboard?id=' . $course_ID; ?>'">
                     <span>Back</span> <i class="fal fa-solid fa-arrow-left"></i>
                     </button>
-                    <button id="file-add" class="action-btn user-view" type="button">
+                    <button id="file-add" class="action-btn user-view" data-toggle="tooltip" data-placement="top" title="Click to add file" type="button">
                     <span>Add</span> <i class="fal fa-solid fa-file-plus"></i>
                     </button>
                 </div>
                 <div class="topic-action-buttons">
-                    <button id="viewBtn" class="topic-action-button action-btn" type="button" onclick="changeView()">
+                    <button id="viewBtn" class="topic-action-button action-btn" data-toggle="tooltip" data-placement="top" title="Click to change view" type="button" onclick="changeView()">
                         <i class="fal fa-regular fa-list"></i>
                     </button>
                     </button>
@@ -45,7 +45,7 @@ if ($result->num_rows > 0) {
             </div>
         </div>
         <div class="topic-header-box">
-            <span id="topic-description" class="topic-description" contenteditable="true"><?php echo $topic_description; ?></span>
+            <span id="topic-description" data-toggle="tooltip" data-placement="top" title="Click to edit topic description" class="topic-description" contenteditable="true"><?php echo $topic_description; ?></span>
         </div>
         <input type='hidden' id='get_id' value='<?php echo $get_id ?>'>
     </div>
