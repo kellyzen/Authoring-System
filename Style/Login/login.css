@@ -46,6 +46,10 @@ select {
     color: #ccc;
 }
 
+select {
+    padding: 5px 8px;
+}
+
 input::placeholder,
 ::placeholder {
     color: #666;
@@ -104,6 +108,23 @@ input::placeholder,
     font-size: 14px;
     color: #D8000C;
     margin-bottom: 18px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
 }
 
 /*Responsive*/
