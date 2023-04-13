@@ -67,7 +67,7 @@ if ($result->num_rows > 0) {
                         <i class="fal fa-solid fa-times-circle"></i>
                     </div>
                     <h3>Are you sure?</h3>
-                    <p class="text-center">Do you really want to delete this imagae? This process cannot be undone.</p>
+                    <p class="text-center">Do you really want to delete this image? This process cannot be undone.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="cancelbtn secondary-btn" data-bs-dismiss="modal">Cancel</button>
