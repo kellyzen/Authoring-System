@@ -68,15 +68,15 @@ if ($result->num_rows > 0) {
                             </label>
                         </div>
                     </div>-->
-                    <button id="course-delete" class="action-btn user-view" type="button" data-id="<?php echo $get_id; ?>" onclick="deleteCourse(<?php echo $get_id; ?>)">
+                    <button id="course-delete" class="action-btn user-view" data-toggle="tooltip" data-placement="top" title="Click to delete course" type="button" data-id="<?php echo $get_id; ?>" onclick="deleteCourse(<?php echo $get_id; ?>)">
                         <span>Delete</span> <i class="fal fa-regular fa-trash"></i>
                     </button>
-                    <button id="topic-add" class="action-btn user-view" type="button">
+                    <button id="topic-add" class="action-btn user-view" data-toggle="tooltip" data-placement="top" title="Click to add topic" type="button">
                     <span>Add</span> <i class="fal fa-regular fa-plus"></i>
                     </button>
                 </div>
                 <div class="dashboard-action-buttons">
-                    <button id="viewButton" class="dashboard-action-button action-btn" type="button" onclick="changeView()">
+                    <button id="viewButton" class="dashboard-action-button action-btn" data-toggle="tooltip" data-placement="top" title="Click to switch view" type="button" onclick="changeView()">
                         <i class="fal fa-regular fa-list"></i>
                     </button>
                 </div>

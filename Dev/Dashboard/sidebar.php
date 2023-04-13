@@ -37,7 +37,7 @@ $count = mysqli_num_rows($query);
     ?>
   </ul>
 
-  <ul id="course-add" class="course-add list-unstyled user-view">
+  <ul id="course-add" class="course-add list-unstyled user-view" data-toggle="tooltip" data-placement="top" title="Click to add course">
     <li class=""><a class="text-decoration-none d-flex justify-content-between">Add course<i class="fal fa-solid fa-plus"></i></a></li>
   </ul>
 
