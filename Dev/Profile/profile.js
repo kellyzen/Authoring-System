@@ -1,3 +1,5 @@
+const { validateEmail, validateUsername, validateName, validatePassword } = require('./validators');
+
 //Toggle between edit and save function
 function editProfile() {
     if (document.getElementById("profile-content").classList.contains("profile-edit")) {
@@ -76,72 +78,29 @@ function showQ3() {
 
 // Validate new email
 function validateEmail(emailV) {
-    // Email validation rule
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-
-    // Check if the email matches the pattern
-    if (emailRegex.test(emailV)) {
-        return true;
-    } else {
-        return false;
-    }
+    return validateEmail(emailV);
 }
 
 // Validate new username
 function validateUsername(usernameV) {
-    // Username validation rule
-    const usernameRegex = /^[a-zA-Z0-9]+$/;
-
-    // Check if the username matches the pattern
-    if (usernameRegex.test(usernameV)) {
-        return true;
-    } else {
-        return false;
-    }
+    return validateUsername(usernameV);
 }
 
 // Validate new name
 function validateName(nameV) {
-    // Name validation rule
-    const nameRegex = /^[a-zA-Z]+$/;
-
-    // Check if the name matches the pattern
-    if (nameRegex.test(nameV)) {
-        return true;
-    } else {
-        return false;
-    }
+    return validateName(nameV);
 }
 
 // Validate new password
 function validatePassword(passwordV) {
-    // Password validation rules
-    const pwRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
-    const minLength = 8;
-    const maxLength = 20;
-
-    // Check if the password meets the length requirement
-    if (passwordV.length >= minLength && passwordV.length <= maxLength) {
-        // Check if the password matches the pattern
-        if (pwRegex.test(passwordV)) {
-            return true;
-        } else {
-            return false;
-        }
-    } else {
-        return false;
-    }
+    return validatePassword(passwordV);
 }
 
 // Validate new password
 function validateSecurityAns(ansV) {
-    // Check if the password meets the length requirement
-    if (ansV.length > 0) {
-        return true;
-    } else {
-        return false;
-    }
+    return validateSecurityAns(ansV);
 }
+
 
 //Update profile to database
 function saveProfile() {
