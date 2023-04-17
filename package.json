@@ -1,0 +1,15 @@
+{
+  "name": "authoring-system",
+  "version": "1.0.0",
+  "description": "- KELLY TAN KAI LING (20310184)\r   - CHAN JIN SHUAN (20307136)\r   - IBRAHIM FAIZ (20314682)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
