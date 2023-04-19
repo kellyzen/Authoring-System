@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2023 at 08:31 AM
+-- Generation Time: Apr 19, 2023 at 05:09 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -40,7 +40,7 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`course_ID`, `c_name`, `c_description`, `c_type_ID`, `user_ID`) VALUES
-(1, 'Operating System & Concurrency', 'To explain how the internal structure of OS is designed and implemented for management of resources and provision of services.', 1, 1),
+(1, 'Operating System &amp; Concurrency', 'To explain how the internal structure of OS is designed and implemented for management of resources and provision of services.', 1, 1),
 (2, 'Mathematics', 'Calculus, Statistic, Probability', 2, 2),
 (3, 'Icing/ Frosting', 'A sweet, often creamy glaze made of sugar with water or milk, that is often enriched with ingredients like butter, egg whites, cream cheese, or flavor', 8, 2),
 (4, 'Soil', 'To determine the different types of soil for planting.', 12, 2),
@@ -50,9 +50,8 @@ INSERT INTO `course` (`course_ID`, `c_name`, `c_description`, `c_type_ID`, `user
 (8, 'Computer Fundamentals', 'Reveal the fundamentals of a computer system.', 1, 1),
 (9, 'Java', 'Polymorphism', 1, 1),
 (10, 'Classical Music', 'Appreciate classical music and its history', 47, 1),
-(12, 'Call of Duty', 'Shooting techniques', 31, 2),
-(14, 'Debit/ Credit', 'blah blah blah...', 10, 2),
-(16, 'Untitled', 'Add description here...', 22, 2);
+(14, 'Debit/ Credit', 'blah blah blah... asdjlasdh asdlaslda askdjfhaksjd askdfjashdf', 10, 2),
+(35, 'Authoring System', 'Add description here...', 17, 2);
 
 -- --------------------------------------------------------
 
@@ -136,7 +135,7 @@ CREATE TABLE `difficulty` (
 --
 
 INSERT INTO `difficulty` (`difficulty_ID`, `difficulty`) VALUES
-(3, 'Advance'),
+(3, 'Advanced'),
 (1, 'Beginner'),
 (2, 'Intermediate');
 
@@ -160,31 +159,21 @@ CREATE TABLE `file` (
 --
 
 INSERT INTO `file` (`file_ID`, `file_name`, `file_size`, `file_type`, `file_path`, `topic_ID`) VALUES
-(6, 'When Will a Genetic Algorithm Outperform Hill-Climbing_', 764755, 'application/pdf', '../../Upload/Topic2/When Will a Genetic Algorithm Outperform Hill-Climbing_.pdf', 2),
-(7, 'Hill Climbers and Mutational Heuristics in Hyperheuristics6_hyper', 157580, 'application/pdf', '../../Upload/Topic2/Hill Climbers and Mutational Heuristics in Hyperheuristics6_hyper.pdf', 2),
 (13, '【TNT时代少年团 宋亚轩】《舞·象·之·年 第四篇章－年》重磅压轴曲《小小孩》「小小的小孩会站在他自己的舞台」【中文歌词字幕／ENG SUB】__ 1080H', 4024625, 'audio/mpeg', '../../Upload/Topic2/【TNT时代少年团 宋亚轩】《舞·象·之·年 第四篇章－年》重磅压轴曲《小小孩》「小小的小孩会站在他自己的舞台」【中文歌词字幕／ENG SUB】__ 1080H.mp3', 2),
-(15, 'Web Design Handout.pdf', 521936, 'application/pdf', '../../Upload/Topic2/Web Design Handout.pdf', 2),
-(16, 'Git installation.pdf', 690587, 'application/pdf', '../../Upload/Topic2/Git installation.pdf', 2),
-(17, 'Git and Github Workshop.pdf', 464308, 'application/pdf', '../../Upload/Topic2/Git and Github Workshop.pdf', 2),
-(19, 'Kelas Aktiviti1.pdf', 107231, 'application/pdf', '../../Upload/Topic2/Kelas Aktiviti1.pdf', 2),
-(21, '2D Game Handout.pdf', 3780537, 'application/pdf', '../../Upload/Topic2/2D Game Handout.pdf', 2),
 (23, 'Discrete_Mathematics_and_Its_Applications_(7th_Edition).pdf', 10128691, 'application/pdf', '../../Upload/Topic27/Discrete_Mathematics_and_Its_Applications_(7th_Edition).pdf', 27),
 (24, 'math induction.pdf', 107062, 'application/pdf', '../../Upload/Topic27/math induction.pdf', 27),
 (26, 'Stud.io database - ER diagram.png', 65532, 'image/png', '../../Upload/Topic2/Stud.io database - ER diagram.png', 2),
-(27, 'Kayden.mp4', 17812312, 'video/mp4', '../../Upload/Topic2/Kayden.mp4', 2),
-(28, 'happy birthday song.mp4', 940510, 'video/mp4', '../../Upload/Topic2/happy birthday song.mp4', 2),
-(30, 'IEEE Certificate of Appreciation.pdf', 439684, 'application/pdf', '../../Upload/Topic2/IEEE Certificate of Appreciation.pdf', 2),
 (41, 'image 5.png', 625883, 'image/png', '../../Upload/Topic2/image 5.png', 2),
-(44, 'image 5-0-Enhanced-Animated.mp4', 4426469, 'video/mp4', '../../Upload/Topic2/image 5-0-Enhanced-Animated.mp4', 2),
 (45, 'Albert-Lee-Story.mp4', 1257114, 'video/mp4', '../../Upload/Topic27/Albert-Lee-Story.mp4', 27),
 (57, 'Albert Lees DeepStory.mp4', 1257114, 'video/mp4', '../../Upload/Topic2/Albert Lees DeepStory.mp4', 2),
 (58, 'try.txt', 12, 'text/plain', '../../Upload/Topic2/try.txt', 2),
 (59, 'howto.html', 6021, 'text/html', '../../Upload/Topic2/howto.html', 2),
 (60, 'Past Years.zip', 576754, 'application/x-zip-compressed', '../../Upload/Topic2/Past Years.zip', 2),
 (61, 'Coursework 1 Template 22.doc', 38912, 'application/msword', '../../Upload/Topic2/Coursework 1 Template 22.doc', 2),
-(62, 'COMP2025-CW 1-CS-CW-Issue-22.docx', 20224, 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', '../../Upload/Topic2/COMP2025-CW 1-CS-CW-Issue-22.docx', 2),
 (63, 'GRP C SEGP.pptx', 973063, 'application/vnd.openxmlformats-officedocument.presentationml.presentation', '../../Upload/Topic2/GRP C SEGP.pptx', 2),
-(64, 'dark.css', 2075, 'text/css', '../../Upload/Topic2/dark.css', 2);
+(64, 'dark.css', 2075, 'text/css', '../../Upload/Topic2/dark.css', 2),
+(102, 'Presentation Slides.pptx', 969401, 'application/vnd.openxmlformats-officedocument.presentationml.presentation', '../../Upload/Topic1/Presentation Slides.pptx', 1),
+(115, 'Authoring System Leaflet.pdf', 413887, 'application/pdf', '../../Upload/Topic2/Authoring System Leaflet.pdf', 2);
 
 -- --------------------------------------------------------
 
@@ -280,12 +269,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_ID`, `username`, `firstname`, `lastname`, `email`, `password`, `theme`) VALUES
-(1, 'John_Doe', 'John', 'Doe', 'JohnDoe@domain.com', 'Johndoe000&', 'light'),
-(2, 'groupc', 'Grp', 'C', 'grpc@gmail.com', 'GroupC000!', 'dark'),
-(3, 'kellyzen', 'Kelly', 'Tan', '02tankelly@gmail.com', 'Kellytan02!', 'light'),
-(4, 'user1', 'user1', 'tan', 'hfykt10@nottingham.edu.my', 'Hfykt10!', 'light'),
-(5, 'okayy', 'user2', 'try', '123@gmail.com', 'Trypassword123!', 'light'),
-(7, 'admin', 'Kelly', 'Tan', 'mr.hamid@gmail.com', 'Helloworld1@', 'light');
+(1, 'John_Doe', 'John', 'Doe', 'JohnDoe@domain.com', 'Johndoe000&', 'dark'),
+(2, 'groupc', 'Grp', 'C', 'grpc@gmail.com', 'GroupC001!', 'dark');
 
 -- --------------------------------------------------------
 
@@ -310,11 +295,7 @@ CREATE TABLE `user_security` (
 
 INSERT INTO `user_security` (`security_ID`, `ques1_ID`, `ques2_ID`, `ques3_ID`, `ques1_ans`, `ques2_ans`, `ques3_ans`, `user_ID`) VALUES
 (1, 5, 10, 15, 'Boston', 'Chinese', 'John', 1),
-(2, 6, 8, 16, 'groupD', 'Nottingham', 'October 2000', 2),
-(3, 2, 7, 17, 'SJK(C) Jalan Davidson', 'Selangor', 'Brandon Chong', 3),
-(4, 4, 9, 18, 'Chong', 'Lew', '000-000-0000', 4),
-(5, 6, 10, 14, 'User', 'Math', 'Chong', 5),
-(7, 2, 7, 13, 'Kindergarten', 'New York City', 'Sunway', 7);
+(2, 6, 8, 13, 'zzz', 'Nottingham', 'October 2000', 2);
 
 --
 -- Indexes for dumped tables
@@ -387,7 +368,7 @@ ALTER TABLE `user_security`
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `course_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `course_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `course_type`
@@ -405,19 +386,19 @@ ALTER TABLE `difficulty`
 -- AUTO_INCREMENT for table `file`
 --
 ALTER TABLE `file`
-  MODIFY `file_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `file_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
 
 --
 -- AUTO_INCREMENT for table `topic`
 --
 ALTER TABLE `topic`
-  MODIFY `topic_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `topic_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
