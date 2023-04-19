@@ -159,7 +159,6 @@ CREATE TABLE `file` (
 --
 
 INSERT INTO `file` (`file_ID`, `file_name`, `file_size`, `file_type`, `file_path`, `topic_ID`) VALUES
-(13, '【TNT时代少年团 宋亚轩】《舞·象·之·年 第四篇章－年》重磅压轴曲《小小孩》「小小的小孩会站在他自己的舞台」【中文歌词字幕／ENG SUB】__ 1080H', 4024625, 'audio/mpeg', '../../Upload/Topic2/【TNT时代少年团 宋亚轩】《舞·象·之·年 第四篇章－年》重磅压轴曲《小小孩》「小小的小孩会站在他自己的舞台」【中文歌词字幕／ENG SUB】__ 1080H.mp3', 2),
 (23, 'Discrete_Mathematics_and_Its_Applications_(7th_Edition).pdf', 10128691, 'application/pdf', '../../Upload/Topic27/Discrete_Mathematics_and_Its_Applications_(7th_Edition).pdf', 27),
 (24, 'math induction.pdf', 107062, 'application/pdf', '../../Upload/Topic27/math induction.pdf', 27),
 (26, 'Stud.io database - ER diagram.png', 65532, 'image/png', '../../Upload/Topic2/Stud.io database - ER diagram.png', 2),
