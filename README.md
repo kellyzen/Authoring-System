@@ -4,7 +4,7 @@
   - Chan Jin Shuan (20307136)
   - Ibrahim Ahmad Faiz (20314682)
 
-## Project Overview
+## Project Description
 
 - The aim of this project was to develop an authoring system that serves as a creation and publishing tool for a Learning Managemetn System. The application is designed to provide a user-freindly interface and eallow untrained personnel to create and organize content without the need for specialized technical skills.
 
