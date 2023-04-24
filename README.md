@@ -1,14 +1,14 @@
 # Authoring-System
-## GROUP MEMBERS
-  - KELLY TAN KAI LING (20310184)
-  - CHAN JIN SHUAN (20307136)
-  - IBRAHIM FAIZ (20314682)
+## Group Members
+  - Kelly Tan Kai Ling (20310184)
+  - Chan Jin Shuan (20307136)
+  - Ibrahim Ahmad Faiz (20314682)
 
 ## Description
 
-- This repository contains the source code for a functional website interface that interacts with a pre-determined given dataset in a MySQL database. 
+- This repository contains the source code for a functional website interface that interacts with the MySQL database. 
 
-- The aim of this project was to develop an authoring system that serves as a creation and publishing tool for a LMS. The system is designed to enable untrained personnel to create and edit courses, organize content without specialized technical skills, and provide an overall user-friendly interface.
+- The aim of this project was to develop an authoring system that serves as a creation and publishing tool for a Learning Managemetn System. The application is designed to provide a user-freindly interface and eallow untrained personnel to create and organize content without the need for specialized technical skills.
 
 ## Tech/Framework Used
 
@@ -18,7 +18,7 @@
 
 - The Database folder contains the studiodb.sql file, which is used for the system's database.
 
-- The Dev folder contains all the necessary .js and .php files required to operate the system. These files are further organized into seven subfolders (Login, Signup, ForgotPassword, Dashboard, Topic, Profile, Theme). Each of these subfolders is responsible for specific functions within the system. Dev folder contains crucial system files such as: config.php for database connection, head.php for initialization, navbar.php for navigation, and session.php for login verification.
+- The Dev folder contains all the necessary .js and .php files required to operate the system. These files are further organized into seven subfolders (Login, Signup, ForgotPassword, Dashboard, Topic, Profile, Theme). Each of these subfolders is responsible for specific functions within the system. Dev folder contains crucial system files such as: config.php for establishing the database connection, head.php for initialization, navbar.php for navigation, and session.php for login verification.
 
 - The following languages were used in the development of this project:
 
@@ -30,7 +30,7 @@
 
 - The following frameworks were used to develop the system's user interface:
 
-	- Bootstrap was used for styling and provided pre-built components such as pop-up modals, accordions, and tooltips.
+	- Bootstrap was used for styling and allowed the usage of pre-built components such as pop-up modals, accordions, and tooltips.
 	- jQuery was used for event handling, animation, AJAX requests, and displaying popup messages or notifications with the .jGrowl plugin.
 
 
