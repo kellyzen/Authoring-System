@@ -39,26 +39,26 @@
 Below is a list of key features that have been implemented in this project:
 
 - Login, Signup, Forgot Password Page
-	-- Functional account registration
-	-- Includes forgotten password feature with security questions
+	- Functional account registration
+	- Includes forgotten password feature with security questions
 
 - Dashboard Page
-	-- Create, edit, delete, clone and search functions
-	-- View list of created courses
-	-- Settings menu including profile, learner’s view and dark or light theme
-	-- Allows users to log out
+	- Create, edit, delete, clone and search functions
+	- View list of created courses
+	- Settings menu including profile, learner’s view and dark or light theme
+	- Allows users to log out
 	
 - Topic Page
-	-- Drag and drop uploading
-	-- File categories
-	-- File previews
-	-- List and grid view for files
+	- Drag and drop uploading
+	- File categories
+	- File previews
+	- List and grid view for files
 	
 - Profile Page
-	-- Edit profile details
-	-- Edit security questions
-	-- Reset password
-	-- Shows total courses and topics created
+	- Edit profile details
+	- Edit security questions
+	- Reset password
+	- Shows total courses and topics created
 
 
 ## Installation
