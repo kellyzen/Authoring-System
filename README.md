@@ -4,11 +4,11 @@
   - Chan Jin Shuan (20307136)
   - Ibrahim Ahmad Faiz (20314682)
 
-## Description
-
-- This repository contains the source code for a functional website interface that interacts with the MySQL database. 
+## Project Overview
 
 - The aim of this project was to develop an authoring system that serves as a creation and publishing tool for a Learning Managemetn System. The application is designed to provide a user-freindly interface and eallow untrained personnel to create and organize content without the need for specialized technical skills.
+
+- This repository contains the website source code that interacts with the MySQL database when run. 
 
 ## Tech/Framework Used
 
@@ -34,7 +34,7 @@
 	- jQuery was used for event handling, animation, AJAX requests, and displaying popup messages or notifications with the .jGrowl plugin.
 
 
-## Features
+## Key Features
 
 Below is a list of key features that have been implemented in this project:
 
@@ -70,5 +70,4 @@ Below is a list of key features that have been implemented in this project:
 - Import the MySQL database provided in the project files into your local MySQL server using a tool such as phpMyAdmin.
 - Update the database connection details in the config.php file located in the Dev folder to match your local MySQL server credentials.
 - Open a web browser and navigate to http://localhost/your-project-folder to access the authoring system.
-
 
