@@ -22,43 +22,43 @@
 
 - The following languages were used in the development of this project:
 
-- HTML for content markup
-- CSS for styling
-- JavaScript for mobile and desktop responsiveness
-- PHP for server-side scripting
-- SQL for database management
+	-- HTML for content markup
+	-- CSS for styling
+	-- JavaScript for mobile and desktop responsiveness
+	-- PHP for server-side scripting
+	-- SQL for database management
 
 - The following frameworks were used to develop the system's user interface:
 
-- Bootstrap was used for styling and provided pre-built components such as pop-up modals, accordions, and tooltips.
-- jQuery was used for event handling, animation, AJAX requests, and displaying popup messages or notifications with the .jGrowl plugin.
+	-- Bootstrap was used for styling and provided pre-built components such as pop-up modals, accordions, and tooltips.
+	-- jQuery was used for event handling, animation, AJAX requests, and displaying popup messages or notifications with the .jGrowl plugin.
 
 
 ## Features
 
 Below is a list of key features that have been implemented in this project:
 
-Login, Signup, Forgot Password Page
-- Functional account registration
-- Includes forgotten password feature with security questions
+- Login, Signup, Forgot Password Page
+	-- Functional account registration
+	-- Includes forgotten password feature with security questions
 
-Dashboard Page
-- Create, edit, delete, clone and search functions
-- View list of created courses
-- Settings menu including profile, learner’s view and dark or light theme
-- Allows users to log out
+- Dashboard Page
+	-- Create, edit, delete, clone and search functions
+	-- View list of created courses
+	-- Settings menu including profile, learner’s view and dark or light theme
+	-- Allows users to log out
 	
-Topic Page
-- Drag and drop uploading
-- File categories
-- File previews
-- List and grid view for files
+- Topic Page
+	-- Drag and drop uploading
+	-- File categories
+	-- File previews
+	-- List and grid view for files
 	
-Profile Page
-- Edit profile details
-- Edit security questions
-- Reset password
-- Shows total courses and topics created
+- Profile Page
+	-- Edit profile details
+	-- Edit security questions
+	-- Reset password
+	-- Shows total courses and topics created
 
 
 ## Installation
