@@ -42,10 +42,6 @@ Below is a list of key features that have been implemented in this project:
 
 - The system's database, named studiodb, was developed using MySQL version 5.0.37 through the XAMPP server.
 
-- The Database folder contains the studiodb.sql file, which is used for the system's database.
-
-- The Dev folder contains all the necessary .js and .php files required to operate the system. These files are further organized into seven subfolders (Login, Signup, ForgotPassword, Dashboard, Topic, Profile, Theme). Each of these subfolders is responsible for specific functions within the system. Dev folder contains crucial system files such as: config.php for establishing the database connection, head.php for initialization, navbar.php for navigation, and session.php for login verification.
-
 - The following languages were used in the development of this project:
 
 	- HTML for content markup
