@@ -22,16 +22,16 @@
 
 - The following languages were used in the development of this project:
 
-	-- HTML for content markup
-	-- CSS for styling
-	-- JavaScript for mobile and desktop responsiveness
-	-- PHP for server-side scripting
-	-- SQL for database management
+	- HTML for content markup
+	- CSS for styling
+	- JavaScript for mobile and desktop responsiveness
+	- PHP for server-side scripting
+	- SQL for database management
 
 - The following frameworks were used to develop the system's user interface:
 
-	-- Bootstrap was used for styling and provided pre-built components such as pop-up modals, accordions, and tooltips.
-	-- jQuery was used for event handling, animation, AJAX requests, and displaying popup messages or notifications with the .jGrowl plugin.
+	- Bootstrap was used for styling and provided pre-built components such as pop-up modals, accordions, and tooltips.
+	- jQuery was used for event handling, animation, AJAX requests, and displaying popup messages or notifications with the .jGrowl plugin.
 
 
 ## Features
