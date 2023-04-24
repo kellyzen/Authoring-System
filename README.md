@@ -10,30 +10,6 @@
 
 - This repository contains the website source code that interacts with the MySQL database when run. 
 
-## Tech/Framework Used
-
-- For this project, XAMPP was used, which is an open-source web server that integrates with Apache and MySQL. 
-
-- The system's database, named studiodb, was developed using MySQL version 5.0.37 through the XAMPP server.
-
-- The Database folder contains the studiodb.sql file, which is used for the system's database.
-
-- The Dev folder contains all the necessary .js and .php files required to operate the system. These files are further organized into seven subfolders (Login, Signup, ForgotPassword, Dashboard, Topic, Profile, Theme). Each of these subfolders is responsible for specific functions within the system. Dev folder contains crucial system files such as: config.php for establishing the database connection, head.php for initialization, navbar.php for navigation, and session.php for login verification.
-
-- The following languages were used in the development of this project:
-
-	- HTML for content markup
-	- CSS for styling
-	- JavaScript for mobile and desktop responsiveness
-	- PHP for server-side scripting
-	- SQL for database management
-
-- The following frameworks were used to develop the system's user interface:
-
-	- Bootstrap was used for styling and allowed the usage of pre-built components such as pop-up modals, accordions, and tooltips.
-	- jQuery was used for event handling, animation, AJAX requests, and displaying popup messages or notifications with the .jGrowl plugin.
-
-
 ## Key Features
 
 Below is a list of key features that have been implemented in this project:
@@ -60,6 +36,28 @@ Below is a list of key features that have been implemented in this project:
 	- Reset password
 	- Shows total courses and topics created
 
+## Technologies/Frameworks Used
+
+- For this project, XAMPP was used, which is an open-source web server that integrates with Apache and MySQL. 
+
+- The system's database, named studiodb, was developed using MySQL version 5.0.37 through the XAMPP server.
+
+- The Database folder contains the studiodb.sql file, which is used for the system's database.
+
+- The Dev folder contains all the necessary .js and .php files required to operate the system. These files are further organized into seven subfolders (Login, Signup, ForgotPassword, Dashboard, Topic, Profile, Theme). Each of these subfolders is responsible for specific functions within the system. Dev folder contains crucial system files such as: config.php for establishing the database connection, head.php for initialization, navbar.php for navigation, and session.php for login verification.
+
+- The following languages were used in the development of this project:
+
+	- HTML for content markup
+	- CSS for styling
+	- JavaScript for mobile and desktop responsiveness
+	- PHP for server-side scripting
+	- SQL for database management
+
+- The following frameworks were used to develop the system's user interface:
+
+	- Bootstrap was used for styling and allowed the usage of pre-built components such as pop-up modals, accordions, and tooltips.
+	- jQuery was used for event handling, animation, AJAX requests, and displaying popup messages or notifications with the .jGrowl plugin.
 
 ## Installation
 
